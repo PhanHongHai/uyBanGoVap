@@ -1,86 +1,125 @@
-$color: #eeeeee;
+$colorHead: rgba(3,44,75,.2);
+$colorFont: #1ea69a;
 header {
-    .sideBar{
-        height: 667px;
-        border-right: 1px solid $color;
-        .search{
-            input{
-                height: 40px;
-                border: 1px solid $color;
-                text-indent: 15px;
+   height: 60px;
+   background-color: $colorFont;
+   position: fixed;
+    .topPage {
+        ul{
+            padding-top: 2%;
+          
+            li{
+                color: white;
+                font-size: 14px;
+                list-style: none;
+                float: left;
                 &:hover{
-                    border: 1px solid  #52d4c2;
-                    transition: .3s;   
+                    color: black;
+                    transition: .4s;
                 }
-                &:focus{
-                    outline-color: #52d4c2;
-                }
-            }
-            i.fa-search{
-                position: absolute;
-                color: #c7c7c7;
-                top: 27%;
-                right: 6%;
-                cursor: pointer;
+               
             }
         }
-        .menu{
-            position: relative;
-            overflow-y: scroll;
-            ul{
-                padding: 0;
-                margin-left: 5%;
-                li{
-                    list-style: none;
-                    padding-bottom: 10px;
-                    border-bottom: 1px solid $color;
-                    margin-right: 5%;
-                    a{
-                        position: relative;
-                        text-decoration: none;
-                        color: #313131;
-                        padding: 15px 0 15px 0;
-                        display: block;
-                        font-weight: bold;
+        .search{
+            form{
+                input{
+                    float: left;
+                    width: 83%;
+                    height: 60px;
+                    background: $colorHead;
+                    border:0;
+                    outline: 0;
+                    color: #dedede;
+                    text-indent: 20px;
+                    font-weight: 300;
+                    font-style: italic;
+                    letter-spacing: .3px;
+                    font-size: 14px;
+                    &::-webkit-input-placeholder{
+                        color: #dedede; 
+                        font-weight: 300;
+                        font-style: italic;
                         font-size: 14px;
-                        cursor: pointer;
-                        &:hover{
-                            color:#52d4c2;
-                            transition: .4s;
-                        }
                     }
-                    i{
-                        float: right;
-                    }
-                   
                 }
-            } 
+                button{
+                    float: right;
+                    width: 17%;
+                    height: 60px;
+                    background-color: rgba(9, 22, 31, 0.62);
+                    color: #dedede;
+                    border:0;
+                    outline: 0;
+                }
+            }
         }
     }
-    .slide{
-        .carousel-item{
-            img{
-                height: 550px;
-    
+    .menu{
+        height: 100px;
+        .listMenu{
+            ul{
+                li{
+                    position: relative;
+                    list-style: none;
+                    float: left;
+                    padding-left: 28px;
+                    padding-top: 21px;
+                    font-weight: 600;
+                    &:hover a::before{
+                        opacity: 1;
+                        transition: .5s;
+
+                  }
+                    a{
+                        text-decoration: none;
+                        color: white;
+                        font-size: 14px;
+                        &::before{
+                            content: '';
+                            width: 30px;
+                            height: 3px;
+                            background-color: #ffeb00;
+                            position: absolute;
+                            bottom: -6px;
+                            opacity: 0;
+                        }
+                        &:hover{
+                            color: $colorFont;
+                            transition: .5s;
+                           
+                        }
+                       
+
+                    }
+                }
             }
-            .carousel-caption{
-                bottom: 40%;
-            }
-        } 
-    }
-    
+        }
+    }   
 }
+.banner{
+    background-image: url('/public/images/slide1.jpg');
+    width: 100%;
+    height: 667px;
+}
+
+
+
+
+
+
+
 ::-webkit-scrollbar{ 
    width: 4px;
 }
 ::-webkit-scrollbar-track { 
     border-radius: 10px;
+    background-color: white;
 }
 ::-webkit-scrollbar-thumb{
     height: 5px;
-    background-color: $color;
+    background-color: gray;
     &:hover{
-        background-color: gray;
+        background-color: $colorHead;
         transition: .3s;
     }
 }

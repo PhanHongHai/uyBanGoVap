@@ -1,62 +1,88 @@
-header .sideBar {
-  height: 667px;
-  border-right: 1px solid #eeeeee; }
-  header .sideBar .search input {
-    height: 40px;
-    border: 1px solid #eeeeee;
-    text-indent: 15px; }
-    header .sideBar .search input:hover {
-      border: 1px solid  #52d4c2;
-      transition: .3s; }
-    header .sideBar .search input:focus {
-      outline-color: #52d4c2; }
-  header .sideBar .search i.fa-search {
-    position: absolute;
-    color: #c7c7c7;
-    top: 27%;
-    right: 6%;
-    cursor: pointer; }
-  header .sideBar .menu {
-    position: relative;
-    overflow-y: scroll; }
-    header .sideBar .menu ul {
-      padding: 0;
-      margin-left: 5%; }
-      header .sideBar .menu ul li {
-        list-style: none;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #eeeeee;
-        margin-right: 5%; }
-        header .sideBar .menu ul li a {
-          position: relative;
-          text-decoration: none;
-          color: #313131;
-          padding: 15px 0 15px 0;
-          display: block;
-          font-weight: bold;
-          font-size: 14px;
-          cursor: pointer; }
-          header .sideBar .menu ul li a:hover {
-            color: #52d4c2;
-            transition: .4s; }
-        header .sideBar .menu ul li i {
-          float: right; }
-header .slide .carousel-item img {
-  height: 550px; }
-header .slide .carousel-item .carousel-caption {
-  bottom: 40%; }
+header {
+  height: 60px;
+  background-color: #1ea69a;
+  position: fixed; }
+  header .topPage ul {
+    padding-top: 2%; }
+    header .topPage ul li {
+      color: white;
+      font-size: 14px;
+      list-style: none;
+      float: left; }
+      header .topPage ul li:hover {
+        color: black;
+        transition: .4s; }
+  header .topPage .search form input {
+    float: left;
+    width: 83%;
+    height: 60px;
+    background: rgba(3, 44, 75, 0.2);
+    border: 0;
+    outline: 0;
+    color: #dedede;
+    text-indent: 20px;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: .3px;
+    font-size: 14px; }
+    header .topPage .search form input::-webkit-input-placeholder {
+      color: #dedede;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 14px; }
+  header .topPage .search form button {
+    float: right;
+    width: 17%;
+    height: 60px;
+    background-color: rgba(9, 22, 31, 0.62);
+    color: #dedede;
+    border: 0;
+    outline: 0; }
+  header .menu {
+    height: 100px; }
+    header .menu .listMenu ul li {
+      position: relative;
+      list-style: none;
+      float: left;
+      padding-left: 28px;
+      padding-top: 21px;
+      font-weight: 600; }
+      header .menu .listMenu ul li:hover a::before {
+        opacity: 1;
+        transition: .5s; }
+      header .menu .listMenu ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 14px; }
+        header .menu .listMenu ul li a::before {
+          content: '';
+          width: 30px;
+          height: 3px;
+          background-color: #ffeb00;
+          position: absolute;
+          bottom: -6px;
+          opacity: 0; }
+        header .menu .listMenu ul li a:hover {
+          color: #1ea69a;
+          transition: .5s; }
+
+.banner {
+  background-image: url("/public/images/slide1.jpg");
+  width: 100%;
+  height: 667px; }
 
 ::-webkit-scrollbar {
   width: 4px; }
 
 ::-webkit-scrollbar-track {
-  border-radius: 10px; }
+  border-radius: 10px;
+  background-color: white; }
 
 ::-webkit-scrollbar-thumb {
   height: 5px;
-  background-color: #eeeeee; }
+  background-color: gray; }
   ::-webkit-scrollbar-thumb:hover {
-    background-color: gray;
+    background-color: rgba(3, 44, 75, 0.2);
     transition: .3s; }
 
 /*# sourceMappingURL=home.css.map */
