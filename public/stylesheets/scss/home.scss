@@ -1,75 +1,114 @@
-@font-face{
-    font-family: montserrat;
-    src:url('/public/font/Montserrat-Black.ttf') format('truetype'),
-    url('/public/font/Montserrat-BlackItalic.ttf') format('truetype'),
-    url('/public/font/Montserrat-Bold.ttf') format('truetype'),
-    url('/public/font/Montserrat-BoldItalic.ttf') format('truetype'),
-    url('/public/font/Montserrat-Light.ttf') format('truetype'),
-    url('/public/font/Montserrat-LightItalic.ttf') format('truetype'),
-    url('/public/font/Montserrat-Regular.ttf') format('truetype'),
-    url('/public/font/Montserrat-SemiBold.ttf') format('truetype'),
-    url('/public/font/Montserrat-Thin.ttf') format('truetype'),
-    url('/public/font/Montserrat-Italic.ttf') format('truetype'),
-    url('/public/font/Montserrat-ExtraBold.ttf') format('truetype'),
-    url('/public/font/Montserrat-Medium.ttf') format('truetype');
-
+@font-face {
+  font-family: montserrat;
+  src: url("/public/font/Montserrat-Black.ttf") format("truetype"),
+    url("/public/font/Montserrat-BlackItalic.ttf") format("truetype"),
+    url("/public/font/Montserrat-Bold.ttf") format("truetype"),
+    url("/public/font/Montserrat-BoldItalic.ttf") format("truetype"),
+    url("/public/font/Montserrat-Light.ttf") format("truetype"),
+    url("/public/font/Montserrat-LightItalic.ttf") format("truetype"),
+    url("/public/font/Montserrat-Regular.ttf") format("truetype"),
+    url("/public/font/Montserrat-SemiBold.ttf") format("truetype"),
+    url("/public/font/Montserrat-Thin.ttf") format("truetype"),
+    url("/public/font/Montserrat-Italic.ttf") format("truetype"),
+    url("/public/font/Montserrat-ExtraBold.ttf") format("truetype"),
+    url("/public/font/Montserrat-Medium.ttf") format("truetype");
 }
-header{
-    background: linear-gradient(180deg,#000 0,transparent);
-    .contact{
-        p{
-            display: inline-block;
-            padding-top: 4%;
-            color: white;
-            font-size: 14px;
-        }
+header {
+  background: #027fca;
+  img {
+    width: 400px;
+    height: 100px;
+  }
+  .contact {
+    text-align: end;
+    p {
+      display: inline-block;
+      color: white;
+      font-size: 14px;
     }
-    .search{
-        padding-top: 6%;
-        form{
-            display: flex;
-            flex-direction: row;
-            input{
-                width: 88%;
-                text-indent: 15px;
-                border: 1px solid black;
-                background-color: transparent;
-                color: white;
-                &:focus{
-                    outline: none;
-                }
-                &::-webkit-input-placeholder{
-                    color: white;
-                    font-size: 15px;
-                }
-            }
-            button{
-                width: 12%;
-                border: none;
-                background-color: black;
-                color: white;
-                &:hover{
-                    background-color: black;
-                    transition: .5s;
-                }
-            }
+  }
+  .search {
+    padding-top: 1%;
+    form {
+      display: flex;
+      flex-direction: row;
+      input {
+        width: 88%;
+        height: 40px;
+        text-indent: 15px;
+        border: 1px solid #f3fbe8;
+        background-color: #f3fbe8;
+        color: black;
+        &:focus {
+          outline: none;
         }
-      
+        &::-webkit-input-placeholder {
+          color: black;
+          font-size: 15px;
+        }
+      }
+      button {
+        width: 12%;
+        border: none;
+        background-color: #93dfff;
+        color: white;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.281);
+          transition: 0.5s;
+        }
+      }
     }
+  }
+  .menu {
+    background-color: #fff;
+    position: relative;
+    .tab-menu {
+      display: none;
+      a{
+          color: black;
+          font-size: 15px;
+          text-decoration: none;
+          &:hover{color: black;}
+          &:after{
+              content: '';
+              background: url('/public/images/menu-icon.png') no-repeat;
+              position: absolute;
+            }
+      }
+    }
+    ul {
+      display: flex;
+      flex-direction: row;
+      li {
+        list-style-type: none;
+        a {
+          color: #333;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 15px;
+          line-height: 58px;
+          white-space: nowrap;
+          padding: 0px 20px;
+          min-width: 110px;
+          font-family: "Open Sans", Helvetica, sans-serif;
+        }
+      }
+    }
+  }
 }
 
-
-::-webkit-scrollbar{ 
-   width: 4px;
+::-webkit-scrollbar {
+  width: 4px;
 }
-::-webkit-scrollbar-track { 
-    border-radius: 10px;
+::-webkit-scrollbar-track {
+  border-radius: 10px;
 }
-::-webkit-scrollbar-thumb{
-    height: 5px;
+::-webkit-scrollbar-thumb {
+  height: 5px;
+  background-color: gray;
+  &:hover {
     background-color: gray;
-    &:hover{
-        background-color: gray;
-        transition: .3s;
-    }
+    transition: 0.3s;
+  }
 }
+@import "responsive";

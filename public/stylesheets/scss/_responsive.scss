@@ -1,0 +1,21 @@
+@media (max-width: 576px) {
+  header {
+    .contact {
+      text-align: start;
+      p {
+        display: inline-block;
+        color: white;
+        font-size: 14px;
+        float: left;
+      }
+    }
+    .search {
+      padding-bottom: 2%;
+    }
+    .menu {
+      .tab-menu {
+        display: block;
+      }
+    }
+  }
+}

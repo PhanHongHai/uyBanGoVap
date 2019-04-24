@@ -2,36 +2,71 @@
   font-family: montserrat;
   src: url("/public/font/Montserrat-Black.ttf") format("truetype"), url("/public/font/Montserrat-BlackItalic.ttf") format("truetype"), url("/public/font/Montserrat-Bold.ttf") format("truetype"), url("/public/font/Montserrat-BoldItalic.ttf") format("truetype"), url("/public/font/Montserrat-Light.ttf") format("truetype"), url("/public/font/Montserrat-LightItalic.ttf") format("truetype"), url("/public/font/Montserrat-Regular.ttf") format("truetype"), url("/public/font/Montserrat-SemiBold.ttf") format("truetype"), url("/public/font/Montserrat-Thin.ttf") format("truetype"), url("/public/font/Montserrat-Italic.ttf") format("truetype"), url("/public/font/Montserrat-ExtraBold.ttf") format("truetype"), url("/public/font/Montserrat-Medium.ttf") format("truetype"); }
 header {
-  background: linear-gradient(180deg, #000 0, transparent); }
-  header .contact p {
-    display: inline-block;
-    padding-top: 4%;
-    color: white;
-    font-size: 14px; }
+  background: #027fca; }
+  header img {
+    width: 400px;
+    height: 100px; }
+  header .contact {
+    text-align: end; }
+    header .contact p {
+      display: inline-block;
+      color: white;
+      font-size: 14px; }
   header .search {
-    padding-top: 6%; }
+    padding-top: 1%; }
     header .search form {
       display: flex;
       flex-direction: row; }
       header .search form input {
         width: 88%;
+        height: 40px;
         text-indent: 15px;
-        border: 1px solid black;
-        background-color: transparent;
-        color: white; }
+        border: 1px solid #f3fbe8;
+        background-color: #f3fbe8;
+        color: black; }
         header .search form input:focus {
           outline: none; }
         header .search form input::-webkit-input-placeholder {
-          color: white;
+          color: black;
           font-size: 15px; }
       header .search form button {
         width: 12%;
         border: none;
-        background-color: black;
+        background-color: #93dfff;
         color: white; }
         header .search form button:hover {
-          background-color: black;
-          transition: .5s; }
+          background-color: rgba(0, 0, 0, 0.281);
+          transition: 0.5s; }
+  header .menu {
+    background-color: #fff;
+    position: relative; }
+    header .menu .tab-menu {
+      display: none; }
+      header .menu .tab-menu a {
+        color: black;
+        font-size: 15px;
+        text-decoration: none; }
+        header .menu .tab-menu a:hover {
+          color: black; }
+        header .menu .tab-menu a:after {
+          content: '';
+          background: url("/public/images/menu-icon.png") no-repeat;
+          position: absolute; }
+    header .menu ul {
+      display: flex;
+      flex-direction: row; }
+      header .menu ul li {
+        list-style-type: none; }
+        header .menu ul li a {
+          color: #333;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 15px;
+          line-height: 58px;
+          white-space: nowrap;
+          padding: 0px 20px;
+          min-width: 110px;
+          font-family: "Open Sans", Helvetica, sans-serif; }
 
 ::-webkit-scrollbar {
   width: 4px; }
@@ -44,6 +79,19 @@ header {
   background-color: gray; }
   ::-webkit-scrollbar-thumb:hover {
     background-color: gray;
-    transition: .3s; }
+    transition: 0.3s; }
+
+@media (max-width: 576px) {
+  header .contact {
+    text-align: start; }
+    header .contact p {
+      display: inline-block;
+      color: white;
+      font-size: 14px;
+      float: left; }
+  header .search {
+    padding-bottom: 2%; }
+  header .menu .tab-menu {
+    display: block; } }
 
 /*# sourceMappingURL=home.css.map */
