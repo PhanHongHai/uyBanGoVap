@@ -43,7 +43,7 @@ header {
       transition: .4s; }
   header .menu {
     height: 100px;
-    background-color: #0a0a0a7a; }
+    background: linear-gradient(180deg, #000 0, transparent); }
     header .menu .listMenu ul li {
       position: relative;
       list-style: none;
