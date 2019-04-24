@@ -1,75 +1,64 @@
-$color: #eeeeee;
-header {
-    .sideBar{
-        height: 667px;
-        border-right: 1px solid $color;
-        .search{
-            input{
-                height: 40px;
-                border: 1px solid $color;
-                text-indent: 15px;
-                &:hover{
-                    border: 1px solid  #52d4c2;
-                    transition: .3s;   
-                }
-                &:focus{
-                    outline-color: #52d4c2;
-                }
-            }
-            i.fa-search{
-                position: absolute;
-                color: #c7c7c7;
-                top: 27%;
-                right: 6%;
-                cursor: pointer;
-            }
-        }
-        .menu{
-            position: relative;
-            overflow-y: scroll;
-            ul{
-                padding: 0;
-                margin-left: 5%;
-                li{
-                    list-style: none;
-                    padding-bottom: 10px;
-                    border-bottom: 1px solid $color;
-                    margin-right: 5%;
-                    a{
-                        position: relative;
-                        text-decoration: none;
-                        color: #313131;
-                        padding: 15px 0 15px 0;
-                        display: block;
-                        font-weight: bold;
-                        font-size: 14px;
-                        cursor: pointer;
-                        &:hover{
-                            color:#52d4c2;
-                            transition: .4s;
-                        }
-                    }
-                    i{
-                        float: right;
-                    }
-                   
-                }
-            } 
-        }
-    }
-    .slide{
-        .carousel-item{
-            img{
-                height: 550px;
-    
-            }
-            .carousel-caption{
-                bottom: 40%;
-            }
-        } 
-    }
-    
+@font-face{
+    font-family: montserrat;
+    src:url('/public/font/Montserrat-Black.ttf') format('truetype'),
+    url('/public/font/Montserrat-BlackItalic.ttf') format('truetype'),
+    url('/public/font/Montserrat-Bold.ttf') format('truetype'),
+    url('/public/font/Montserrat-BoldItalic.ttf') format('truetype'),
+    url('/public/font/Montserrat-Light.ttf') format('truetype'),
+    url('/public/font/Montserrat-LightItalic.ttf') format('truetype'),
+    url('/public/font/Montserrat-Regular.ttf') format('truetype'),
+    url('/public/font/Montserrat-SemiBold.ttf') format('truetype'),
+    url('/public/font/Montserrat-Thin.ttf') format('truetype'),
+    url('/public/font/Montserrat-Italic.ttf') format('truetype'),
+    url('/public/font/Montserrat-ExtraBold.ttf') format('truetype'),
+    url('/public/font/Montserrat-Medium.ttf') format('truetype');
+
 }
+header{
+    background: linear-gradient(180deg,#000 0,transparent);
+    .contact{
+        p{
+            display: inline-block;
+            padding-top: 4%;
+            color: white;
+            font-size: 14px;
+        }
+    }
+    .search{
+        padding-top: 6%;
+        form{
+            display: flex;
+            flex-direction: row;
+            input{
+                width: 88%;
+                text-indent: 15px;
+                border: 1px solid black;
+                background-color: transparent;
+                color: white;
+                &:focus{
+                    outline: none;
+                }
+                &::-webkit-input-placeholder{
+                    color: white;
+                    font-size: 15px;
+                }
+            }
+            button{
+                width: 12%;
+                border: none;
+                background-color: black;
+                color: white;
+                &:hover{
+                    background-color: black;
+                    transition: .5s;
+                }
+            }
+        }
+      
+    }
+}
+
+
 ::-webkit-scrollbar{ 
    width: 4px;
 }
@@ -78,7 +67,7 @@ header {
 }
 ::-webkit-scrollbar-thumb{
     height: 5px;
-    background-color: $color;
+    background-color: gray;
     &:hover{
         background-color: gray;
         transition: .3s;
