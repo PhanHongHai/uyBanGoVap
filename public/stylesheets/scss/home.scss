@@ -50,12 +50,17 @@ header {
                     color: #dedede;
                     border:0;
                     outline: 0;
+                    &:hover{
+                        background-color: rgba(5, 46, 75, 0.62);
+                        transition: .4s;
+                    }
                 }
             }
         }
     }
     .menu{
         height: 100px;
+        background-color: #0a0a0a7a;
         .listMenu{
             ul{
                 li{
@@ -80,7 +85,7 @@ header {
                             height: 3px;
                             background-color: #ffeb00;
                             position: absolute;
-                            bottom: -6px;
+                            bottom: -15px;
                             opacity: 0;
                         }
                         &:hover{
@@ -97,17 +102,9 @@ header {
     }   
 }
 .banner{
-    background-image: url('/public/images/slide1.jpg');
-    width: 100%;
     height: 667px;
+    img{ height: 100%; width: 100%;}
 }
-
-
-
-
-
-
-
 ::-webkit-scrollbar{ 
    width: 4px;
 }
@@ -123,3 +120,4 @@ header {
         transition: .3s;
     }
 }
+@import "responsive";

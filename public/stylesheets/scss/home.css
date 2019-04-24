@@ -38,8 +38,12 @@ header {
     color: #dedede;
     border: 0;
     outline: 0; }
+    header .topPage .search form button:hover {
+      background-color: rgba(5, 46, 75, 0.62);
+      transition: .4s; }
   header .menu {
-    height: 100px; }
+    height: 100px;
+    background-color: #0a0a0a7a; }
     header .menu .listMenu ul li {
       position: relative;
       list-style: none;
@@ -60,16 +64,17 @@ header {
           height: 3px;
           background-color: #ffeb00;
           position: absolute;
-          bottom: -6px;
+          bottom: -15px;
           opacity: 0; }
         header .menu .listMenu ul li a:hover {
           color: #1ea69a;
           transition: .5s; }
 
 .banner {
-  background-image: url("/public/images/slide1.jpg");
-  width: 100%;
   height: 667px; }
+  .banner img {
+    height: 100%;
+    width: 100%; }
 
 ::-webkit-scrollbar {
   width: 4px; }
