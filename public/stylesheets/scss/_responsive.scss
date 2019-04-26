@@ -1,4 +1,4 @@
-@media (max-width: 576px) {
+@media (max-width: 575px) {
   header {
     .contact {
       text-align: start;
@@ -13,8 +13,102 @@
       padding-bottom: 2%;
     }
     .menu {
-      .tab-menu {
-        display: block;
+      .container {
+        padding: 0;
+        .tab-menu {
+          display: block;
+          height: 50px;
+          box-shadow: 0 7px 7px #dadada;
+          a {
+            text-decoration: none;
+            text-indent: 15px;
+            line-height: 50px;
+            color: #027fca;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-block;
+            cursor: pointer;
+          }
+          img {
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            margin-top: 4%;
+            margin-right: 7%;
+            cursor: pointer;
+          }
+        }
+        .menu-box {
+          ul {
+            padding: 0;
+            display: block;
+            position: relative;
+            li {
+              border-bottom: 1px dashed gray;
+              a {
+                text-align: center;
+                display: block;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+        .normal-menu{
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  header {
+    .container {
+      padding: 0;
+      max-width: 100%;
+    }
+    .menu {
+      .container {
+        .tab-menu {
+          display: block;
+          height: 50px;
+          box-shadow: 0 7px 7px #dadada;
+          a {
+            text-decoration: none;
+            text-indent: 50px;
+            line-height: 50px;
+            color: #027fca;
+            font-size: 20px;
+            font-weight: bold;
+            display: inline-block;
+            cursor: pointer;
+          }
+          img {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            margin-top: 2%;
+            margin-right: 6%;
+            cursor: pointer;
+          }
+        }
+        .menu-box {
+          ul {
+            padding: 0;
+            display: block;
+            position: relative;
+            li {
+              border-bottom: 1px dashed gray;
+              a {
+                text-align: center;
+                display: block;
+                font-size: 15px;
+              }
+            }
+          }
+        }
+        .normal-menu{
+          display: none;
+        }
       }
     }
   }
