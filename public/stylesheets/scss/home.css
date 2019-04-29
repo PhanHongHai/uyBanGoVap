@@ -258,6 +258,7 @@ body {
             color: #f9c100;
             transition: 0.4s; }
           body .contentHome .hoatDong .contentCate .cateClassify .mainCate a h4 {
+            max-width: 300px;
             padding-top: 3%;
             font-weight: 400;
             font-family: roboto, sans-serif; }
@@ -343,6 +344,7 @@ body {
               color: #f9c100;
               transition: 0.4s; }
             body .contentHome .vanHoaXaHoi .contentCate .cateClassify .mainCate a h4 {
+              max-width: 300px;
               padding-top: 3%;
               font-weight: 400;
               font-family: roboto, sans-serif; }
@@ -428,6 +430,7 @@ body {
               color: #f9c100;
               transition: 0.4s; }
             body .contentHome .anNinh .contentCate .cateClassify .mainCate a h4 {
+              max-width: 300px;
               padding-top: 3%;
               font-weight: 400;
               font-family: roboto, sans-serif; }
@@ -494,6 +497,7 @@ body {
               color: #f9c100;
               transition: 0.4s; }
             body .contentHome .matTran .contentCate .cateClassify .mainCate a h4 {
+              max-width: 300px;
               padding-top: 3%;
               font-weight: 400;
               font-family: roboto, sans-serif; }
@@ -547,9 +551,85 @@ body {
           font-weight: 400; }
     body .contentHome .pageCoDong .contentCoDong {
       height: 500px; }
+    body .contentHome .coSo {
+      width: 100%;
+      height: auto;
+      border: 1px solid #c8c8c8;
+      width: 100%; }
+      body .contentHome .coSo .tabCoSo {
+        border-top: 4px solid #9235d8;
+        height: 50px; }
+        body .contentHome .coSo .tabCoSo ul {
+          width: 100%;
+          height: 100%;
+          padding: 0; }
+          body .contentHome .coSo .tabCoSo ul .activeTabCS {
+            background-color: #a2caf3; }
+            body .contentHome .coSo .tabCoSo ul .activeTabCS span {
+              color: white; }
+          body .contentHome .coSo .tabCoSo ul li {
+            list-style-type: none;
+            border-right: 1px solid black;
+            height: 100%;
+            width: 25%;
+            font-size: 15px;
+            float: left;
+            text-align: center;
+            cursor: pointer; }
+            body .contentHome .coSo .tabCoSo ul li:last-child {
+              border-right: 0; }
+            body .contentHome .coSo .tabCoSo ul li:hover {
+              background-color: #a2caf3; }
+              body .contentHome .coSo .tabCoSo ul li:hover span {
+                color: white; }
+            body .contentHome .coSo .tabCoSo ul li span {
+              padding-top: 7%;
+              display: block; }
+      body .contentHome .coSo .contentCs .activeContentCS {
+        display: block !important; }
+      body .contentHome .coSo .contentCs .allContentCoSo {
+        width: 100%;
+        height: auto;
+        background-color: #e8e3e37a;
+        display: none; }
+        body .contentHome .coSo .contentCs .allContentCoSo .contentCoSo {
+          width: 100%; }
+          body .contentHome .coSo .contentCs .allContentCoSo .contentCoSo ul {
+            padding: 0;
+            height: 300px;
+            overflow-y: scroll; }
+            body .contentHome .coSo .contentCs .allContentCoSo .contentCoSo ul li {
+              display: inline-block;
+              padding: 2%;
+              width: 40%;
+              margin-left: 7%; }
+              body .contentHome .coSo .contentCs .allContentCoSo .contentCoSo ul li a {
+                color: #333;
+                text-decoration: none; }
+                body .contentHome .coSo .contentCs .allContentCoSo .contentCoSo ul li a:hover {
+                  color: #c10100;
+                  transition: 0.4s; }
+  body footer {
+    width: 100%;
+    height: 400px;
+    background-color: #0d2038; }
+    body footer div {
+      width: 48%;
+      height: 100%;
+      float: left; }
+      body footer div img {
+        height: 100% !important; }
+    body footer p {
+      width: 49%;
+      height: auto;
+      float: left;
+      color: white;
+      padding-top: 8%;
+      padding-right: 0%;
+      border-bottom: 1px solid white; }
 
 ::-webkit-scrollbar {
-  width: 4px; }
+  width: 8px; }
 
 ::-webkit-scrollbar-track {
   border-radius: 10px; }

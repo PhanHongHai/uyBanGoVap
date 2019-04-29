@@ -49,4 +49,12 @@ $(function(){
         $(".anNinh .headCate .subCate ul li").removeClass('activeSubCate');
         $(this).addClass('activeSubCate');
     });
+    $('.coSo .tabCoSo ul li').click(function(){
+        let valueCS=$(this).index();
+        $('.coSo .contentCs .allContentCoSo').removeClass('activeContentCS');
+        let result=".coSo .contentCs .allContentCoSo:nth-child("+(valueCS+1)+")";
+        $(result).addClass('activeContentCS');
+        $(".coSo .tabCoSo ul li").removeClass('activeTabCS');
+        $(this).addClass('activeTabCS');
+    });
 });

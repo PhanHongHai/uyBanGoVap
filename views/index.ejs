@@ -1,32 +1,54 @@
 <%
-  var linkImg=['/public/images/cong-truc-tuyen.jpg',
+ var linkImg=['/public/images/cong-truc-tuyen.jpg',
     '/public/images/do-thi-thong-minh.jpg',
     '/public/images/kenh-tuong-tac.jpg',
     '/public/images/thu-tuc-hanh-chinh.jpg',
     '/public/images/tra-cuu.jpg'
   ];
+  var phuongXa=[
+  "Phường 1","Phường 3","Phường 4","Phường 5","Phường 6","Phường 7","Phường 8",
+  "Phường 9","Phường 10","Phường 11","Phường 12","Phường 13","Phường 14",
+  "Phường 16","Phường 17"
+  ];
+  var quanHuyen=[
+  "Quận 1","Quận 2","Quận 3","Quận 4","Quận 5","Quận 6",
+  "Quận 7","Quận 8","Quận 9","Quận 10","Quận 11","Quận 12",
+  "Quận Bình Tân","Quận Bình Thạnh","Quận Gò Vấp","Quận Phú Nhuận","Quận Tân Bình",
+  "Quận Tân Phú","Quận Thủ Đức","Huyện Bình Chánh","Huyện Cần Giờ","Huyện Củ Chi",
+  "Huyện Hóc Môn","Huyện Nhà Bè"
+  ];
+  var soBan=[
+      "Đại biểu nhân dân TP","Sở LĐ Thương binh và Xã hội","Sở Y tế","Sở Giáo dục và Đào tạo",
+      "Sở Du Lịch","Sở Văn hóa và Thể thao"," Sở Xây dựng","Sở Nông nghiệp và PTNT","Công an Tp. Hồ CHí Minh",
+      "Cảnh sát Phòng cháy Chữa cháy","Ban dân tộc TP.HCM","Cục Thuế","Viện Nghiên cứu phát triển TPHCM",
+      "UB về người VN ở nước ngoài","Hội đồng thi đua khen thưởng","Sở Khoa học và Công nghệ",
+       "Sở Thông tin và Truyền thông","Ủy ban Mặt trận Tổ quốc TP","Văn phòng UBND thành phố",
+       "Tòa án nhân dân TP","Viện Kiểm soát nhân dân","Thanh tra TP","Sở Tư pháp","Sở Ngoại Vụ",
+       "Sở Nội Vụ","Sở Kế hoạch và Đầu tư","Sở Tài chính","Sở Công thương","Sở Quy hoạch Kiến trúc",
+       "Sở Tài nguyên và Môi trường","Sở Giao thông và Vận tải","Học viện Cán bộ thành phố",
+       "Cục Hải quan"
+  ];
+  var trungUong=[];
  %>
 <!DOCTYPE html>
 <html>
 <% include ../component/head %>
 
 <body class="mw-100 m-0 p-0 ">
- <% include ../component/header %>
- <% include ../component/mainHome %>
- <% include ../component/contentHome %>
+  <% include ../component/header %>
+  <% include ../component/mainHome %>
+ 	<% include ../component/contentHome %>
+
+  <% include ../component/footer %>
 
 
 
-
- <% include ../component/footer %>
- 
- 
- 
 </body>
 <script type="text/javascript">
-
-    function changeLink(duongDan){
-      var vdo= document.getElementById('videoNew').src=duongDan;
-    }
+  new WOW().init();
+  function changeLink(duongDan) {
+    var vdo = document.getElementById('videoNew').src = duongDan;
+  }
 </script>
+
 </html>
