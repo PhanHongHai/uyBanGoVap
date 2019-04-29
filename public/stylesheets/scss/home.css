@@ -39,11 +39,15 @@ body {
           body header .search form button:hover {
             background-color: rgba(0, 0, 0, 0.281);
             transition: 0.5s; }
+    body header .menuZoom {
+      position: fixed !important;
+      top: 0; }
     body header .menu {
       background-color: #fff;
       position: relative;
       box-shadow: 0px 4px 8px 0px #585858de;
-      z-index: 10; }
+      z-index: 15;
+      width: 100%; }
       body header .menu .tab-menu {
         display: none; }
         body header .menu .tab-menu .head-box {

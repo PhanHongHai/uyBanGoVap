@@ -7,6 +7,18 @@ $(function(){
     $('.menu .tab-menu a').click(function(event){
         $('.menu-box').slideToggle(500);
     });
+    // menu  fix
+    $(window).scroll(function(event) {
+        var vitri=$("html").scrollTop();
+        console.log(vitri);
+		if(vitri > 150){
+			$('.menu').addClass('menuZoom');
+		}
+		else if(vitri < 100){
+			$('.menu').removeClass('menuZoom');
+		}
+	});
+
     // tab news
     $('.nameTab button').click(function(){
         let giaTriTab =$(this).index();

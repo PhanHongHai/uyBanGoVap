@@ -61,11 +61,17 @@ body {
         }
       }
     }
+    .menuZoom{
+      position: fixed !important;
+      top: 0;
+
+    }
     .menu {
       background-color: #fff;
       position: relative;
       box-shadow: 0px 4px 8px 0px #585858de;
-      z-index: 10;
+      z-index: 15;
+      width: 100%;
       .tab-menu {
         display: none;
         .head-box {

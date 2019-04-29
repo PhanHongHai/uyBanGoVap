@@ -5,5 +5,7 @@ const {gioiThieu,tinTuc,quyHoach,congDan} = require('../content/sidebar');
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Trang chủ- Công thông tin điện tử Gò Vấp'});
 });
+router.get('/cong-dan',(req,res) => {
 
+});
 module.exports = router;
