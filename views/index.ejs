@@ -36,7 +36,7 @@
 <% include ../component/head %>
 
 <body class="mw-100 m-0 p-0 ">
-  <main id="main-scrollbar" data-scrollbar>
+  <main id="main-scrollbar">
     <div class="scroll-content">
       <% include ../component/header %>
       <% include ../component/mainHome %>
@@ -57,18 +57,16 @@
   <script src="/public/js/function/menu.js"></script>
   <script src="/public/slick/slick.min.js"></script>
   <script src="/public/js/wow.js"></script>
-  <script src="/public/js/smooth-scrollbar.js"></script>
+  <script src="/public/js/SmoothScroll.js"></script>
   <script src="/public/js/function/carouselHome.js"></script>
   <script type="text/javascript">
     new WOW().init();
     function changeLink(duongDan) {
       var vdo = document.getElementById('videoNew').src = duongDan;
     }
-    var Scrollbar = window.Scrollbar;
-    Scrollbar.initAll();
-    var ele=document.getElementsByClassName('scroll-content');
-    var values = ele.style.transform.split(/\w+\(|\);?/);
-    console.log(values[1].split(/,\s?/g));
+   /* var Scrollbar = window.Scrollbar;
+    Scrollbar.initAll();*/
+    SmoothScroll({ keyboardSupport: true })
   </script>
 
 </body>
