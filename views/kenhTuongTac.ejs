@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../component/head %>
+    <link rel="stylesheet" href="/public/stylesheets/scss/sideBar.css">
+    <link rel='stylesheet' href='/public/stylesheets/scss/kenhTuongTac.css' />
+</head>
+
+<body>
+    <% include ../component/header%>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <% include ../component/sideBar %>
+            </div>
+            <div class="col-md-9">
+                <div class="tuongTacBox bg-light shadow card">
+                    <h5 class="text-center">BAN TIẾP CÔNG DÂN QUẬN GÒ VẤP</h5>
+                    <div class="contentTuongTac mt-5">
+                        <div class="row m-0">
+                            <div class="col-md-3 border border-secondary ">
+                                <img class="img-fluid" src="/public/images/hadung.jpg" alt="">
+                            </div>
+                            <div class="col-md-5 border border-secondary text-center">
+                                <p>Hoàng Anh Dũng <br>
+                                    Phó Chánh Văn phòng</p>
+                            </div>
+                            <div class="col-md-4 border border-secondary text-center">
+                                <span>
+                                        0838.943.830
+                                    <a href="">hadung.govap@tphcm.gov.vn</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% include ../component/footer%>
+
+</body>
+
+</html>

@@ -5,9 +5,10 @@
                 <div class="col-md-3">
                         <div class="up"><img src="/public/images/up-arrow.png" alt=""></div>
                     <div class="thumb">
-                        <% linkImg.forEach(function(item,index){  %>
+                        <% linkImg.forEach(function(ele){  %>
                         <div class="app-menu">
-                            <img src="<%= item %>" alt="">
+                            <a href="<%= ele.link %>"> <img src="<%= ele.linkIMG %>" alt=""></a>
+                           
                         </div>
                         <% }) %>
                     </div>            

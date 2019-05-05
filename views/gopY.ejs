@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../component/head %>
+    <link rel="stylesheet" href="/public/stylesheets/scss/sideBar.css">
+    <link rel="stylesheet" href="/public/stylesheets/scss/tinChung.css">
+</head>
+
+<body>
+    <% include ../component/header %>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <% include ../component/sideBar %>
+            </div>
+            <div class="col-md-9">
+                <div class="tinChung bg-light shadow card">
+                    <div class="headTinChung shadow-sm">
+                        <h5><a href="/"> <i class="fas fa-angle-double-right pr-3 pl-3"></i>GÓP Ý</a></h5>
+                    </div>
+                    <div class="contentTinChung mt-3 pb-4">
+                        <form action="" method="post">
+                           <div class="form-group w-75 mx-auto">
+                               <label for="my-input w-50 float-left">Họ và tên :<span class="text-danger">(*)</span></label>
+                               <input id="my-input w-50 float-left" class="form-control" type="text">
+                           </div>
+                           <div class="form-group w-75 mx-auto">
+                               <label for="my-input w-50 float-left">Email :<span class="text-danger">(*)</span></label>
+                               <input id="my-input w-50 float-left" class="form-control" type="text">
+                           </div>
+                           <div class="form-group w-75 mx-auto">
+                               <label for="my-input w-50 float-left">Địa chỉ :</label>
+                               <input id="my-input w-50 float-left" class="form-control" type="text">
+                           </div>
+                           <div class="form-group w-75 mx-auto">
+                               <label for="my-input w-50 float-left">Số điện thoại :</label>
+                               <input id="my-input w-50 float-left" class="form-control" type="text">
+                           </div>
+                           <div class="form-group w-75 mx-auto">
+                               <label for="my-input w-50 float-left">Chủ đề :<span class="text-danger">(*)</span></label>
+                               <input id="my-input w-50 float-left" class="form-control" type="text">
+                           </div>
+                           <div class="form-group w-75 mx-auto">
+                               <label for="my-input w-50 float-left">Nội dung:<span class="text-danger">(*)</span></label>
+                               <input id="my-input w-50 float-left" class="form-control" type="text">
+                           </div>
+                           <div class="form-group w-75 mx-auto">
+                               <label for="my-input w-50 float-left">File đính kèm:<span class="text-danger">(*)</span></label>
+                               <input id="my-input w-50 float-left" class="form-control" type="file">
+                           </div>
+                           <div class="w-50 mx-auto">
+                               <input type="submit" class="btn btn-secondary w-50 float-left" value="Gửi góp ý">
+                               <input type="submit" class="btn btn-danger w-50 float-left" value="Làm lại">
+                           </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <% include ../component/footer %>
+</body>
+
+</html>

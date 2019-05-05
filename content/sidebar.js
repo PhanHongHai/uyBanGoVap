@@ -1,39 +1,43 @@
+var sideBarCongDan=[
+    {name: 'Thủ tục hành chính',link:'/thu-tuc-hanh-chinh'},
+    {name: 'Dịch vụ công',link:'/dich-vu-cong'},
+    {name: 'Góp ý',link:'/gop-y'},
+    {name: 'Hỏi đáp',link:'/hoi-dap'}
+
+];
 var gioiThieu=[
-    {name: 'SƠ ĐỒ',link:''},
-    {name: 'ĐƠN VỊ TRỰC THUỘC',link:''},
-    {name: 'TRUYỀN THỐNG - LỊCH SỬ GÒ VẤP',link:''},
-    {name: 'CẢNH QUAN ĐẤT VÀ NGƯỜI GÒ VẤP',link:''},
-    {name: 'ĐỊA ĐIỂM THĂM QUAN',link:''},
-    {name: 'ẨM THỰC',link:''},
-    {name: 'SIÊU THỊ - TRUNG TÂM THƯƠNG MẠI',link:''},
-    {name: 'DỊCH VỤ',link:''}
+    {name: 'Sơ đồ tổ chức',link:'/so-do-to-chuc'},
+    {name: 'Đơn vị trực thuộc',link:'/don-vi-truc-thuoc'},
+    {name: 'Truyền thống - Lịch sử Quận Gò Vấp',link:'/truyen-thong-lich-su-go-vap'},
+    {name: 'Cảnh quan đất và người Gò Vấp',link:'/canh-quan-dat-va-nguoi-go-vap'},
+    {name: 'Địa điểm tham quan',link:'/dia-diem-tham-quan'},
+    {name: 'Ẩm thực',link:'/am-thuc'},
+    {name: 'Siêu thị - Trung tâm thương mại',link:'/sieu-thi-trung-tam-thuong-mai'},
+    {name: 'Dịch vụ',link:'/dich-vu'}
 ];
 var tinTuc=[
-    {name: 'KINH TẾ - DOANH NGHIỆP',link:''},
-    {name: 'VĂN HÓA - XÃ HỘI',link:''},
-    {name: 'QUÂN SỰ - QUỐC PHÒNG',link:''},
-    {name: 'NẾP SỐNG VĂN MINH ĐÔ THỊ',link:''},
-    {name: 'AN NINH TRẬT TỰ',link:''},
-    {name: 'PHÒNG CHÁY CHỮA CHÁY',link:''},
-    {name: 'AN TOÀN GIAO THÔNG',link:''},
-    {name: 'CẢI CÁCH HÀNH CHÍNH',link:''},
-    {name: 'ĐIỂN HÌNH NGƯỜI TỐT VIỆC TÔT',link:''},
-    {name: 'HOẠT ĐỘNG DÂN TỘC',link:''},
-    {name: 'ỐNG KÍNH PHÓNG VIÊN',link:''}
+    {name: 'Kinh tế - Doanh nghiệp',link:'/kinh-te-doanh-nghiep'},
+    {name: 'Văn hóa - Xã hội',link:'/van-hoa-xa-hoi'},
+    {name: 'Quân sự - Quốc phòng',link:'/quan-su-quoc-phong'},
+    {name: 'Nếp sống văn minh đô thị',link:'/'},
+    {name: 'An ninh trật tự',link:'/'},
+    {name: 'Phòng cháy chữa cháy',link:'/'},
+    {name: 'An toàn giao thông',link:'/'},
+    {name: 'Cải cách hành chính',link:'/'},
+    {name: 'Điển hình - Người tốt việc tốt',link:'/'},
+    {name: 'Hoạt động dân tộc',link:'/'},
+    {name: 'Ống kính phóng viên',link:'/'},
 ];
-var quyHoach=[
-    {name: 'BẢN ĐỒ HÀNH CHÍNH QUẬN GÒ VẤP',link:''},
-    {name: 'QUY HOẠCH VÀ SỬ DỤNG ĐẤT QUẬN GÒ VẤP',link:''},
-    {name: 'QUY HOẠCH XÂY DỰNG',link:''},
-    {name: 'QUY HOẠCH LỘ GIỚI HẺM',link:''},
-    {name: 'QUY HOẠCH SỬ DỤNG ĐẤT',link:''},
-    {name: 'QUY HOẠCH THƯƠNG MẠI - DỊCH VỤ',link:''},
-    {name: 'BẢNG GIÁ ĐẤT',link:''}
+var uyBan=[
+    {name: 'Thường trực và Ủy viên Ủy ban Nhân dân Quận',link:'/kinh-te-doanh-nghiep'},
+    {name: 'Hoạt động UBND',link:'/van-hoa-xa-hoi'},
+    {name: 'Thông báo',link:'/quan-su-quoc-phong'},
+    {name: 'Thông tin báo chí',link:'/'},
+    {name: 'Lịch tiếp công dân',link:'/'},
+    {name: 'Lịch công tác',link:'/'},
+    {name: 'Văn bản chỉ đạo - điều hành',link:'/'},
+    {name: 'Công khai ngân sách',link:'/'},
+    {name: 'Các dự án hạng mục đầu tư',link:'/'}
 ];
-var congDan=[
-    {name: 'THỦ TỤC HÀNH CHÍNH',link:''},
-    {name: 'DỊCH VỤ CÔNG',link:''},
-    {name: 'GÓP Ý',link:''},
-    {name: 'HỎI ĐÁP',link:''}
-];
-module.exports ={ gioiThieu,tinTuc,quyHoach,congDan};
+
+module.exports ={sideBarCongDan,gioiThieu,tinTuc,uyBan};

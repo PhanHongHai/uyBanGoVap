@@ -1,0 +1,21 @@
+.sideBar .headSideBar {
+  width: 100%;
+  background-color: aqua; }
+.sideBar .contentSideBar ul {
+  padding: 0; }
+  .sideBar .contentSideBar ul li {
+    list-style: none;
+    border-bottom: 1px solid gainsboro;
+    padding: 5%; }
+    .sideBar .contentSideBar ul li:last-child {
+      border-bottom: 0; }
+    .sideBar .contentSideBar ul li:hover {
+      background-color: darksalmon;
+      transition: .4s; }
+      .sideBar .contentSideBar ul li:hover a {
+        color: white; }
+    .sideBar .contentSideBar ul li a {
+      color: gray;
+      text-decoration: none; }
+
+/*# sourceMappingURL=sideBar.css.map */

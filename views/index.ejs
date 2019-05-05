@@ -1,9 +1,10 @@
 <%
- var linkImg=['/public/images/cong-truc-tuyen.jpg',
-    '/public/images/do-thi-thong-minh.jpg',
-    '/public/images/kenh-tuong-tac.jpg',
-    '/public/images/thu-tuc-hanh-chinh.jpg',
-    '/public/images/tra-cuu.jpg'
+ var linkImg=[
+    {linkIMG:'/public/images/kenh-tuong-tac.jpg',link:'/cong-dan'},
+    {linkIMG:'/public/images/cong-truc-tuyen.jpg',link:'/dich-vu-cong'},
+    {linkIMG:'/public/images/do-thi-thong-minh.jpg',link:'/dich-vu-cong'},
+    {linkIMG:'/public/images/thu-tuc-hanh-chinh.jpg',link:'/dich-vu-cong'},
+    {linkIMG:'/public/images/tra-cuu.jpg',link:'/dich-vu-cong'}
   ];
   var phuongXa=[
   "Phường 1","Phường 3","Phường 4","Phường 5","Phường 6","Phường 7","Phường 8",
@@ -35,20 +36,41 @@
 <% include ../component/head %>
 
 <body class="mw-100 m-0 p-0 ">
-  <% include ../component/header %>
-  <% include ../component/mainHome %>
- 	<% include ../component/contentHome %>
+  <main id="main-scrollbar" data-scrollbar>
+    <div class="scroll-content">
+      <% include ../component/header %>
+      <% include ../component/mainHome %>
+      <% include ../component/contentHome %>
+    </div>
+    <div class="scrollbar-track scrollbar-track-x">
+        <div class="scrollbar-thumb scrollbar-thumb-x"></div>
+    </div>
+    <div class="scrollbar-track scrollbar-track-y">
+        <div class="scrollbar-thumb scrollbar-thumb-y"></div>
+    </div>
+    <% include ../component/footer %>
+  </main>
 
-  <% include ../component/footer %>
 
-
+  <script src="/public/js/jquery.min.js"></script>
+  <script src="/public/js/bootstrap.min.js"></script>
+  <script src="/public/js/function/menu.js"></script>
+  <script src="/public/slick/slick.min.js"></script>
+  <script src="/public/js/wow.js"></script>
+  <script src="/public/js/smooth-scrollbar.js"></script>
+  <script src="/public/js/function/carouselHome.js"></script>
+  <script type="text/javascript">
+    new WOW().init();
+    function changeLink(duongDan) {
+      var vdo = document.getElementById('videoNew').src = duongDan;
+    }
+    var Scrollbar = window.Scrollbar;
+    Scrollbar.initAll();
+    var ele=document.getElementsByClassName('scroll-content');
+    var values = ele.style.transform.split(/\w+\(|\);?/);
+    console.log(values[1].split(/,\s?/g));
+  </script>
 
 </body>
-<script type="text/javascript">
-  new WOW().init();
-  function changeLink(duongDan) {
-    var vdo = document.getElementById('videoNew').src = duongDan;
-  }
-</script>
 
 </html>
