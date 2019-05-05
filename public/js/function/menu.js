@@ -11,11 +11,11 @@ $(function(){
     $(window).scroll(function(event) {
         var vitri=$("html").scrollTop();
         console.log(vitri);
-		if(vitri > 150){
-			$('.menu').addClass('menuZoom');
+		if(vitri > 113){
+			$('.menu').addClass('menuZoom animated fadeInDown');
 		}
 		else if(vitri < 100){
-			$('.menu').removeClass('menuZoom');
+			$('.menu').removeClass('menuZoom animated fadeInDown');
 		}
 	});
 

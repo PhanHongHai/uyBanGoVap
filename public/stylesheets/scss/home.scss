@@ -13,13 +13,14 @@
     url("/public/font/Montserrat-ExtraBold.ttf") format("truetype"),
     url("/public/font/Montserrat-Medium.ttf") format("truetype");
 }
+$color-bg:#f5f5f5;
 body {
-  background-image: url("/public/images/background.png");
- 
-  #main-scrollbar {
-   
+  background-image: url("/public/images/bg-home.jpg");
+  position: relative;
     header {
-      background: #027fca;
+      .mainHeader{
+        background-color: $color-bg;
+      }
       img {
         width: 400px;
         height: 100px;
@@ -28,7 +29,7 @@ body {
         text-align: end;
         p {
           display: inline-block;
-          color: white;
+          color: #959595;
           font-size: 14px;
         }
       }
@@ -41,14 +42,14 @@ body {
             width: 88%;
             height: 40px;
             text-indent: 15px;
-            border: 1px solid #f3fbe8;
-            background-color: #f3fbe8;
-            color: black;
+            border: 1px solid #232422d8;
+            background-color: #232422d8;
+            color: white;
             &:focus {
               outline: none;
             }
             &::-webkit-input-placeholder {
-              color: black;
+              color: white;
               font-size: 15px;
             }
           }
@@ -67,13 +68,15 @@ body {
       .menuZoom {
         position: fixed !important;
         top: 0;
+        background-color: #1c1c1cd9 !important;
       }
       .menu {
-        background-color: #fff;
+        background-color: #1c1c1c;
         position: relative;
         box-shadow: 0px 4px 8px 0px #585858de;
         z-index: 15;
         width: 100%;
+        max-width: 1200px;
         .tab-menu {
           display: none;
           .head-box {
@@ -94,14 +97,13 @@ body {
           }
         }
         .menu-box {
-          background-color: #fff;
           ul {
             display: flex;
             flex-direction: row;
             li {
               list-style-type: none;
               a {
-                color: #333;
+                color: #f2f2f2;
                 text-decoration: none;
                 font-weight: bold;
                 font-size: 15px;
@@ -109,7 +111,7 @@ body {
                 white-space: nowrap;
                 padding: 0px 20px;
                 min-width: 110px;
-                font-family: "Open Sans", Helvetica, sans-serif;
+                font-family:  'Oswald', sans-serif;
               }
             }
           }
@@ -121,7 +123,7 @@ body {
             height: 100%;
             li {
               &:hover {
-                background-color: #6363e0;
+                background-color: #689FCE;
                 transition: 0.5s;
                 border-right: white;
                 border-left: white;
@@ -136,20 +138,18 @@ body {
     }
     .main {
       .content {
-        background-color: #0d2038;
+        position: relative;
         .thumb {
           position: relative;
-          margin-left: 5%;
-          .app-menu {
-            padding: 2%;
-            img {
-              width: 90%;
-              height: auto;
-            }
+          img{
+            width: 100%;
+            max-height: 500px;
           }
         }
-        .up {
-          text-align: center;
+        .owl-prev {
+          position: absolute;
+          top: 40%;
+          left: 0;
           img {
             cursor: pointer;
             width: 40px;
@@ -160,22 +160,23 @@ body {
             }
           }
         }
-        .down {
-          @extend .up;
-        }
-        .slide {
-          height: 400px;
-          width: 100%;
-          margin-top: 2%;
+        .owl-next {
+          position: absolute;
+          top: 40%;
+          right: 0;
           img {
-            height: 400px;
-            width: 100%;
+            cursor: pointer;
+            width: 40px;
+            height: auto;
+            &:hover {
+              transform: scale(1.3);
+              transition: 0.5s;
+            }
           }
         }
       }
     }
     .contentHome {
-      padding-top: 1%;
       .shadow {
         background-color: #fff;
         .newTab {
@@ -236,6 +237,7 @@ body {
             }
             .contentTab {
               max-height: 86%;
+              overflow-y: scroll;
               .tab {
                 display: none;
                 ul {
@@ -280,6 +282,7 @@ body {
           .listVideo {
             width: 100%;
             height: 270px;
+            overflow-y: scroll;
             ul {
               padding: 0;
               li {
@@ -863,20 +866,21 @@ body {
       }
     }
   }
-}
-/*
+
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  border-radius: 10px;
+  //border-radius: 10px;
+  background-color: rgb(184, 184, 184); 
 }
 ::-webkit-scrollbar-thumb {
-  height: 5px;
-  background-color: gray;
+  border-radius: 15px;
+  height: 4px;
+  background-color: rgb(70, 70, 70);
   &:hover {
     background-color: gray;
     transition: 0.3s;
   }
-}*/
+}
 @import "responsive";
