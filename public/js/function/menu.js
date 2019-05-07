@@ -18,7 +18,11 @@ $(function(){
 			$('.menu').removeClass('menuZoom animated fadeInDown');
 		}
 	});
-
+    /// smooth scroll
+    SmoothScroll({
+        keyboardSupport: true,
+        animationTime    : 500, // [ms]
+        stepSize         : 100, });
     // tab news
     $('.nameTab button').click(function(){
         let giaTriTab =$(this).index();
@@ -39,33 +43,33 @@ $(function(){
     });
     $('.hoatDong .headCate .subCate ul li').click(function(){
         let valueSubCate=$(this).index();
-        $('.hoatDong .contentCate .cateClassify').removeClass('activeCate');
+        $('.hoatDong .contentCate .cateClassify').removeClass('activeCate animated fadeInUp');
         let result=".hoatDong .contentCate .cateClassify:nth-child("+(valueSubCate+1)+")";
-        $(result).addClass('activeCate');
+        $(result).addClass('activeCate animated fadeInUp');
         $(".hoatDong .headCate .subCate ul li").removeClass('activeSubCate');
         $(this).addClass('activeSubCate');
     });
     $('.vanHoaXaHoi .headCate .subCate ul li').click(function(){
         let valueSubCate=$(this).index();
-        $('.vanHoaXaHoi .contentCate .cateClassify').removeClass('activeCate');
+        $('.vanHoaXaHoi .contentCate .cateClassify').removeClass('activeCate animated fadeInUp');
         let result=".vanHoaXaHoi .contentCate .cateClassify:nth-child("+(valueSubCate+1)+")";
-        $(result).addClass('activeCate');
+        $(result).addClass('activeCate animated fadeInUp');
         $(".vanHoaXaHoi .headCate .subCate ul li").removeClass('activeSubCate');
         $(this).addClass('activeSubCate');
     });
     $('.anNinh .headCate .subCate ul li').click(function(){
         let valueSubCate=$(this).index();
-        $('.anNinh .contentCate .cateClassify').removeClass('activeCate');
+        $('.anNinh .contentCate .cateClassify').removeClass('activeCate animated fadeInUp');
         let result=".anNinh .contentCate .cateClassify:nth-child("+(valueSubCate+1)+")";
-        $(result).addClass('activeCate');
+        $(result).addClass('activeCate animated fadeInUp');
         $(".anNinh .headCate .subCate ul li").removeClass('activeSubCate');
         $(this).addClass('activeSubCate');
     });
     $('.coSo .tabCoSo ul li').click(function(){
         let valueCS=$(this).index();
-        $('.coSo .contentCs .allContentCoSo').removeClass('activeContentCS');
+        $('.coSo .contentCs .allContentCoSo').removeClass('activeContentCS animated fadeInUp');
         let result=".coSo .contentCs .allContentCoSo:nth-child("+(valueCS+1)+")";
-        $(result).addClass('activeContentCS');
+        $(result).addClass('activeContentCS animated fadeInUp');
         $(".coSo .tabCoSo ul li").removeClass('activeTabCS');
         $(this).addClass('activeTabCS');
     });

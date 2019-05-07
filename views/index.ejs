@@ -31,12 +31,14 @@
        "Cục Hải quan"
   ];
   var trungUong=[];
+
+   img='/public/images/bg-home.jpg';
  %>
 <!DOCTYPE html>
 <html>
 <% include ../component/head %>
 
-<body class="mw-100 m-0 p-0 ">
+<body class="mw-100 m-0 p-0 " style="background-image: url('<%= img %>');">
 
   <% include ../component/header %>
   <% include ../component/mainHome %>
@@ -60,10 +62,7 @@
     }
     /* var Scrollbar = window.Scrollbar;
      Scrollbar.initAll();*/
-    SmoothScroll({
-       keyboardSupport: true,
-       animationTime    : 500, // [ms]
-       stepSize         : 100, });
+ 
   </script>
 
 </body>

@@ -6,7 +6,7 @@ $(document).ready(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 4000,
         arrows: false,
         fade: true,
         responsive: [
@@ -44,12 +44,49 @@ $(document).ready(function () {
         smartSpeed:250,
         slideTransition:'ease-out',
         autoplay:true,
-        autoplayTimeout:4000,
+        autoplayTimeout:6000,
         autoplaySpeed:true,
         loop:true,
         nav:true,
         navText:''
     });
+    
+$('.pageSearch ul').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    infinite:true,
+    prevArrow:'.nutPrev',
+    nextArrow:'.nutNext',
+    responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+       
+      ]
+
+  });
     $('.owl-next').click(function() {
         $(".owl-carousel").trigger('next.owl.carousel');
     })

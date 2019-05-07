@@ -1,47 +1,59 @@
-.tinChung {
-  width: 100%; }
-  .tinChung .headTinChung {
-    width: 100%;
-    background-color: #6eb48c; }
-    .tinChung .headTinChung h5 a {
-      text-decoration: none;
-      color: white; }
-      .tinChung .headTinChung h5 a:hover {
-        color: rgba(133, 13, 13, 0.842);
-        transition: 0.4s; }
-  .tinChung .contentTinChung ul li {
-    list-style: none;
-    display: inline-block;
-    padding-bottom: 1%; }
-    .tinChung .contentTinChung ul li a {
-      width: 100%;
-      color: black;
-      font-weight: bold;
-      text-decoration: none; }
-      .tinChung .contentTinChung ul li a img {
-        width: 30%;
-        height: 150px;
-        float: left; }
-      .tinChung .contentTinChung ul li a span {
-        width: 70%;
-        float: left;
-        padding-left: 2%; }
-        .tinChung .contentTinChung ul li a span:hover {
-          color: #8d0b0b;
-          transition: .4s; }
-  .tinChung .contentTinChung .contentBaiViet img {
-    padding-bottom: 3%; }
-  .tinChung .contentTinChung .contentBaiViet span {
-    font-size: 12px;
-    display: block;
-    color: #3b3be7;
-    text-align: center;
-    padding-bottom: 3%; }
-  .tinChung .tinDaDua h5, .tinChung .comment h5 {
-    color: #e00d0d;
-    margin-left: 3%; }
-
-.dvCong .card-body ul li {
-  list-style: none; }
+.allPage {
+  box-shadow: 0 9px 0 0 rgba(255, 255, 255, 0), 0 -9px 0 0 rgba(255, 255, 255, 0), 10px 0 30px 0 rgba(0, 0, 0, 0.15), -10px 0 30px 0 rgba(0, 0, 0, 0.15); }
+  .allPage #bodyPage {
+    background-color: #fff; }
+    .allPage #bodyPage .tinChung {
+      width: 100%; }
+      .allPage #bodyPage .tinChung .headTinChung {
+        width: 100%;
+        height: 100px;
+        max-height: 200px;
+        background-color: #d0c6c6;
+        margin: 10px 0px 15px 20px; }
+        .allPage #bodyPage .tinChung .headTinChung h2 {
+          text-align: center; }
+          .allPage #bodyPage .tinChung .headTinChung h2 a {
+            text-decoration: none;
+            color: #161616;
+            display: block;
+            padding-top: 3%; }
+            .allPage #bodyPage .tinChung .headTinChung h2 a:hover {
+              color: #474747;
+              transition: 0.4s; }
+      .allPage #bodyPage .tinChung .contentTinChung ul {
+        padding-left: 21px; }
+        .allPage #bodyPage .tinChung .contentTinChung ul li {
+          list-style: none;
+          display: inline-block;
+          padding-bottom: 1%; }
+          .allPage #bodyPage .tinChung .contentTinChung ul li a {
+            width: 100%;
+            color: black;
+            font-weight: bold;
+            text-decoration: none; }
+            .allPage #bodyPage .tinChung .contentTinChung ul li a img {
+              width: 30%;
+              height: 150px;
+              float: left; }
+            .allPage #bodyPage .tinChung .contentTinChung ul li a span {
+              width: 70%;
+              float: left;
+              padding-left: 2%; }
+              .allPage #bodyPage .tinChung .contentTinChung ul li a span:hover {
+                color: #8d0b0b;
+                transition: 0.4s; }
+      .allPage #bodyPage .tinChung .contentTinChung .contentBaiViet img {
+        padding-bottom: 3%; }
+      .allPage #bodyPage .tinChung .contentTinChung .contentBaiViet span {
+        font-size: 12px;
+        display: block;
+        color: #3b3be7;
+        text-align: center;
+        padding-bottom: 3%; }
+      .allPage #bodyPage .tinChung .tinDaDua h5, .allPage #bodyPage .tinChung .comment h5 {
+        color: #e00d0d;
+        margin-left: 3%; }
+    .allPage #bodyPage .dvCong .card-body ul li {
+      list-style: none; }
 
 /*# sourceMappingURL=tinChung.css.map */

@@ -1,21 +1,30 @@
-.sideBar .headSideBar {
-  width: 100%;
-  background-color: aqua; }
-.sideBar .contentSideBar ul {
-  padding: 0; }
-  .sideBar .contentSideBar ul li {
-    list-style: none;
-    border-bottom: 1px solid gainsboro;
-    padding: 5%; }
-    .sideBar .contentSideBar ul li:last-child {
-      border-bottom: 0; }
-    .sideBar .contentSideBar ul li:hover {
-      background-color: darksalmon;
-      transition: .4s; }
-      .sideBar .contentSideBar ul li:hover a {
-        color: white; }
-    .sideBar .contentSideBar ul li a {
-      color: gray;
-      text-decoration: none; }
+.sideBar {
+  padding-top: 10px; }
+  .sideBar .headSideBar {
+    width: 100%;
+    height: 55px;
+    background-color: #f2f2f2;
+    border-bottom: 3px solid #689fce; }
+    .sideBar .headSideBar h5 {
+      padding-top: 3%; }
+  .sideBar .contentSideBar {
+    margin-top: 8%;
+    background-color: #f2f2f2; }
+    .sideBar .contentSideBar ul {
+      padding: 0; }
+      .sideBar .contentSideBar ul li {
+        list-style: none;
+        border-bottom: 1px solid gainsboro;
+        padding: 5%; }
+        .sideBar .contentSideBar ul li:last-child {
+          border-bottom: 0; }
+        .sideBar .contentSideBar ul li:hover {
+          background-color: darksalmon;
+          transition: .4s; }
+          .sideBar .contentSideBar ul li:hover a {
+            color: white; }
+        .sideBar .contentSideBar ul li a {
+          color: gray;
+          text-decoration: none; }
 
 /*# sourceMappingURL=sideBar.css.map */

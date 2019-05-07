@@ -1,8 +1,10 @@
-.tuongTacBox {
-  width: 100%; }
-  .tuongTacBox .contentTuongTac {
+.allPage {
+  background-color: #fff; }
+  .allPage .tuongTacBox {
     width: 100%; }
-    .tuongTacBox .contentTuongTac img {
-      padding: 10%; }
+    .allPage .tuongTacBox .contentTuongTac {
+      width: 100%; }
+      .allPage .tuongTacBox .contentTuongTac img {
+        padding: 10%; }
 
 /*# sourceMappingURL=kenhTuongTac.css.map */

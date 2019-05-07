@@ -1,9 +1,18 @@
+$color-bg:#f2f2f2;
 .sideBar {
+  padding-top:10px;
   .headSideBar {
     width: 100%;
-    background-color: aqua;
+    height: 55px;
+    background-color: $color-bg;
+    border-bottom: 3px solid #689fce;
+    h5{
+      padding-top: 3%;
+    }
   }
   .contentSideBar {
+    margin-top: 8%;
+    background-color: $color-bg;
     ul {
         padding: 0;
       li {

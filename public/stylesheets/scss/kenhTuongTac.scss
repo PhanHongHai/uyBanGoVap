@@ -1,10 +1,14 @@
-.tuongTacBox{
-    width: 100%;
-    .contentTuongTac{
+$color-bg:#fff;
+.allPage{
+    background-color: $color-bg;
+    .tuongTacBox{
         width: 100%;
-        img{
-            padding: 10%;
+        .contentTuongTac{
+            width: 100%;
+            img{
+                padding: 10%;
+            }
+    
         }
-
     }
 }
