@@ -5,43 +5,82 @@
     .allPage #bodyPage .tinChung {
       width: 100%; }
       .allPage #bodyPage .tinChung .headTinChung {
+        position: relative;
         width: 100%;
         height: 100px;
         max-height: 200px;
-        background-color: #d0c6c6;
+        background-color: #f2f2f2;
         margin: 10px 0px 15px 20px; }
-        .allPage #bodyPage .tinChung .headTinChung h2 {
-          text-align: center; }
-          .allPage #bodyPage .tinChung .headTinChung h2 a {
+        .allPage #bodyPage .tinChung .headTinChung h3 {
+          text-align: center;
+          font-weight: 400;
+          letter-spacing: 2px; }
+          .allPage #bodyPage .tinChung .headTinChung h3 a {
             text-decoration: none;
             color: #161616;
             display: block;
             padding-top: 3%; }
-            .allPage #bodyPage .tinChung .headTinChung h2 a:hover {
+            .allPage #bodyPage .tinChung .headTinChung h3 a:hover {
               color: #474747;
               transition: 0.4s; }
+            .allPage #bodyPage .tinChung .headTinChung h3 a:before {
+              content: "";
+              width: 10%;
+              height: 10px;
+              background: url("/public/images/brixton-border-left.png") 0 1px no-repeat;
+              position: absolute;
+              left: 40%;
+              top: 65%; }
+            .allPage #bodyPage .tinChung .headTinChung h3 a:after {
+              content: "";
+              width: 10%;
+              height: 10px;
+              background: url("/public/images/brixton-border-right.png") 0 1px no-repeat;
+              position: absolute;
+              right: 40%;
+              top: 65%; }
+        .allPage #bodyPage .tinChung .headTinChung h1 {
+          letter-spacing: 0; }
       .allPage #bodyPage .tinChung .contentTinChung ul {
         padding-left: 21px; }
         .allPage #bodyPage .tinChung .contentTinChung ul li {
           list-style: none;
           display: inline-block;
-          padding-bottom: 1%; }
-          .allPage #bodyPage .tinChung .contentTinChung ul li a {
-            width: 100%;
-            color: black;
-            font-weight: bold;
-            text-decoration: none; }
-            .allPage #bodyPage .tinChung .contentTinChung ul li a img {
-              width: 30%;
-              height: 150px;
-              float: left; }
-            .allPage #bodyPage .tinChung .contentTinChung ul li a span {
-              width: 70%;
-              float: left;
-              padding-left: 2%; }
-              .allPage #bodyPage .tinChung .contentTinChung ul li a span:hover {
-                color: #8d0b0b;
+          padding: 3% 0% 3% 0px;
+          border-bottom: 1px solid rgba(175, 174, 174, 0.397); }
+          .allPage #bodyPage .tinChung .contentTinChung ul li a img {
+            width: 40%;
+            height: 250px;
+            float: left; }
+          .allPage #bodyPage .tinChung .contentTinChung ul li span {
+            width: 60%;
+            float: left;
+            padding-left: 2%; }
+            .allPage #bodyPage .tinChung .contentTinChung ul li span a {
+              width: 100%;
+              color: black;
+              text-decoration: none; }
+              .allPage #bodyPage .tinChung .contentTinChung ul li span a:hover {
+                color: #b81e1e;
                 transition: 0.4s; }
+              .allPage #bodyPage .tinChung .contentTinChung ul li span a h3 {
+                font-size: 18px;
+                font-weight: 500; }
+            .allPage #bodyPage .tinChung .contentTinChung ul li span p {
+              font-size: 14px;
+              font-weight: 400; }
+              .allPage #bodyPage .tinChung .contentTinChung ul li span p i {
+                font-size: 12px;
+                font-weight: 400; }
+            .allPage #bodyPage .tinChung .contentTinChung ul li span a.btn {
+              background-color: #272727;
+              color: white;
+              letter-spacing: 2px;
+              font-size: 11px;
+              padding: 10px 10px 10px 10px; }
+              .allPage #bodyPage .tinChung .contentTinChung ul li span a.btn:hover {
+                background-color: #696868;
+                transition: .5s; }
       .allPage #bodyPage .tinChung .contentTinChung .contentBaiViet img {
         padding-bottom: 3%; }
       .allPage #bodyPage .tinChung .contentTinChung .contentBaiViet span {

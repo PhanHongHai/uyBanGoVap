@@ -4,14 +4,14 @@ $color-bg:#f2f2f2;
   .headSideBar {
     width: 100%;
     height: 55px;
-    background-color: $color-bg;
+    background-color: #191818;
     border-bottom: 3px solid #689fce;
     h5{
-      padding-top: 3%;
+      padding: 3% 0 0 10%;
+      color: white;
     }
   }
   .contentSideBar {
-    margin-top: 8%;
     background-color: $color-bg;
     ul {
         padding: 0;
