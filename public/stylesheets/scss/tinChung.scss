@@ -1,4 +1,136 @@
 $color-bg: #fff;
+// responsive
+@media (max-width: 575px){
+  .allPage{
+    #bodyPage{
+      .tinChung{
+        .headTinChung{
+          margin: 0 !important;
+          h3{
+            a{
+              &:before{
+                width: 20% !important;
+                top: 85% !important;
+                left: 33% !important;
+              }
+              &:after{
+               width: 20% !important;
+               top: 85% !important;
+               right: 31% !important;
+              }
+            }
+          }
+        }
+        .contentTinChung{
+          ul{
+            li{
+              a{
+                img{
+                  width: 45% !important;
+                  height: 190px !important;
+                }
+              }
+              span{
+                width: 55% !important;
+                a.btn {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 576px) and (max-width: 767px){
+  .allPage{
+    #bodyPage{
+      .tinChung{
+        .headTinChung{
+          margin: 0 !important;
+          h3{
+            a{
+              &:before{
+                width: 20% !important;
+                top: 85% !important;
+                left: 33% !important;
+              }
+              &:after{
+               width: 20% !important;
+               top: 85% !important;
+               right: 31% !important;
+              }
+            }
+          }
+        }
+        .contentTinChung{
+          ul{
+            li{
+              a{
+                img{
+                  width: 45% !important;
+                  height: 190px !important;
+                }
+              }
+              span{
+                width: 55% !important;
+                a.btn {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 991px){
+  .allPage{
+    #bodyPage{
+      .tinChung{
+        .headTinChung{
+          h3{
+            a{
+              &:before{
+                width: 20% !important;
+                top: 85% !important;
+                left: 33% !important;
+              }
+              &:after{
+               width: 20% !important;
+               top: 85% !important;
+               right: 31% !important;
+              }
+            }
+          }
+        }
+        .contentTinChung{
+          ul{
+            li{
+              a{
+                img{
+                  width: 45% !important;
+                  height: 190px !important;
+                }
+              }
+              span{
+                width: 55% !important;
+                a.btn {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+ }
+@media (min-width: 992px) and (max-width: 1200px){
+
+}
 .allPage {
   box-shadow: 0 9px 0 0 rgba(255, 255, 255, 0), 0 -9px 0 0 rgba(255, 255, 255, 0), 10px 0 30px 0 rgba(0, 0, 0, 0.15),
     -10px 0 30px 0 rgba(0, 0, 0, 0.15);
