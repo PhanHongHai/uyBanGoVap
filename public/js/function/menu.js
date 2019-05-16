@@ -1,10 +1,7 @@
 $(function(){
     // menu responsive
     $('.menu-box').slideUp();
-    $('.menu .tab-menu img').click(function(event){
-        $('.menu-box').slideToggle(500);
-    });
-    $('.menu .tab-menu a').click(function(event){
+    $('.menu .tab-menu .head-box .fa-bars').click(function(event){
         $('.menu-box').slideToggle(500);
     });
     // menu  fix
@@ -17,7 +14,18 @@ $(function(){
 		else if(vitri < 100){
 			$('.menu').removeClass('menuZoom animated fadeInDown');
 		}
-	});
+    });
+    // small menu
+    $('.small-head-box i').click(function(){
+        $('.menu .small-menu-box').removeClass('hideMenu');
+        $('.menu .small-menu-box').addClass('openMenu');
+        $('.menu').addClass('disableAni');
+    });
+    $('.small-menu-box i').click(function(){
+        $('.menu .small-menu-box').removeClass('openMenu');
+        $('.menu .small-menu-box').addClass('hideMenu');
+        $('.menu').removeClass('disableAni');
+    });
     /// smooth scroll
     SmoothScroll({
         keyboardSupport: true,
@@ -35,6 +43,7 @@ $(function(){
         $(vlaue).addClass('activeContentNew');
         $(vlaue1).addClass('activeClassify');
     });
+
     $('.contentTab .activeContentNew ul li').hover(function(){
         let giaTriListItem=$(this).index();
         $('.imageNewTab .newImage').removeClass('activeImageNew');

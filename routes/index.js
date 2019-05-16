@@ -36,4 +36,5 @@ router.get('/thu-tuc-hanh-chinh',(req,res) => {
   res.render('gopY',{title:'Góp Ý-Công thông tin điện tử Gò Vấp',
   sideBarCongDan:sideBarCongDan,gioiThieu:gioiThieu,tinTuc:tinTuc,uyBan:uyBan,check:0});
  });
+
 module.exports = router;

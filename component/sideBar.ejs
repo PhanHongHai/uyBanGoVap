@@ -1,56 +1,115 @@
-<div class="sideBar">
-    <% if(check==0){ %>
-      <div class="headSideBar text-center">
-        <h5><i class="far fa-newspaper pr-2"></i>CÔNG DÂN</h5>
-    </div>
-    <div class="contentSideBar">
-        <ul>
-            <% sideBarCongDan.forEach(function(ele){ %>
-            <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
-            <% }) %>
-        </ul>
-    </div>
-    <% }
+<div>
+    <div class="sideBar">
+        <% if(check==0){ %>
+        <div class="headSideBar text-center">
+            <h5><i class="far fa-newspaper pr-2"></i>CÔNG DÂN</h5>
+        </div>
+        <div class="contentSideBar">
+            <ul>
+                <% sideBarCongDan.forEach(function(ele){ %>
+                <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
+                <% }) %>
+            </ul>
+        </div>
+        <% }
         else{
      %>
-    <div class="headSideBar text-center">
-        <h5><i class="far fa-newspaper pr-2"></i>GIỚI THIỆU</h5>
+        <div class="headSideBar text-center">
+            <h5><i class="far fa-newspaper pr-2"></i>GIỚI THIỆU</h5>
+        </div>
+        <div class="contentSideBar">
+            <ul>
+                <% gioiThieu.forEach(function(ele){ %>
+                <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="headSideBar text-center">
+            <h5><i class="far fa-newspaper pr-2"></i>TIN TỨC SỰ KIỆN</h5>
+        </div>
+        <div class="contentSideBar">
+            <ul>
+                <% tinTuc.forEach(function(ele){ %>
+                <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="headSideBar text-center">
+            <h5><i class="far fa-newspaper pr-2"></i>ỦY BAN NHÂN DÂN</h5>
+        </div>
+        <div class="contentSideBar">
+            <ul>
+                <% uyBan.forEach(function(ele){ %>
+                <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="headSideBar text-center">
+            <h5><i class="far fa-newspaper pr-2"></i>HỘI ĐỒNG NHÂN DÂN</h5>
+        </div>
+        <div class="contentSideBar">
+            <ul>
+                <li><a href="">Hoạt động HĐND nhiệm kỳ 2004 - 2009</a></li>
+                <li><a href="">Hoạt động HĐND nhiệm kỳ 2016 - 2021</a></li>
+            </ul>
+        </div>
+        <% } %>
     </div>
-    <div class="contentSideBar">
-        <ul>
-            <% gioiThieu.forEach(function(ele){ %>
-            <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
-            <% }) %>
-        </ul>
+    <div class="sideBar-menu" >
+        <% if(check==0){ %>
+        <div class="headSideBar text-center">
+            <h5><i class="far fa-newspaper pr-2"></i>CÔNG DÂN</h5>
+        </div>
+        <div class="contentSideBar "  >
+            <ul>
+                <% sideBarCongDan.forEach(function(ele){ %>
+                <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
+                <% }) %>
+            </ul>
+        </div>
+        <% }
+        else{
+     %>
+        <div class="headSideBar text-center">
+            <h5 data-toggle="collapse" data-target="#gt"><i class="far fa-newspaper pr-2"></i>GIỚI THIỆU</h5>
+        </div>
+        <div class="contentSideBar collapse" id="gt">
+            <ul>
+                <% gioiThieu.forEach(function(ele){ %>
+                <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="headSideBar text-center">
+            <h5  data-toggle="collapse" data-target="#tt"><i class="far fa-newspaper pr-2"></i>TIN TỨC SỰ KIỆN</h5>
+        </div>
+        <div class="contentSideBar collapse"  id="tt">
+            <ul>
+                <% tinTuc.forEach(function(ele){ %>
+                <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="headSideBar text-center">
+            <h5  data-toggle="collapse"  data-target="#uyban"><i class="far fa-newspaper pr-2"></i>ỦY BAN NHÂN DÂN</h5>
+        </div>
+        <div class="contentSideBar collapse" id="uyban" >
+            <ul>
+                <% uyBan.forEach(function(ele){ %>
+                <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="headSideBar text-center">
+            <h5><i class="far fa-newspaper pr-2"></i>HỘI ĐỒNG NHÂN DÂN</h5>
+        </div>
+        <div class="contentSideBar ">
+            <ul>
+                <li><a href="">Hoạt động HĐND nhiệm kỳ 2004 - 2009</a></li>
+                <li><a href="">Hoạt động HĐND nhiệm kỳ 2016 - 2021</a></li>
+            </ul>
+        </div>
+        <% } %>
     </div>
-    <div class="headSideBar text-center">
-        <h5><i class="far fa-newspaper pr-2"></i>TIN TỨC SỰ KIỆN</h5>
-    </div>
-    <div class="contentSideBar">
-        <ul>
-            <% tinTuc.forEach(function(ele){ %>
-            <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
-            <% }) %>
-        </ul>
-    </div>
-    <div class="headSideBar text-center">
-        <h5><i class="far fa-newspaper pr-2"></i>ỦY BAN NHÂN DÂN</h5>
-    </div>
-    <div class="contentSideBar">
-        <ul>
-            <% uyBan.forEach(function(ele){ %>
-            <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
-            <% }) %>
-        </ul>
-    </div>
-    <div class="headSideBar text-center">
-        <h5><i class="far fa-newspaper pr-2"></i>HỘI ĐỒNG NHÂN DÂN</h5>
-    </div>
-    <div class="contentSideBar">
-        <ul>
-            <li><a href="">Hoạt động HĐND nhiệm kỳ 2004 - 2009</a></li>
-            <li><a href="">Hoạt động HĐND nhiệm kỳ 2016 - 2021</a></li>
-        </ul>
-    </div>
-    <% } %>
+
 </div>

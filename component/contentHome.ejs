@@ -2,8 +2,8 @@
     <div class="container shadow pt-3 pb-4">
         <div class="row">
             <div class="col-12 col-md-12">
-                <div class="title">
-                    <h4>TIN TỨC</h4>
+                <div class="sectionHeader">
+                    <h2>Tin tức</h2>
                 </div>
             </div>
             <!-- content tab news && video new  -->
@@ -31,7 +31,7 @@
                         <!-- end uy ban mat tran cate -->
 
                         <!-- phan loai co so content category  -->
-                        <div class="coSo shadow mt-5 wow fadeInUp ">
+                        <div class="coSo shadow mt-5">
                             <div class="tabCoSo shadow-sm">
                                 <ul>
                                     <li><span>PHƯỜNG XÃ</span> </li>
@@ -41,42 +41,42 @@
                                 </ul>
                             </div>
                             <div class="contentCs position-relative">
-                                    <div class="allContentCoSo activeContentCS ">
-                                        <div class="contentCoSo d-flex flex-nowrap">
-                                            <ul>
-                                                <% for (var i of phuongXa){ %>
-                                                <li><a href=""><i class="fas fa-caret-right mr-2"></i><%= i %></a> </li>
-                                                <%} %>
-                                            </ul>
-                                        </div>
+                                <div class="allContentCoSo activeContentCS ">
+                                    <div class="contentCoSo d-flex flex-nowrap">
+                                        <ul>
+                                            <% for (var i of phuongXa){ %>
+                                            <li><a href=""><i class="fas fa-caret-right mr-2"></i><%= i %></a> </li>
+                                            <%} %>
+                                        </ul>
                                     </div>
-                                    <div class="allContentCoSo">
-                                        <div class="contentCoSo d-flex flex-nowrap">
-                                            <ul>
-                                                <% for (var i of quanHuyen){ %>
-                                                <li><a href=""><i class="fas fa-caret-right mr-2"></i><%= i %></a> </li>
-                                                <%} %>
-                                            </ul>
-                                        </div>
+                                </div>
+                                <div class="allContentCoSo">
+                                    <div class="contentCoSo d-flex flex-nowrap">
+                                        <ul>
+                                            <% for (var i of quanHuyen){ %>
+                                            <li><a href=""><i class="fas fa-caret-right mr-2"></i><%= i %></a> </li>
+                                            <%} %>
+                                        </ul>
                                     </div>
-                                    <div class="allContentCoSo">
-                                        <div class="contentCoSo d-flex flex-nowrap">
-                                            <ul>
-                                                <% for (var i of soBan){ %>
-                                                <li><a href=""><i class="fas fa-caret-right mr-2"></i><%= i %></a> </li>
-                                                <%} %>
-                                            </ul>
-                                        </div>
+                                </div>
+                                <div class="allContentCoSo">
+                                    <div class="contentCoSo d-flex flex-nowrap">
+                                        <ul>
+                                            <% for (var i of soBan){ %>
+                                            <li><a href=""><i class="fas fa-caret-right mr-2"></i><%= i %></a> </li>
+                                            <%} %>
+                                        </ul>
                                     </div>
-                                    <div class="allContentCoSo">
-                                        <div class="contentCoSo d-flex flex-nowrap">
-                                            <ul>
-                                                <% for (var i of trungUong){ %>
-                                                <li><a href=""><i class="fas fa-caret-right mr-2"></i><%= i %></a> </li>
-                                                <%} %>
-                                            </ul>
-                                        </div>
+                                </div>
+                                <div class="allContentCoSo">
+                                    <div class="contentCoSo d-flex flex-nowrap">
+                                        <ul>
+                                            <% for (var i of trungUong){ %>
+                                            <li><a href=""><i class="fas fa-caret-right mr-2"></i><%= i %></a> </li>
+                                            <%} %>
+                                        </ul>
                                     </div>
+                                </div>
                             </div>
 
                         </div>
@@ -84,7 +84,21 @@
 
                     </div>
                     <div class="col-md-4">
-                        <div class="pageCoDong  wow fadeInUp">
+                        <div class="mainPageApp pb-3">
+                            <div class="headPage">
+                                <h5>
+                                    <span>TƯƠNG TÁC</span>
+                                </h5>
+                            </div>
+                            <div class="contentPageApp">
+                                    <div><img src="/public/images/tra-cuu.jpg" alt="" class="img-fluid"></div>
+                                    <div><img src="/public/images/thu-tuc-hanh-chinh.jpg" alt="" class="img-fluid"></div>
+                                    <div><img src="/public/images/kenh-tuong-tac.jpg" alt="" class="img-fluid"></div>
+                                    <div><img src="/public/images/do-thi-thong-minh.jpg" alt="" class="img-fluid"></div>
+                                    <div><img src="/public/images/cong-truc-tuyen.jpg" alt="" class="img-fluid"></div>
+                                </div>
+                        </div>
+                        <div class="pageCoDong">
                             <div class="headPage">
                                 <h5>
                                     <span>TRANG CỔ ĐÔNG</span>
@@ -112,8 +126,9 @@
             </div>
             <!-- end content category  -->
 
-
+            <% include ../component/footer %>
 
         </div>
+
     </div>
 </div>

@@ -4,8 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
+let indexRouter = require('./routes/index');
+let adminRouter = require('./routes/admin');
 
+const mongoose= require('mongoose');
+mongoose.connect('mongodb://localhost/goVap',{useNewUrlParser: true});
 
 var app = express();
 
@@ -19,13 +22,14 @@ app.use(cookieParser());
 app.use('/public',express.static('public'));
 
 
+
 app.use(indexRouter);
+app.use(adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
