@@ -1,5 +1,5 @@
 const methodCateType = require('../Model/LoaiDanhMuc/Method');
-const methodAccount = require('../Model/Account/Method');
+
 
 module.exports = {
     loadCateType: async (req, res) => {
@@ -12,6 +12,14 @@ module.exports = {
         }
 
     },
-    
+    addCateType: async (req,res) => {
+        let data={
+            typeName:req.nameType
+        }
+        if(methodCateType.addCateType(data))
+            res.render('/admin/CategoryType',{title:'QL Loại Danh Mục',mess});
+        else
+
+    }
     
 }

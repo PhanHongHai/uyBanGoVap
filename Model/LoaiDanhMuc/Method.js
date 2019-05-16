@@ -5,14 +5,14 @@ module.exports={
         return data;
     },
     getCateType: async () => {
-        
+
     },
     addCateType: (data) => {
         let cateType= new modelCateType(data);
         if(cateType.save())
-            return 1;
+            return true;
         else
-            return 0;
+            return false;
     }
 
 }
