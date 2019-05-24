@@ -5,6 +5,6 @@ var news=new mongoose.Schema({
     postTime:'Date',
     linkImg:'String',
     shortContent:'String',
-    idCate:'mongoose.ObjectId'
+    idCate:{type:'ObjectId',ref:'Category'}
 },{collection:'News'});
 module.exports =mongoose.model('News',news);

@@ -31,7 +31,7 @@ module.exports = {
         if (req.isAuthenticated()) {
             let tk = await acc.find();
             console.log(tk);
-            res.render('admin/Account', { title: 'QL Tài Khoản', link: link, user: req.user, acc: tk});
+            res.render('admin', { title: 'QL Tài Khoản', link: link, user: req.user, acc: tk,path:"Account",count:req.session.count});
         }
         else
             res.redirect('/login');
@@ -51,10 +51,11 @@ module.exports = {
     },
     updateAccount: (req,res) => {
         console.log(req.data);
+        method.updateAccount(req.body)
     },
     deleteAccount: (req,res) => {
-        if(method.deleteAccount(req.params.idAcc))
-            return 1;
+        method.deleteAccount(req.params.idAcc);
+         res.status(200).json({mess:'success'});
     }
     // end account
 }

@@ -1,0 +1,160 @@
+
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                            <h3 class="card-title float-left">Danh sách tài khoản</h3>
+                            <div class="float-right">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAđ">
+                                        Thêm
+                                    </button>
+            
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="modalAđ" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalScrollableTitle">Thêm mới</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form method="POST" action="/admin/tai-khoan">
+                                                        <div class="form-group">
+                                                            <label for="inputSmall" class="col-form-label">Username</label>
+                                                            <input id="inputSmall" type="text" class="form-control form-control-sm"
+                                                                name="username" novalidate>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="inputDefault" class="col-form-label">Password</label>
+                                                            <input id="inputDefault" type="text" class="form-control"
+                                                                name="password" novalidate>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="input-select">Quyền</label>
+                                                            <select class="form-control" id="input-select" name="role" novalidate>
+                                                                <option value="1">Admin</option>
+                                                                <option value="2">Nhân viên</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Thoát</button>
+                                                            <button type="submit" class="btn btn-primary">Xác Nhận</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    </div>
+                    <div class="card-body">
+                       
+                       
+                        <div class="table-responsive">
+                            <table id="zero_config" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">STT</th>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">Password</th>
+                                        <th scope="col">Quyền</th>
+                                        <th scope="col">Xử lý</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if(acc){
+                                                                let i=1;
+                                                            acc.forEach(function(ele){
+                                                            %>
+        
+                                    <tr>
+                                        <th scope="row"><%= i %></th>
+                                        <td><%= ele.username %></td>
+                                        <td><%= ele.password %></td>
+                                        <% if(ele.role == 1){ %>
+                                        <td>Admin</td>
+                                        <% } else{ %>
+                                        <td>Nhân viên</td>
+                                        <% }%>
+                                        <td>
+                                            <i class="fas fa-edit pr-3 " data-toggle="modal" data-target="#modalEdit<%=i%>"
+                                                style="cursor:pointer;"></i>
+                                            <i class="fas fa-trash-alt" style="cursor:pointer;"
+                                                onclick="deleteAcc('<%= ele._id%>')"></i>
+                                        </td>
+                                        <!-- Button trigger modal -->
+                                        <!-- Modal -->
+                                        <input type="hidden" name="" id="id" value="<%= ele._id %>">
+                                        <div class="modal fade" id="modalEdit<%= i %>" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Sửa Thông
+                                                            tin
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label for="inputSmall" class="col-form-label">Tên tài
+                                                                khoản</label>
+                                                            <input id="us" type="text" class="form-control form-control-sm"
+                                                                value="<%= ele.username %>" name="username" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="inputDefault" class="col-form-label">Mật Khẩu</label>
+                                                            <input id="pass" type="text" class="form-control" name="password"
+                                                                value="<%= ele.password %>" required>
+                                                        </div>
+        
+                                                        <div class="form-group">
+                                                            <label for="input-select">Quyền</label>
+                                                            <select class="form-control" id="role" name="role">
+                                                                <% var roleTemp=["Admin","Nhân Viên"]
+                                                                                            for(var count = 1; count <=2 ; count++){
+                                                                                        %>
+                                                                <% if(ele.role == count){ %>
+                                                                <option value="<%= count%>" selected>
+                                                                    <%= roleTemp[count-1] %></option>
+                                                                <% } else{ %>
+        
+                                                                <option value="<%= count%>">
+                                                                    <%= roleTemp[count-1] %></option>
+                                                                <% }} %>
+        
+                                                            </select>
+                                                        </div>
+        
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Thoát</button>
+                                                            <button type="submit" class="btn btn-primary nutEdit">Xác
+                                                                Nhận</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </tr>
+                                    <% i++; })} %>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

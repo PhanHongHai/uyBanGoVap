@@ -44,7 +44,7 @@ module.exports={
        
     },
     deleteAccount:async (id) => {
-        modelAccount.findByIdAndDelete(id,(err) => {
+        modelAccount.findOneAndRemove({_id:id},(err) => {
             if(err)
              return console.log(err);
         });

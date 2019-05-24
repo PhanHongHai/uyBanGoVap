@@ -1,55 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <% include ../component/headAdmin %>
-    <style>
-        html,
-        body {
-            height: 100%;
-        }
-
-        body {
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-align: center;
-            align-items: center;
-            padding-top: 40px;
-            padding-bottom: 40px;
-        }
-    </style>
-</head>
+<html lang="en" class="fullscreen-bg">
+<% include ../component/headAdmin %>
 
 <body>
-    <div class="splash-container">
-        <div class="card ">
-            <div class="card-header text-center"><a href="/"><img class="logo-img" width="300"
-                        src="/public/images/logoHome.png" alt="logo"></a></div>
-            <div class="card-body">
-                <form method="POST" action="/login">
-                    <div class="form-group">
-                        <input class="form-control form-control-lg" id="username" type="text" placeholder="Username"
-                            name="username" novalidate >
+    <div class="main-wrapper">
+        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark">
+            <div class="auth-box bg-dark border-top border-secondary">
+                <div id="loginform">
+                    <div class="text-center p-t-20 p-b-20">
+                        <span class="db"><img src="" alt="logo" /></span>
                     </div>
-                    <div class="form-group">
-                        <input class="form-control form-control-lg" id="password" type="password" placeholder="Password"
-                            name="password" novalidate>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Đăng Nhập</button>
-                    <div class="card-footer bg-white p-0 mt-4 card-footer-item-bordered">
-                        <div class="pt-3">
-                            <% if(errs != null){
-                                errs.forEach(function(ele,index){ %>
-                            <p class="mt-1 text-danger"><%= errs[index].msg %></p>
-                            <%})} %>
+                    <!-- Form -->
+                    <form class="form-horizontal m-t-20" id="loginform" action="/login" method="POST">
+                        <div class="row p-b-30">
+                            <div class="col-12">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <input class="form-control form-control-lg" id="username" type="text"
+                                        placeholder="Tên tài khoản" name="username">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="fas fa-lock"></i></span>
+                                    </div>
+                                    <input class="form-control form-control-lg" id="password" type="password"
+                                        placeholder="Mật khẩu" name="password">
+
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                        <div class="row border-top border-secondary">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="p-t-20">
+                                        <button class="btn btn-success float-right" type="submit">Đăng nhập</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
+        <!-- ============================================================== -->
+        <!-- Login box.scss -->
+        <!-- ============================================================== -->
+
     </div>
+
     <script src="/public/js/jquery.min.js"></script>
-    <script src="/public/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>

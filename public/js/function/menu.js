@@ -7,7 +7,6 @@ $(function(){
     // menu  fix
     $(window).scroll(function(event) {
         var vitri=$("html").scrollTop();
-        console.log(vitri);
 		if(vitri > 113){
 			$('.menu').addClass('menuZoom animated fadeInDown');
 		}
@@ -82,4 +81,6 @@ $(function(){
         $(".coSo .tabCoSo ul li").removeClass('activeTabCS');
         $(this).addClass('activeTabCS');
     });
+    // add bai viet
+  
 });

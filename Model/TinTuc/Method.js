@@ -4,17 +4,17 @@ module.exports={
         let data= await modelNews.find();
         return data;
     },
-    addNews: async (title,mainContent,postTime,linkImg,shortContent,idCate) => {
-        let data={
-            title:title,
-            mainContent:mainContent,
-            postTime:postTime,
-            linkImg:linkImg,
-            shortContent:shortContent,
-            idCate:idCate
-        }
+    addNews: async (data) => {
         let news= new modelNews(data);
-        if(news.save())
-            return 1;
+        news.save();
+
+    },
+    updateNews: (id,data) => {
+        modelNews.findOneAndUpdate({_id:id},data,(err) => {
+            return err;
+        })
+    },
+    deleteNews: (id) => {
+        modelNews.findOneAndRemove({_id:id});
     }
 }

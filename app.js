@@ -8,7 +8,7 @@ let indexRouter = require('./routes/index');
 let adminRouter = require('./routes/admin');
 
 const mongoose= require('mongoose');
-mongoose.connect('mongodb://localhost/goVap',{useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/goVap',{useNewUrlParser: true,useFindAndModify: false});
 
 var app = express();
 
@@ -21,10 +21,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/public',express.static('public'));
 
-
+// config header type
+app.use((req,res,next) => {
+  res.setHeader('Access-Control-Allow-Origin','*');
+  res.setHeader('Access-Control-Allow-Methods','GET, POST, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers','Content-Type, Authorization');
+  next();
+})
 
 app.use(indexRouter);
 app.use(adminRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

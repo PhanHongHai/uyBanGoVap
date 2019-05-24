@@ -131,6 +131,24 @@ $color-bg: #fff;
 @media (min-width: 992px) and (max-width: 1200px){
 
 }
+.page-breadcrumb{
+  .breadcrumb{
+    li{
+      a{
+        text-decoration: none;
+        color: #7b6969;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      &:last-child{
+        a{
+          color:#dc0808 !important;
+        }
+        
+      }
+    }
+  }
+}
 .allPage {
   box-shadow: 0 9px 0 0 rgba(255, 255, 255, 0), 0 -9px 0 0 rgba(255, 255, 255, 0), 10px 0 30px 0 rgba(0, 0, 0, 0.15),
     -10px 0 30px 0 rgba(0, 0, 0, 0.15);

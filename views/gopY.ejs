@@ -1,3 +1,6 @@
+<%
+    img='/public/images/pattern_bg.png';
+ %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,62 +8,128 @@
     <% include ../component/head %>
     <link rel="stylesheet" href="/public/stylesheets/scss/sideBar.css">
     <link rel="stylesheet" href="/public/stylesheets/scss/tinChung.css">
+    <style>
+        label.invalid {
+		display: inline-block;
+		color:red;
+		width: 200px;
+	}
+    </style>
 </head>
 
-<body>
-    <% include ../component/header %>
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-3">
-                <% include ../component/sideBar %>
-            </div>
-            <div class="col-md-9">
-                <div class="tinChung bg-light shadow card">
-                    <div class="headTinChung shadow-sm">
-                        <h5><a href="/"> <i class="fas fa-angle-double-right pr-3 pl-3"></i>GÓP Ý</a></h5>
+<body class="mw-100 m-0 p-0 " style="background-image: url('<%= img %>');">
+    <div class="container p-0 allPage">
+        <% include ../component/header %>
+
+        <div id="bodyPage">
+            <% include ../component/breadCrumb %>
+            <div class="row">
+                <div class="col-md-8 mb-3">
+                    <div class="tinChung">
+                        <div class="headTinChung">
+                            <h3><a href="/"></i>Góp Ý</a></h3>
+                        </div>
+                        <div class="contentTinChung mt-3 pb-4">
+                            <form id="formGY" method="POST" enctype="multipart/form-data" action="/gop-y">
+                                    <div class="form-group w-75 mx-auto">
+                                        <label >Họ và tên :<span
+                                                class="text-danger">(*)</span></label>
+                                        <input id="name w-50 float-left" class="form-control " type="text"
+                                            name="name" >
+                                    </div>
+                                    <div class="form-group w-75 mx-auto">
+                                        <label >Email :<span
+                                                class="text-danger">(*)</span></label>
+                                        <input id="email w-50 float-left" class="form-control " type="email"
+                                            name="email" >
+                                    </div>
+                                    <div class="form-group w-75 mx-auto">
+                                        <label >Địa chỉ :</label>
+                                        <input id="adress w-50 float-left" class="form-control " type="text"
+                                            name="adress" >
+                                    </div>
+                                    <div class="form-group w-75 mx-auto">
+                                        <label >Số điện thoại :</label>
+                                        <input id="phone w-50 float-left" class="form-control " type="number"
+                                            name="phone" >
+                                    </div>
+                                    <div class="form-group w-75 mx-auto">
+                                        <label >Chủ đề :<span
+                                                class="text-danger">(*)</span></label>
+                                        <input id="title w-50 float-left" class="form-control " type="text"
+                                            name="title" >
+                                    </div>
+                                    <div class="form-group w-75 mx-auto">
+                                        <label >Nội dung:<span
+                                                class="text-danger">(*)</span></label>
+                                        <textarea id="content w-50 float-left" class="form-control " type="text"
+                                            name="content" ></textarea>
+                                    </div>
+                                    <div class="form-group w-75 mx-auto">
+                                        <label >File đính kèm:<span
+                                                class="text-danger">(*)</span></label>
+                                        <input id="file w-50 float-left" class="form-control " type="file"
+                                            name="file" >
+                                    </div>
+                                    <div class="w-50 mx-auto">
+                                        <input type="submit" class="btn btn-secondary w-25 ml-5 float-left"
+                                            style="cursor: pointer" value="Gửi góp ý">
+                                        <input type="reset" class="btn btn-danger w-25 ml-5 float-left" value="Làm lại">
+                                    </div>
+                                    <div id="erros">
+
+                                    </div>
+                            </form>
+                        </div>
+
                     </div>
-                    <div class="contentTinChung mt-3 pb-4">
-                        <form action="" method="post">
-                           <div class="form-group w-75 mx-auto">
-                               <label for="my-input w-50 float-left">Họ và tên :<span class="text-danger">(*)</span></label>
-                               <input id="my-input w-50 float-left" class="form-control" type="text">
-                           </div>
-                           <div class="form-group w-75 mx-auto">
-                               <label for="my-input w-50 float-left">Email :<span class="text-danger">(*)</span></label>
-                               <input id="my-input w-50 float-left" class="form-control" type="text">
-                           </div>
-                           <div class="form-group w-75 mx-auto">
-                               <label for="my-input w-50 float-left">Địa chỉ :</label>
-                               <input id="my-input w-50 float-left" class="form-control" type="text">
-                           </div>
-                           <div class="form-group w-75 mx-auto">
-                               <label for="my-input w-50 float-left">Số điện thoại :</label>
-                               <input id="my-input w-50 float-left" class="form-control" type="text">
-                           </div>
-                           <div class="form-group w-75 mx-auto">
-                               <label for="my-input w-50 float-left">Chủ đề :<span class="text-danger">(*)</span></label>
-                               <input id="my-input w-50 float-left" class="form-control" type="text">
-                           </div>
-                           <div class="form-group w-75 mx-auto">
-                               <label for="my-input w-50 float-left">Nội dung:<span class="text-danger">(*)</span></label>
-                               <input id="my-input w-50 float-left" class="form-control" type="text">
-                           </div>
-                           <div class="form-group w-75 mx-auto">
-                               <label for="my-input w-50 float-left">File đính kèm:<span class="text-danger">(*)</span></label>
-                               <input id="my-input w-50 float-left" class="form-control" type="file">
-                           </div>
-                           <div class="w-50 mx-auto">
-                               <input type="submit" class="btn btn-secondary w-50 float-left" value="Gửi góp ý">
-                               <input type="submit" class="btn btn-danger w-50 float-left" value="Làm lại">
-                           </div>
-                        </form>
-                    </div>
+                </div>
+                <div class="col-md-4">
 
                 </div>
             </div>
         </div>
+        <% include ../component/footer %>
     </div>
-    <% include ../component/footer %>
+    <% include ../component/script %>
 </body>
+<script type="text/javascript">
+    <% if (check == 1) { %>
+        $.toast({
+            heading: 'Chúc mừng!',
+            text: "<span style='font-size:18px;'> Bạn đã gửi thành công </span>",
+            position: 'mid-center',
+            loaderBg: '#5ba035',
+            icon: 'success',
+            hideAfter: 4000,
+            stack: 1
+        });
+        axios.get('/destroySS')
+        .then(function(res){
+
+        })
+        .catch(function(err){
+            if(err) throw err;
+        })
+    <% }
+    else if(check == 0) { %>
+        $.toast({
+            heading: 'Thông báo !',
+            text:"<span style=font-size:18px;'> Bạn đã gửi thất bại </span>" ,
+            position: 'mid-center',
+            loaderBg: '#5ba035',
+            icon: 'error',
+            hideAfter: 4000,
+            stack: 1
+        });
+           axios.get('/destroySS')
+        .then(function(res){
+
+        })
+        .catch(function(err){
+            if(err) throw err;
+        })
+    <% } %>
+</script>
 
 </html>
