@@ -1,90 +1,69 @@
 <!-- Container fluid  -->
-<!-- ============================================================== -->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title float-left">Danh sách thư góp ý</h3>
+<div class="dashboard-wrapper">
+        <aside class="page-aside">
+                <div class="aside-content">
+                    <div class="aside-header">
+                        <button class="navbar-toggle" data-target=".aside-nav" data-toggle="collapse"
+                            type="button"><span class="icon"><i
+                                    class="fas fa-caret-down"></i></span></button><span
+                            class="title">Góp Ý</span>
+                        <p class="description">Chức năng</p>
+                    </div>
+                    <div class="aside-nav">
+                        <ul class="nav">
+                            <li class="active"><a href="/admin/gop-y"><span class="icon"><i
+                                            class="fas fa-fw fa-inbox"></i></span>Inbox<span
+                                        class="badge badge-primary float-right"><%= count %></span></a></li>
+                            <li><a href="/admin/gop-y"><span class="icon"><i
+                                            class="fas fa-fw  fa-envelope"></i></span>Thư đã gửi</a></li>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <div class="table-responsive ">
-                        <div class="table-responsive">
-                            <table id="" class="table ">
-                                <thead>
-                                    <tr>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <% if(list){
-                                             let i=1;
-                                             list.forEach(function(ele){
-                                    %>
-                                    <% if(!ele.check){ %>
-                                    <tr class="w-100 accordion" style="background-color: #cecece47;" id="view<%=i%>">
-                                        <td class="w-100" data-toggle="collapse" data-target="#view1<%=i%>" aria-expanded="true"
-                                            aria-controls="#view1<%=i%>">
-                                            <span class="d-inline-block text-truncate pr-5"
-                                                style="max-width: 15%; width: 15%;"><%= ele.name %></span>
-                                            <span class="d-inline-block text-truncate pl-5" style="max-width: 57%; width:57%;">
-                                                <%= ele.title %>
-                                            </span>
-                                            <span class="d-inline-block ml-5" style="width:17%;font-size: 12px;font-weight: 700;"><%= ele.ngay %></span>
-                                            <span class="float-right"> <i class="fas fa-trash-alt dropdown-item "
-                                                    style="cursor:pointer;"
-                                                    onclick="deleteGY('<%= ele._id%>')"></i></span>
-                                            <div class="w-100">
-                                                <div id="view1<%=i%>" class="collapse bg-light"
-                                                    aria-labelledby="headingOne" data-parent="#view<%=i%>">
-                                                    <div class="card-body w-100 mt-4">
-                                                        <h3>Tiêu đề : <%= ele.title %></h3>
-                                                        <h5>Người gửi : <%= ele.name%></h5>
-                                                        <p>Email : <%= ele.email%></p>
-                                                        <p>Phone : <%= ele.phone%></p>
-                                                        <p>Nội dung : <%= ele.content%></p>
-                                                        <p>File : <%= ele.file%></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-
-                                    </tr>
-                                    <% } else{ %>
-                                    <tr class="w-100 accordion" id="view<%=i%>">
-                                        <td class="w-100" data-toggle="collapse" data-target="#view1<%=i%>" aria-expanded="true"
-                                            aria-controls="#view1<%=i%>" onclick="updateCheck('<%= ele._id%>','<%=i%>')">
-                                            <img src="/public/images/new.png" alt="" width="30px" height="30px" class="d-inline-block">
-                                            <span class="d-inline-block text-truncate pr-5"
-                                                style="max-width: 15%; width: 15%;"><%= ele.name %></span>
-                                            <span class="d-inline-block text-truncate pl-5" style="max-width: 57%; width:57%;">
-                                                <%= ele.title %>
-                                            </span>
-                                            <span class="d-inline-block ml-5" style="width:17%;font-size: 12px;font-weight: 700;"><%= ele.ngay %></span>
-                                            <span class="float-right"> <i class="fas fa-trash-alt dropdown-item "
-                                                    style="cursor:pointer;"
-                                                    onclick="deleteGY('<%= ele._id%>')"></i></span>
-                                            <div class="w-100">
-                                                <div id="view1<%=i%>" class="collapse bg-light"
-                                                    aria-labelledby="headingOne" data-parent="#view<%=i%>">
-                                                    <div class="card-body w-100 mt-4">
-                                                        <h3>Tiêu đề : <%= ele.title %></h3>
-                                                        <h5>Người gửi : <%= ele.name%></h5>
-                                                        <p>Email : <%= ele.email%></p>
-                                                        <p>Phone : <%= ele.phone%></p>
-                                                        <p>Nội dung : <%= ele.content%></p>
-                                                        <p>File : <%= ele.file%></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-
-                                    </tr>
-                                    <% } %>
-                                    <% i++; })} %>
-                                </tbody>
-                            </table>
-                        </div>
+            </aside>
+    <div class="content">
+        <div class="main-content container-fluid p-0">
+            <div class="email-inbox-header">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="email-title"><span class="icon"><i
+                                    class="fas fa-inbox"></i></span> Inbox <span
+                                class="new-messages">(<%= count %> tin mới)</span> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="email-filters">
+                <div class="email-filters-right"><span class="email-pagination-indicator">1-50 of
+                        253</span>
+                    <div class="btn-group email-pagination-nav">
+                        <button class="btn btn-light" type="button"><i
+                                class="fas fa-angle-left"></i></button>
+                        <button class="btn btn-light" type="button"><i
+                                class="fas fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="email-list">
+                
+                <div class="email-list-item email-list-item--unread">
+                    <div class="email-list-detail"><span class="date float-right"><span
+                                class="icon"></span>28
+                            Jul</span><span class="from">Penelope Thornton</span>
+                        <p class="msg">Urgent - You forgot your keys in the class room, please come
+                            imediatly!</p>
+                    </div>
+                </div>
+                <div class="email-list-item email-list-item--unread">
+                    <div class="email-list-detail"><span class="date float-right"></span><span
+                            class="date float-right"><span class="icon"></span> 13 Jul</span><span
+                            class="from">Benji Harper</span>
+                        <p class="msg">Urgent - You forgot your keys in the class room, please come
+                            imediatly!</p>
+                    </div>
+                </div>
+                <div class="email-list-item">
+                    <div class="email-list-detail"><span class="date float-right">23 Jun</span><span
+                            class="from">Justine Myranda</span>
+                        <p class="msg">Urgent - You forgot your keys in the class room, please come
+                            imediatly!</p>
                     </div>
                 </div>
             </div>

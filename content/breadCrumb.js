@@ -5,6 +5,7 @@ const breadCrumb=[
     {key:'/admin/tin-tuc/danh-muc',link:[{text:'Home',link:'/admin'},{text:'Tin Tức',link:'/admin/tin-tuc'},{text:'Danh Mục',link:'/admin/tin-tuc/danh-muc'}]},
     {key:'/admin/linh-vuc',link:[{text:'Home',link:'/admin'},{text:'Lĩnh Vực',link:'/admin/linh-vuc'}]},
     {key:'/admin/co-quan',link:[{text:'Home',link:'/admin'},{text:'Cơ quan ban hành',link:'/admin/co-quan'}]},
+    {key:'/admin/gop-y',link:[{text:'Home',link:'/admin'},{text:'Góp ý',link:'/admin/gop-y'}]},
 
     // page
     {key:'/gop-y',link:[{text:'Trang chủ',link:'/'},{text:'Góp ý',link:'/gop-y'}]},
