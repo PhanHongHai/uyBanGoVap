@@ -5888,7 +5888,22 @@ Vertical Timeline - by CodyHouse.co
     font-size: 1rem;
     margin: 0 0 1px 0;
 }
-
+.email-list a{
+    text-decoration: none;
+    color: gray;
+}
+.email-list a:hover{
+    color: gray;
+}
+.email-list .email-list-item {
+    text-decoration: none;
+}
+.email-list .date{
+    color: #71748d;
+}
+.email-list .email-list-item--unread .date{
+    color: #2962FF;
+}
 .email-list-item .msg {
     margin: 0;
     color: #71738d;
@@ -5971,10 +5986,12 @@ Vertical Timeline - by CodyHouse.co
     border-bottom-right-radius: 1px;
     border-top-right-radius: 1px;
 }
-
+.paginationjs.phanTrang{
+    float: right;
+}
 .email-filters {
     padding: 20px;
-    border-bottom: 1px solid #e6e6f2;
+    border-bottom: 2px solid #e550ef;
     background-color: #fff;
     display: table;
     width: 100%;
@@ -6340,15 +6357,6 @@ Vertical Timeline - by CodyHouse.co
     position: relative;
 }
 
-.avatar {
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
-    border: 2px solid #F7F9FA;
-    background: #F7F9FA;
-    color: #fff;
-}
-
 .media-attachment {
     padding-left: 0.75rem;
     align-items: center;
@@ -6675,15 +6683,6 @@ form.dropzone {
 .list-group-activity .avatars>li:first-child {
     position: relative;
     z-index: 2;
-}
-
-.avatar {
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
-    border: 2px solid #F7F9FA;
-    background: #F7F9FA;
-    color: #fff;
 }
 
 .avatars>li {

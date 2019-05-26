@@ -1,72 +1,42 @@
 <!-- Container fluid  -->
 <div class="dashboard-wrapper">
-        <aside class="page-aside">
-                <div class="aside-content">
-                    <div class="aside-header">
-                        <button class="navbar-toggle" data-target=".aside-nav" data-toggle="collapse"
-                            type="button"><span class="icon"><i
-                                    class="fas fa-caret-down"></i></span></button><span
-                            class="title">Góp Ý</span>
-                        <p class="description">Chức năng</p>
-                    </div>
-                    <div class="aside-nav">
-                        <ul class="nav">
-                            <li class="active"><a href="/admin/gop-y"><span class="icon"><i
-                                            class="fas fa-fw fa-inbox"></i></span>Inbox<span
-                                        class="badge badge-primary float-right"><%= count %></span></a></li>
-                            <li><a href="/admin/gop-y"><span class="icon"><i
-                                            class="fas fa-fw  fa-envelope"></i></span>Thư đã gửi</a></li>
-                    </div>
-                </div>
-            </aside>
+    <aside class="page-aside">
+        <div class="aside-content">
+            <div class="aside-header">
+                <button class="navbar-toggle" data-target=".aside-nav" data-toggle="collapse" type="button"><span
+                        class="icon"><i class="fas fa-caret-down"></i></span></button><span class="title">Góp Ý</span>
+                <p class="description">Chức năng</p>
+            </div>
+            <div class="aside-nav">
+                <ul class="nav">
+                    <li class="active"><a href="/admin/gop-y"><span class="icon"><i
+                                    class="fas fa-fw fa-inbox"></i></span>Inbox<span
+                                class="badge badge-primary float-right"><%= count %></span></a></li>
+                    <li><a href="/admin/gop-y"><span class="icon"><i class="fas fa-fw  fa-envelope"></i></span>Thư đã
+                            gửi</a></li>
+            </div>
+        </div>
+    </aside>
     <div class="content">
         <div class="main-content container-fluid p-0">
             <div class="email-inbox-header">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="email-title"><span class="icon"><i
-                                    class="fas fa-inbox"></i></span> Inbox <span
+                        <div class="email-title"><span class="icon"><i class="fas fa-inbox"></i></span> Inbox <span
                                 class="new-messages">(<%= count %> tin mới)</span> </div>
                     </div>
                 </div>
             </div>
-            <div class="email-filters">
-                <div class="email-filters-right"><span class="email-pagination-indicator">1-50 of
-                        253</span>
-                    <div class="btn-group email-pagination-nav">
-                        <button class="btn btn-light" type="button"><i
-                                class="fas fa-angle-left"></i></button>
-                        <button class="btn btn-light" type="button"><i
-                                class="fas fa-angle-right"></i></button>
-                    </div>
-                </div>
+            <div class="email-filters ">
+                <span class="d-flex flex-wrap"><img src="/public/admin/inbox_gm.png" alt="" width="20" height="20"><h4 class="ml-4">Tên</h4></span>
             </div>
             <div class="email-list">
-                
-                <div class="email-list-item email-list-item--unread">
-                    <div class="email-list-detail"><span class="date float-right"><span
-                                class="icon"></span>28
-                            Jul</span><span class="from">Penelope Thornton</span>
-                        <p class="msg">Urgent - You forgot your keys in the class room, please come
-                            imediatly!</p>
-                    </div>
-                </div>
-                <div class="email-list-item email-list-item--unread">
-                    <div class="email-list-detail"><span class="date float-right"></span><span
-                            class="date float-right"><span class="icon"></span> 13 Jul</span><span
-                            class="from">Benji Harper</span>
-                        <p class="msg">Urgent - You forgot your keys in the class room, please come
-                            imediatly!</p>
-                    </div>
-                </div>
-                <div class="email-list-item">
-                    <div class="email-list-detail"><span class="date float-right">23 Jun</span><span
-                            class="from">Justine Myranda</span>
-                        <p class="msg">Urgent - You forgot your keys in the class room, please come
-                            imediatly!</p>
-                    </div>
+                <div class="paginationGY">
+
                 </div>
             </div>
+
         </div>
+
     </div>
 </div>

@@ -18,7 +18,9 @@ module.exports={
             res.redirect('/logIn');
     },
     addNews: (req,res) => {
-        method.addNews(req.body);
+        console.log(req.body);
+        console.log(req.file.filename);
+        //method.addNews(req.body);
     },
     updateNews: (req,res) => {
         model.findOneAndUpdate({_id:req.params.idNew},req.body,(err) => {

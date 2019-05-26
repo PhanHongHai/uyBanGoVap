@@ -18,12 +18,29 @@ const passPortLocal = require('passport-local').Strategy;
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const BreadCrumb = require('../content/breadCrumb');
+var multer  = require('multer')
+// upload
+const store= multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './public/uploads')
+  },
+  filename: function (req, file, cb) {
+    cb(null,file.originalname  )
+  }
+});
+var fileFilter=(req,file,cb) => {
+    if(!file.originalname.match(/\.(jpg|png|jpeg)$/))
+        cb(new Error('Bạn chỉ được upload file ảnh'));
+    else
+        cb(null,true);
+}
+let upload = multer({ storage: store,fileFilter:fileFilter });
 //-----------------------
 //-----------------------
+
 let bread = (req) => {
     return BreadCrumb.find((item) => item.key === req.path);
 }
-
 router.use(session({
     secret: 'something',
     cookie: { maxAge: 1000 * 60 * 20 },
@@ -31,7 +48,9 @@ router.use(session({
     resave: false,
     saveUninitialized: true
 }))
-router.use(bodyParser.urlencoded({ extended: true }));
+
+router.use(bodyParser.urlencoded({ limit: '50mb', extended: true}));
+router.use(bodyParser.json({limit: '50mb'}));
 router.use(passPort.initialize());
 router.use(passPort.session());
 // admin login
@@ -101,9 +120,17 @@ router.route('/admin/tin-tuc/danh-muc/:idCate')
 // -----------------------
 
 // bai viet
+router.post('/admin/tin-tuc/bai-viet/sendImage',(req,res) => {
+    upload(req,res,function(err) {
+        if(err) {
+            return res.status(500).json({mess:"Error uploading file."});
+        }
+        res.status(200).json({mess:'success',url:req.filename});
+    });
+})
 router.route('/admin/tin-tuc/bai-viet')
     .get(newCtrl.loadPage)
-    .post()
+    .post(upload.single('anh'),newCtrl.addNews)
 router.route('/admin/tin-tuc/bai-viet/:idBV')
     .get()
     .patch(newCtrl.updateNews)
@@ -129,8 +156,10 @@ router.route('/admin/co-quan-ban-hanh/:idAg')
 // -------------------
 // thu gop y
 router.route('/admin/gop-y').get(gopYCtrl.loadPage)
+router.route('/admin/gop-y/download/:idGY').get(gopYCtrl.downloadFile)
+router.route('/admin/gop-y/getList').get(gopYCtrl.getList)
 router.route('/admin/gop-y/:idGY')
-    .get()
+    .get(gopYCtrl.loadItem)
     .patch(gopYCtrl.updateCheck)
     .delete(gopYCtrl.deleteGY)
 // -----------------

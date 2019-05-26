@@ -1,0 +1,78 @@
+<!-- Container fluid  -->
+<div class="dashboard-wrapper">
+    <aside class="page-aside">
+        <div class="aside-content">
+            <div class="aside-header">
+                <button class="navbar-toggle" data-target=".aside-nav" data-toggle="collapse" type="button"><span
+                        class="icon"><i class="fas fa-caret-down"></i></span></button><span class="title">Góp Ý</span>
+                <p class="description">Chức năng</p>
+            </div>
+            <div class="aside-nav">
+                <ul class="nav">
+                    <li class="active"><a href="/admin/gop-y"><span class="icon"><i
+                                    class="fas fa-fw fa-inbox"></i></span>Inbox<span
+                                class="badge badge-primary float-right"><%= count %></span></a></li>
+                    <li><a href="/admin/gop-y"><span class="icon"><i class="fas fa-fw  fa-envelope"></i></span>Thư đã
+                            gửi</a></li>
+            </div>
+        </div>
+    </aside>
+    <div class="main-content container-fluid p-0 float-right" style="width: 70%;">
+        <% if(list){
+           list.forEach(function(ele){  %>
+        <div class="email-head">
+            <div class="email-head-subject">
+                <div class="title mt-4"><span><%= ele.title %></span>
+                    <div class="icons"><a href="#" class="icon"><i class="fas fa-reply"></i></a>
+                        <a class="icon" style="cursor: pointer;" data-toggle="modal" data-target="#deleteGY"><i
+                                class="fas fa-trash"></i></a>
+                        <!-- Button trigger modal -->
+                        <!-- Modal -->
+                        <div class="modal fade" id="deleteGY" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Xóa thư góp ý</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"
+                                            onclick="deleteGY('<%= ele._id %>')">Xác nhận</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Hủy</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="email-head-sender">
+                <div class="date"><%= ele.ngay %></div>
+                <div class="avatar"><img src="/public/admin/1.jpg" alt="Avatar" class="rounded-circle user-avatar-md">
+                </div>
+                <div class="sender">
+                    <a class="text-primary"><%= ele.name %></a>
+                    <p style="font-size: 13px;"><%= ele.email %></p>
+                </div>
+            </div>
+        </div>
+        <div class="email-body">
+            <%= ele.content %>
+        </div>
+        <div class="email-attachments">
+            <div class="title">File đính kèm</div>
+            <ul>
+                <li>
+                    <a href="/admin/gop-y/download/<%=ele._id%>">
+                        <span class="icon"><i class="fas fa-file pr-2"></i><%= ele.file %> </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <%})} %>
+    </div>
+</div>

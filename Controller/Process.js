@@ -3,17 +3,18 @@
 const methodGY = require('../Model/GopY/Method');
 const modelGY = require('../Model/GopY/FeedBack');
 // ----------------------------
-const format=require('dateformat');
+const format = require('dateformat');
 const BreadCrumb = require('../content/breadCrumb');
 let bread = (req) => {
     return BreadCrumb.find((item) => item.key === req.path);
 }
 module.exports = {
+    /// GÓP Ý 
     createGopY: async (req, res) => {
         let now = new Date();
-        let date=format(now,"h:MM:ss TT ,d/mm/yyyy");
+        let date = format(now, "h:MM tt ,d/mm/yyyy");
         console.log(date);
-        let data = { ...req.body,ngay:date, file: req.file.filename };
+        let data = { ...req.body, ngay: date, file: req.file.filename };
         let gopY = await new modelGY(data);
         gopY.save((err) => {
             if (err) {
@@ -21,9 +22,9 @@ module.exports = {
                 res.redirect('/gop-y');
             }
             else {
-                if( req.session.count == null)
+                if (req.session.count == null)
                     req.session.count = 0;
-                req.session.count +=1
+                req.session.count += 1
                 req.session.mess = 1;
                 res.redirect('/gop-y');
             }
@@ -32,10 +33,37 @@ module.exports = {
     },
     loadPage: async (req, res) => {
         if (req.isAuthenticated()) {
-            let list = await modelGY.find({}).sort({ngay:-1});
-            console.log(list);
+            let list = await modelGY.find({}).sort({ ngay: -1 });
+            if (req.session.count == null)
+                req.session.count = 0;
             let link = bread(req);
             res.render('admin', { title: 'QL thư góp ý', link: link, user: req.user, list: list, path: 'GopY', count: req.session.count })
+        }
+        else
+            res.redirect('/logIn');
+    },
+    downloadFile:async (req,res) => {
+        let data= await modelGY.find({_id:req.params.idGY});
+        let filePath="public/uploads/"+data[0].file;
+        console.log(filePath);
+        res.download(filePath,data[0].file);
+    },
+    sendImage:(req,res) => {
+        res.status(200).json({mess:'success',data:req.file.filename});
+    },
+    getList: async (req, res) => {
+        let numberPage = await modelGY.find().count();
+        let list = await modelGY.find({}).sort({ ngay: -1 });
+        let total = numberPage / 7;
+        res.status(200).json({ total: total,data:list });
+    },
+    loadItem: async (req, res) => {
+        if (req.isAuthenticated()) {
+            let list = await modelGY.find({ _id: req.params.idGY });
+            if (req.session.count == null)
+                req.session.count = 0;
+            let link = bread(req);
+            res.render('admin', { title: 'QL thư góp ý', link: link, user: req.user, list: list, path: 'DetailEmail', count: req.session.count })
         }
         else
             res.redirect('/logIn');
@@ -50,7 +78,7 @@ module.exports = {
                 }
                 else
                     req.session.count = 0;
-                res.status(200).json({ mess: 'success',count:req.session.count });
+                res.status(200).json({ mess: 'success', count: req.session.count });
             }
 
         })
