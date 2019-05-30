@@ -20,7 +20,6 @@ module.exports = {
     },
     addCate: async (data) => {
         data.typeCate = await mongoose.Types.ObjectId(data.typeCate);
-
         cate = new modelCate(data);
         cate.save();
     },

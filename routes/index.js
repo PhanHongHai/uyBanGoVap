@@ -3,7 +3,17 @@ var router = express.Router();
 var session = require('express-session')
 
 // controller 
-const ctrl=require('../Controller/Process');
+const adminCtrl = require('../Controller/ProcessAdmin');
+const cateTypeCtrl = require('../Controller/LoaiDanhMuc');
+const cateCtrl = require('../Controller/DanhMuc');
+const fieldCtrl = require('../Controller/LinhVuc');
+const agencyCtrl = require('../Controller/Agency');
+const ctrl = require('../Controller/Process');
+const newCtrl=require('../Controller/News');
+const ttCtrl=require('../Controller/ThuTucHanhChinh');
+const modelCate=require('../Model/DanhMuc/Category');
+
+const modelCateType=require('../Model/LoaiDanhMuc/CategoryType');
 //---------------
 const BreadCrumb = require('../content/breadCrumb');
 var multer  = require('multer')
@@ -34,17 +44,29 @@ let bread = (req) => {
 }
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Trang chủ-Công thông tin điện tử Gò Vấp' });
-});
+router.get('/',ctrl.loadHome );
+// load bai viet
+router.get('/bai-viet/*.:idBV',ctrl.loadBV)
 // kenh tuong tac
-router.get('/cong-dan', (req, res) => {
-  let link = bread(req);
-  res.render('kenhTuongTac', { title: 'Công dân-Công thông tin điện tử Gò Vấp', link: link });
-});
+router.get('/cong-dan',ctrl.loadCD);
 router.get('/gioi-thieu', (req, res) => {
   let link = bread(req);
-  res.render('gioiThieu', { title: 'Giới Thiêu-Công thông tin điện tử Gò Vấp', link: link });
+  modelCateType.aggregate([
+    {
+        $lookup:{
+            from:'Category',
+            localField:'_id',
+            foreignField:'typeCate',
+            as:'cate'
+        }
+    }
+],(err,data) => {
+    if(err) throw err;
+    else{
+        res.render('gioiThieu', { title: 'Giới Thiêu-Công thông tin điện tử Gò Vấp', link: link,sideBar:data,kt:1 });
+    }
+})
+
 });
 // thu tuc hanh chinh
 router.get('/thu-tuc-hanh-chinh', (req, res) => {
@@ -52,22 +74,11 @@ router.get('/thu-tuc-hanh-chinh', (req, res) => {
   res.render('thuTucHanhChinh', { title: 'Thủ tục hành chính-Công thông tin điện tử Gò Vấp', link: link });
 });
 
-router.get('/bai-viet', (req, res) => {
-  res.render('baiViet', {
-    title: 'Bài Viết-Công thông tin điện tử Gò Vấp'
-  });
-});
 
-router.get('/dich-vu-cong', (req, res) => {
-  let link = bread(req);
-  res.render('dichVuCong', { title: 'Dịch Vụ Công-Công thông tin điện tử Gò Vấp', link: link });
-});
+router.get('/dich-vu-cong',ctrl.loadDVC);
 
 router.route('/gop-y')
-  .get((req, res) => {
-    let link = bread(req);
-    res.render('gopY', { title: 'Góp Ý-Công thông tin điện tử Gò Vấp', link: link,check:req.session.mess });
-  })
+  .get(ctrl.loadGY)
   .post(upload.single('file'),ctrl.createGopY)
 router.get('/getSS',(req,res) => {
   res.send(req.session.count+'++'+req.session.mess);

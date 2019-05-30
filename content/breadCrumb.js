@@ -12,5 +12,13 @@ const breadCrumb=[
     {key:'/dich-vu-cong',link:[{text:'Trang chủ',link:'/'},{text:'',link:'/dich-vu-cong'}]},
     {key:'/cong-dan',link:[{text:'Trang chủ',link:'/'},{text:'Công dân',link:'/cong-dan'}]},
     {key:'/thu-tuc-hanh-chinh',link:[{text:'Trang chủ',link:'/'},{text:'Thủ tục hành chính',link:'/thu-tuc-hanh-chinh'}]},
+    
+    // bai viet
+  
+
+
+
+
+
 ];
 module.exports=breadCrumb;

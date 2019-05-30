@@ -10,24 +10,25 @@ module.exports = {
         let link = bread(req);
         if (req.isAuthenticated()) {
             let listType = await modelType.find({});
-            res.render('admin', { title: 'QL Loại Danh Mục', link: link, user: req.user,path:'CategoryType',list: listType,count:req.session.count});
+            res.render('admin', { title: 'QL Loại Danh Mục', link: link, user: req.user,path:'CategoryType',list: listType,count:req.session.count,mess:req.session.mess});
         }
         else
             res.redirect('/login');
 
     },
     addCateType: async (req, res) => {
-        let val = await methodCateType.addCateType(req.body.name);
+        console.log(req.body);
+        let val = await methodCateType.addCateType(req.body.nameType,req.body.link);
         console.log(val);
         if (val) {
-            res.status(200).json({mess:1});
+            res.redirect('/admin/tin-tuc/loai-danh-muc');
         }
         else {
           res.status(500).json({mess:0});
         }
     },
     updateCateType: async (req, res) => {
-        await methodCateType.updateCateType(req.params.idType, req.body.nameType);
+        await methodCateType.updateCateType(req.params.idType, req.body.nameType,req.body.link);
             res.status(200).json({ mess: 'success' });
 
     },

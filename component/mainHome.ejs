@@ -1,121 +1,56 @@
 <div class="main">
     <div class="container p-0" style="background-color: #fff;">
-        <div class="trending">
-            <div class="container">
-                <span>Tin mới <i class="fas fa-hand-point-right pl-3"></i></span>
-                <div class="bodyTrending">
-                    <ul>
-                        <li><a href="">Tin mot trong ngay</a> </li>
-                        <li><a href="">Tin hai trong ngay</a> </li>
-                        <li><a href="">Tin ba trong ngay</a> </li>
-                        <li><a href="">Tin bon trong ngay</a> </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <% include ../component/trending %>
         <div class="content w-100">
+        <% if(tinMoi){ %>
             <div class="newsHomeCha w-100 d-flex flex-wrap">
+            <% tinMoi.forEach(function(ele,index){ %>
+                <%if(index <=1){ %>
                 <div class="itemNewHome">
-                    <a href="">
-                        <img src="/public/images/slide1.jpg" alt="">
+                    <a href="/bai-viet/<%=ele.linkSEO%>.<%=ele._id%>">
+                        <img src="/public/uploads/<%=ele.linkImg%>" alt="">
                         <div class="bodyNewsHome">
                             <div class="titleNewsHome mx-auto">
                                 <h3>
-                                    NÂNG CAO TỶ LỆ NGƯỜI DÂN SỬ DỤNG DỊCH VỤ CÔNG TRỰC TUYẾN CHÍNH LÀ ĐẢM BẢO TÍNH CÔNG
-                                    KHAI,
-                                    MINH
-                                    BẠCH TRONG QUY
+                                   <%= ele.title %>
                                 </h3>
                             </div>
                             <div class="timeNewsHome">
                                 <ul>
-                                    <li><i class="far fa-folder pr-2"></i>danh muc</li>
-                                    <li><i class="far fa-clock pr-2"></i>9/5/2019</li>
+                                    <li><i class="far fa-folder pr-2"></i><%=ele.cate[0].nameCate%></li>
+                                    <li><i class="far fa-clock pr-2"></i><%=ele.postTime %></li>
                                 </ul>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="itemNewHome">
-                        <a href="">
-                                <img src="/public/images/wallpaper.jpg" alt="">
-                                <div class="bodyNewsHome">
-                                    <div class="titleNewsHome mx-auto">
-                                        <h3>
-                                            NÂNG CAO TỶ LỆ NGƯỜI DÂN SỬ DỤNG DỊCH VỤ CÔNG TRỰC TUYẾN CHÍNH LÀ ĐẢM BẢO TÍNH CÔNG
-                                            KHAI,
-                                            MINH
-                                            BẠCH TRONG QUY
-                                        </h3>
-                                    </div>
-                                    <div class="timeNewsHome">
-                                        <ul>
-                                            <li><i class="far fa-folder pr-2"></i>danh muc</li>
-                                            <li><i class="far fa-clock pr-2"></i>9/5/2019</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </a>
-                </div>
+                <% } %>
+                <%}) %>
             </div>
             <div class="newHomeCha1 w-100">
+               <% tinMoi.forEach(function(ele,index){ %>
+               <% if(index >1){ %>
                 <div class=" itemNewHome1">
-                    <img src="/public/images/slide1.jpg" alt="">
+                <a href="/bai-viet/<%=ele.linkSEO%>.<%=ele._id%>">
+                    <img src="/public/uploads/<%=ele.linkImg%>" alt="">
                     <div class="bodyNewsHome">
                         <div class="titleNewsHome mx-auto">
                             <h3>
-                                NÂNG CAO TỶ LỆ NGƯỜI DÂN SỬ DỤNG DỊCH VỤ CÔNG TRỰC TUYẾN CHÍNH LÀ ĐẢM BẢO TÍNH CÔNG
-                                KHAI
+                                    <%= ele.title %>
                             </h3>
                         </div>
                         <div class="timeNewsHome">
                             <ul>
-                                <li><i class="far fa-folder pr-2"></i>danh muc</li>
-                                <li><i class="far fa-clock pr-2"></i>9/5/2019</li>
+                                <li><i class="far fa-folder pr-2"></i><%=ele.cate[0].nameCate%></li>
+                                <li><i class="far fa-clock pr-2"></i><%=ele.postTime %></li>
                             </ul>
                         </div>
                     </div>
+                </a>
                 </div>
-                <div class=" itemNewHome1">
-                    <img src="/public/images/slide1.jpg" alt="">
-                    <div class="bodyNewsHome">
-                        <div class="titleNewsHome mx-auto">
-                            <h3>
-                                NÂNG CAO TỶ LỆ NGƯỜI DÂN SỬ DỤNG DỊCH VỤ CÔNG TRỰC TUYẾN CHÍNH LÀ ĐẢM BẢO TÍNH CÔNG
-                                KHAI,
-                                MINH
-                                BẠCH TRONG QUY
-                            </h3>
-                        </div>
-                        <div class="timeNewsHome">
-                            <ul>
-                                <li><i class="far fa-folder pr-2"></i>danh muc</li>
-                                <li><i class="far fa-clock pr-2"></i>9/5/2019</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class=" itemNewHome1">
-                    <img src="/public/images/slide1.jpg" alt="">
-                    <div class="bodyNewsHome">
-                        <div class="titleNewsHome mx-auto">
-                            <h3>
-                                NÂNG CAO TỶ LỆ NGƯỜI DÂN SỬ DỤNG DỊCH VỤ CÔNG TRỰC TUYẾN CHÍNH LÀ ĐẢM BẢO TÍNH CÔNG
-                                KHAI,
-                                MINH
-                                BẠCH TRONG QUY
-                            </h3>
-                        </div>
-                        <div class="timeNewsHome">
-                            <ul>
-                                <li><i class="far fa-folder pr-2"></i>danh muc</li>
-                                <li><i class="far fa-clock pr-2"></i>9/5/2019</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <%}}) %>
             </div>
         </div>
-       
+        <%} %>
     </div>
 </div>

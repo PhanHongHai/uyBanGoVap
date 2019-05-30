@@ -14,22 +14,22 @@
 <body class="mw-100 m-0 p-0 " style="background-image: url('<%= img %>');">
     <div class="container p-0 allPage">
         <% include ../component/header%>
-        <div class="container ">
+        <div class="container pb-4">
             <div class="row pt-4">
-                <div class="col-md-8">
+                <div class="col-12 col-sm-12 col-md-8">
                     <div class="tuongTacBox bg-light">
-                        <h5 class="text-center">BAN TIẾP CÔNG DÂN QUẬN GÒ VẤP</h5>
+                        <h5 class="text-center pt-3">BAN TIẾP CÔNG DÂN QUẬN GÒ VẤP</h5>
                         <div class="contentTuongTac mt-5">
                             <div class="row m-0">
                                 <div class="col-md-3 border border-secondary ">
                                     <img class="img-fluid" src="/public/images/hadung.jpg" alt="">
                                 </div>
                                 <div class="col-md-5 border border-secondary text-center">
-                                    <p>Hoàng Anh Dũng <br>
+                                    <p style="padding-top: 25%;">Hoàng Anh Dũng <br>
                                         Phó Chánh Văn phòng</p>
                                 </div>
                                 <div class="col-md-4 border border-secondary text-center">
-                                    <span>
+                                    <span style="padding-top: 30%; display: block;">
                                         0838.943.830
                                         <a href="">hadung.govap@tphcm.gov.vn</a>
                                     </span>
@@ -39,12 +39,13 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <% include ../component/sideBar %>
+                    <%- include('../component/sideBar',{sideBar}) %>
                 </div>
             </div>
         </div>
+        <% include ../component/footer%>
     </div>
-    <% include ../component/footer%>
+
 
 </body>
 

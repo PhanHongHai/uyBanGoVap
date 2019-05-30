@@ -25,10 +25,10 @@ module.exports={
                     }
                ],(err,list) => {
                    if(err)
-                   res.render('admin', { title: 'QL Danh Mục', link: link, user: req.user, list: listCate ,listType:listType,path:'Category',count:req.session.count });
+                   res.render('admin', { title: 'QL Danh Mục', link: link, user: req.user, list: listCate ,listType:listType,path:'Category',count:req.session.count,mess:req.session.mess });
                    else{
                        console.log(list);
-                       res.render('admin', { title: 'QL Danh Mục', link: link, user: req.user, list: list ,listType:listType,path:'Category',count:req.session.count  });
+                       res.render('admin', { title: 'QL Danh Mục', link: link, user: req.user, list: list ,listType:listType,path:'Category',count:req.session.count,mess:req.session.mess  });
                    }
                })
         }

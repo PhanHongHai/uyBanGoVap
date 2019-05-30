@@ -6,184 +6,185 @@
 
 <head>
     <% include ../component/head %>
-    <link rel="stylesheet" href="/public/stylesheets/scss/sideBar.css">
+    <link rel="stylesheet" href="/public/stylesheets/scss/sideBar.css"/>
     <link rel='stylesheet' href='/public/stylesheets/scss/tinChung.css' />
+    <link rel='stylesheet' href='/public/stylesheets/scss/kenhTuongTac.css' />
 </head>
 
 <body class="mw-100 m-0 p-0 " style="background-image: url('<%= img %>');">
     <div class="container p-0 allPage">
         <% include ../component/header%>
         <div class="container mt-4">
-            <div class="row">
+            <div class="row pt-4">
                 <div class="col-md-8">
                     <div class="dvCong w-100">
                         <img class="img-fluid w-100" src="/public/images/dvc.jpg" alt="">
                         <div class="accordion" id="accordionExample">
-                            <div class="card">
-                                <div class="card-header" id="headingOne">
-                                    <h2 class="mb-0">
-                                        <button class="btn font-weight-bold" type="button" data-toggle="collapse"
-                                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Lĩnh vực kinh tế
-                                        </button>
-                                    </h2>
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h2 class="mb-0">
+                                            <button class="btn font-weight-bold" type="button" data-toggle="collapse"
+                                                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Lĩnh vực kinh tế
+                                            </button>
+                                        </h2>
+                                    </div>
+                
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                        data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li>
+                                                    <p class="stt w-50 float-left">STT</p>
+                                                    <p class="w-50 float-left">Tên thủ tục</p>
+                                                </li>
+                                                <li>
+                                                    <p class="stt w-50 float-left">1</p>
+                                                    <p class="w-50 float-left">Thủ tục Tạm ngừng kinh doanh hộ kinh doanh
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="stt w-50 float-left">2</p>
+                                                    <p class="w-50 float-left">Thủ tục Tạm ngừng kinh doanh hộ kinh doanh
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="stt w-50 float-left">3</p>
+                                                    <p class="w-50 float-left">Thủ tục Tạm ngừng kinh doanh hộ kinh doanh
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <ul>
-                                            <li>
-                                                <p class="stt w-50 float-left">STT</p>
-                                                <p class="w-50 float-left">Tên thủ tục</p>
-                                            </li>
-                                            <li>
-                                                <p class="stt w-50 float-left">1</p>
-                                                <p class="w-50 float-left">Thủ tục Tạm ngừng kinh doanh hộ kinh doanh
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p class="stt w-50 float-left">2</p>
-                                                <p class="w-50 float-left">Thủ tục Tạm ngừng kinh doanh hộ kinh doanh
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p class="stt w-50 float-left">3</p>
-                                                <p class="w-50 float-left">Thủ tục Tạm ngừng kinh doanh hộ kinh doanh
-                                                </p>
-                                            </li>
-                                        </ul>
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h2 class="mb-0">
+                                            <button class="btn font-weight-bold collapsed" type="button"
+                                                data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo">
+                                                Lĩnh vực lao động
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                        data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <ul style="list-style: none;">
+                                                <li>
+                                                    <p class="stt w-50 float-left">STT</p>
+                                                    <p class="w-50 float-left">Tên thủ tục</p>
+                                                </li>
+                                                <li>
+                                                    <p class="stt w-50 float-left">1</p>
+                                                    <p class="w-50 float-left">Báo cáo giảm lao động</p>
+                                                </li>
+                                                <li>
+                                                    <p class="stt w-50 float-left">2</p>
+                                                    <p class="w-50 float-left">Thủ tục Khai trình sử dụng lao động</p>
+                                                </li>
+                                                <li>
+                                                    <p class="stt w-50 float-left">3</p>
+                                                    <p class="w-50 float-left">Thủ tục đăng ký Nội quy lao động</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h2 class="mb-0">
+                                            <button class="btn font-weight-bold collapsed" type="button"
+                                                data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                                aria-controls="collapseThree">
+                                                Lĩnh vực vệ sinh an toàn thực phẩm
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                        data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li>
+                                                    <p class="stt w-50 float-left">STT</p>
+                                                    <p class="w-50 float-left">Tên thủ tục</p>
+                                                </li>
+                                                <li>
+                                                    <p class="stt w-50 float-left">1</p>
+                                                    <p class="w-50 float-left">Cấp lại Giấy chứng nhận cơ sở đủ điều kiện an
+                                                        toàn thực phẩm đối với cơ sở sản xuất, kinh doanh nông lâm thủy sản
+                                                        do
+                                                        hết hạn quận Gò Vấp</p>
+                                                </li>
+                                                <li>
+                                                    <p class="stt w-50 float-left">2</p>
+                                                    <p class="w-50 float-left">Thủ tục Cấp giấy chứng nhận cơ sở đủ điều
+                                                        kiện an
+                                                        toàn thực phẩm đối với cơ sở kinh doanh dịch vụ ăn uống trên địa bàn
+                                                        Quận Gò Vấp</p>
+                                                </li>
+                                                <li>
+                                                    <p class="stt w-50 float-left">3</p>
+                                                    <p class="w-50 float-left"> Thủ tục Cấp giấy chứng nhận cơ sở đủ điều
+                                                        kiện
+                                                        an toàn thực phẩm đối với cơ sở sản xuất, kinh doanh nông lâm thủy
+                                                        sản
+                                                        trên địa bàn quận Gò Vấp</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h2 class="mb-0">
+                                            <button class="btn font-weight-bold collapsed" type="button"
+                                                data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                                                aria-controls="collapseFour">
+                                                Lĩnh vực Xây dựng
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" aria-labelledby="headingThree"
+                                        data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li>
+                                                    <p class="stt w-50 float-left">STT</p>
+                                                    <p class="w-50 float-left">Tên thủ tục</p>
+                                                </li>
+                                                <li>
+                                                    <p class="stt w-50 float-left">1</p>
+                                                    <p class="w-50 float-left">Cấp lại Giấy chứng nhận cơ sở đủ điều kiện an
+                                                        toàn thực phẩm đối với cơ sở sản xuất, kinh doanh nông lâm thủy sản
+                                                        do
+                                                        hết hạn quận Gò Vấp</p>
+                                                </li>
+                                                <li>
+                                                    <p class="stt w-50 float-left">2</p>
+                                                    <p class="w-50 float-left">Thủ tục Cấp giấy chứng nhận cơ sở đủ điều
+                                                        kiện an
+                                                        toàn thực phẩm đối với cơ sở kinh doanh dịch vụ ăn uống trên địa bàn
+                                                        Quận Gò Vấp</p>
+                                                </li>
+                                                <li>
+                                                    <p class="stt w-50 float-left">3</p>
+                                                    <p class="w-50 float-left"> Thủ tục Cấp giấy chứng nhận cơ sở đủ điều
+                                                        kiện
+                                                        an toàn thực phẩm đối với cơ sở sản xuất, kinh doanh nông lâm thủy
+                                                        sản
+                                                        trên địa bàn quận Gò Vấp</p>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-header" id="headingTwo">
-                                    <h2 class="mb-0">
-                                        <button class="btn font-weight-bold collapsed" type="button"
-                                            data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                                            aria-controls="collapseTwo">
-                                            Lĩnh vực lao động
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <ul style="list-style: none;">
-                                            <li>
-                                                <p class="stt w-50 float-left">STT</p>
-                                                <p class="w-50 float-left">Tên thủ tục</p>
-                                            </li>
-                                            <li>
-                                                <p class="stt w-50 float-left">1</p>
-                                                <p class="w-50 float-left">Báo cáo giảm lao động</p>
-                                            </li>
-                                            <li>
-                                                <p class="stt w-50 float-left">2</p>
-                                                <p class="w-50 float-left">Thủ tục Khai trình sử dụng lao động</p>
-                                            </li>
-                                            <li>
-                                                <p class="stt w-50 float-left">3</p>
-                                                <p class="w-50 float-left">Thủ tục đăng ký Nội quy lao động</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="headingThree">
-                                    <h2 class="mb-0">
-                                        <button class="btn font-weight-bold collapsed" type="button"
-                                            data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                                            aria-controls="collapseThree">
-                                            Lĩnh vực vệ sinh an toàn thực phẩm
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <ul>
-                                            <li>
-                                                <p class="stt w-50 float-left">STT</p>
-                                                <p class="w-50 float-left">Tên thủ tục</p>
-                                            </li>
-                                            <li>
-                                                <p class="stt w-50 float-left">1</p>
-                                                <p class="w-50 float-left">Cấp lại Giấy chứng nhận cơ sở đủ điều kiện an
-                                                    toàn thực phẩm đối với cơ sở sản xuất, kinh doanh nông lâm thủy sản
-                                                    do
-                                                    hết hạn quận Gò Vấp</p>
-                                            </li>
-                                            <li>
-                                                <p class="stt w-50 float-left">2</p>
-                                                <p class="w-50 float-left">Thủ tục Cấp giấy chứng nhận cơ sở đủ điều
-                                                    kiện an
-                                                    toàn thực phẩm đối với cơ sở kinh doanh dịch vụ ăn uống trên địa bàn
-                                                    Quận Gò Vấp</p>
-                                            </li>
-                                            <li>
-                                                <p class="stt w-50 float-left">3</p>
-                                                <p class="w-50 float-left"> Thủ tục Cấp giấy chứng nhận cơ sở đủ điều
-                                                    kiện
-                                                    an toàn thực phẩm đối với cơ sở sản xuất, kinh doanh nông lâm thủy
-                                                    sản
-                                                    trên địa bàn quận Gò Vấp</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="headingThree">
-                                    <h2 class="mb-0">
-                                        <button class="btn font-weight-bold collapsed" type="button"
-                                            data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
-                                            aria-controls="collapseFour">
-                                            Lĩnh vực Xây dựng
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="collapseFour" class="collapse" aria-labelledby="headingThree"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <ul>
-                                            <li>
-                                                <p class="stt w-50 float-left">STT</p>
-                                                <p class="w-50 float-left">Tên thủ tục</p>
-                                            </li>
-                                            <li>
-                                                <p class="stt w-50 float-left">1</p>
-                                                <p class="w-50 float-left">Cấp lại Giấy chứng nhận cơ sở đủ điều kiện an
-                                                    toàn thực phẩm đối với cơ sở sản xuất, kinh doanh nông lâm thủy sản
-                                                    do
-                                                    hết hạn quận Gò Vấp</p>
-                                            </li>
-                                            <li>
-                                                <p class="stt w-50 float-left">2</p>
-                                                <p class="w-50 float-left">Thủ tục Cấp giấy chứng nhận cơ sở đủ điều
-                                                    kiện an
-                                                    toàn thực phẩm đối với cơ sở kinh doanh dịch vụ ăn uống trên địa bàn
-                                                    Quận Gò Vấp</p>
-                                            </li>
-                                            <li>
-                                                <p class="stt w-50 float-left">3</p>
-                                                <p class="w-50 float-left"> Thủ tục Cấp giấy chứng nhận cơ sở đủ điều
-                                                    kiện
-                                                    an toàn thực phẩm đối với cơ sở sản xuất, kinh doanh nông lâm thủy
-                                                    sản
-                                                    trên địa bàn quận Gò Vấp</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
                 <div class="col-md-4">
-                    <% include ../component/sideBar %>
+                    <%- include('../component/sideBar',{sideBar}) %>
                 </div>
             </div>
         </div>

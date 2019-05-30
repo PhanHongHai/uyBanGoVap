@@ -14,7 +14,7 @@
                         <!-- Modal -->
                         <div class="modal fade" id="modalAđ" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalScrollableTitle">Thêm mới</h5>
@@ -23,11 +23,11 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form method="POST" action="/admin/co-quan-ban-hanh">
+                                        <form method="POST" action="/admin/co-quan-ban-hanh" id="addAgen">
                                             <div class="form-group">
                                                 <label for="inputSmall" class="col-form-label">Tên cơ quan</label>
                                                 <input id="inputSmall" type="text" class="form-control form-control-sm"
-                                                    name="nameAg" require>
+                                                    name="nameAg">
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"

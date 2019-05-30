@@ -2,9 +2,9 @@ const mongoose=require('mongoose');
 var news=new mongoose.Schema({
     title:'String',
     mainContent:'String',
-    postTime:'Date',
+    postTime:'String',
     linkImg:'String',
-    shortContent:'String',
+    linkSEO:'String',
     idCate:{type:'ObjectId',ref:'Category'}
 },{collection:'News'});
 module.exports =mongoose.model('News',news);

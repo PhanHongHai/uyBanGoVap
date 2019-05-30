@@ -1,26 +1,44 @@
 // tai khoan
+function updateAcc(id) {
+    let username=$('.show .username').val();
+    let pass=$('.show .pass').val();
+    let role=$('.show .role').val();
+   let data={
+    username:username,
+    password:pass,
+    role:role
+   }
+        axios.patch("/admin/tai-khoan/" + id,data)
+        .then((res) => {
+          // location.reload(true);
+        })
+        .catch((err) => {
+           console.log(err);
+          // location.reload(true);
+        }) 
+}
 function deleteAcc(id) {
-    let confirmText = "Bạn có muốn xóa không ?";
-    console.log(id);
-    if (confirm(confirmText)) {
-        axios.delete("/admin/tai-khoan/" + id)
-            .then((res) => {
-                location.reload(true);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    }
+
+    axios.delete("/admin/tai-khoan/" + id)
+        .then((res) => {
+            location.reload(true);
+        })
+        .catch((err) => {
+            console.log(err);
+            location.reload(true);
+        })
 }
 // -----------
 // loai danh muc 
 function addCateType(data) {
 
 }
-function updateCate(id) {
+function updateCateType(id) {
     let name = $('.show .nameType').val();
+    let link = $('.show .link').val();
     let data = {
-        nameType: name
+        nameType: name,
+        link:link
     };
     console.log(data);
     console.log(id);
@@ -146,7 +164,16 @@ function updateCheck(id) {
             if (err) throw err;
         })
 }
-function test(){
-    console.log("hello");
-}
+
 //------------------------
+/// bai viet 
+function deleteNews(id){
+    axios.delete("/admin/tin-tuc/bai-viet/" + id)
+    .then((res) => {
+        window.location.href = "/admin/tin-tuc/bai-viet";
+    })
+    .catch((err) => {
+        if (err) throw err;
+    })
+}
+//******************* */

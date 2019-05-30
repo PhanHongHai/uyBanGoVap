@@ -9,7 +9,7 @@ module.exports={
         if (req.isAuthenticated()) {
             let link = bread(req);
             let list = await model.find();
-            res.render('admin',{ title: 'QL Cơ quan ban hành', link: link, user: req.user, list: list ,path:'Agency',count:req.session.count })
+            res.render('admin',{ title: 'QL Cơ quan ban hành', link: link, user: req.user, list: list ,path:'Agency',count:req.session.count,mess:req.session.mess })
         }
         else
             res.redirect('/login');

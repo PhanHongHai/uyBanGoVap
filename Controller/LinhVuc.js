@@ -9,7 +9,7 @@ module.exports={
         if (req.isAuthenticated()) {
             let link = bread(req);
             let list = await modelLV.find({});
-            res.render('admin', { title: 'QL Lĩnh Vực', link: link, user: req.user, list: list,path:'Fields',count:req.session.count });
+            res.render('admin', { title: 'QL Lĩnh Vực', link: link, user: req.user, list: list,path:'Fields',count:req.session.count,mess:req.session.mess });
         }
         else {
             res.redirect('/login');

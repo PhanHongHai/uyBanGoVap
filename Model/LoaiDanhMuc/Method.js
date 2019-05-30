@@ -14,11 +14,11 @@ module.exports = {
         const data = await modelCateType.find({ nameType: name });
         return data;
     },
-    addCateType: async (name) => {
+    addCateType: async (name,link) => {
         const data = await modelCateType.find({ nameType: name });
         console.log(data);
-        if (data == null) {
-            let cateType = new modelCateType({ nameType: name });
+        if (data.length == 0) {
+            let cateType = new modelCateType({ nameType: name,link:link });
             cateType.save();
             return true;
         }
@@ -26,14 +26,12 @@ module.exports = {
             return false;
 
     },
-    updateCateType: async (id, nameType) => {
-        await modelCateType.findOneAndUpdate({ _id: id }, { $set: { nameType: nameType } }, (err) => {
+    updateCateType: async (id, nameType,link) => {
+        await modelCateType.findOneAndUpdate({ _id: id }, { $set: { nameType: nameType,link:link } }, (err) => {
             if (err) {
-                console.log(false);
                 return false;
             }
             else {
-                console.log(true);
                 return 1;
             }
 

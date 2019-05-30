@@ -9,6 +9,9 @@ const fieldCtrl = require('../Controller/LinhVuc');
 const agencyCtrl = require('../Controller/Agency');
 const gopYCtrl = require('../Controller/Process');
 const newCtrl=require('../Controller/News');
+const ttCtrl=require('../Controller/ThuTucHanhChinh');
+const upload_img=require('../Controller/img_upload');
+const blCtrl=require('../Controller/Comment');
 // --------------------
 // --------------------
 // setup
@@ -18,8 +21,13 @@ const passPortLocal = require('passport-local').Strategy;
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const BreadCrumb = require('../content/breadCrumb');
+var path = require("path");
+var fs = require("fs");
 var multer  = require('multer')
 // upload
+
+
+
 const store= multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './public/uploads')
@@ -79,24 +87,20 @@ router.route('/admin')
         let link = bread(req);
         if (req.isAuthenticated()) {
 
-            res.render('admin', { title: 'Admin', link: link, user: req.user, path: 'empty', count: req.session.count });
+            res.render('admin', { title: 'Admin', link: link, user: req.user, path: 'empty', count: req.session.count,mess:req.session.mess });
         }
         else
             res.redirect('/login');
     });
-// load page
+// load page account
 router.route('/admin/tai-khoan')
     .get(adminCtrl.getListAccount)
-    .post([
-        check('username')
-            .isLength({ min: 2, max: 20 }).withMessage('Nhập username tối thiểu 2 và tối đa là 20 ký tự'),
-        check('password').isLength({ min: 2, max: 20 }).withMessage('Nhập password tối thiểu 2 và tối đa là 20 ký tự')
-    ], adminCtrl.addAccount);
+    .post(adminCtrl.addAccount);
 // -----------------------
 
 
 router.route('/admin/tai-khoan/:idAcc')
-    .put(adminCtrl.updateAccount)
+    .patch(adminCtrl.updateAccount)
     .delete(adminCtrl.deleteAccount)
 
 // loai danh muc
@@ -120,22 +124,55 @@ router.route('/admin/tin-tuc/danh-muc/:idCate')
 // -----------------------
 
 // bai viet
-router.post('/admin/tin-tuc/bai-viet/sendImage',(req,res) => {
-    upload(req,res,function(err) {
-        if(err) {
-            return res.status(500).json({mess:"Error uploading file."});
+
+router.post('/admin/tin-tuc/bai-viet/loadUpdate/upload',(req,res) => {
+    upload_img(req, function(err, data) {
+        if (err) {
+          return res.status(404).end(JSON.stringify(err));
         }
-        res.status(200).json({mess:'success',url:req.filename});
-    });
+    
+        res.send(data);
+      });
 })
+router.post('/admin/tin-tuc/upload',(req,res) => {
+    upload_img(req, function(err, data) {
+        if (err) {
+          return res.status(404).end(JSON.stringify(err));
+        }
+    
+        res.send(data);
+      });
+})
+router.post('/admin/tin-tuc/bai-viet/upload',(req,res) => {
+    upload_img(req, function(err, data) {
+        if (err) {
+          return res.status(404).end(JSON.stringify(err));
+        }
+    
+        res.send(data);
+      });
+})
+var filesDir = path.join(path.dirname(require.main.filename), "/public/");
+
+if (!fs.existsSync(filesDir)){
+  fs.mkdirSync(filesDir);
+}
+router.get('/admin/tin-tuc/bai-viet/getList',newCtrl.getList)
+router.get('/admin/tin-tuc/bai-viet/loadUpdate/:idBV',newCtrl.loadUpdate)
 router.route('/admin/tin-tuc/bai-viet')
     .get(newCtrl.loadPage)
-    .post(upload.single('anh'),newCtrl.addNews)
+    .post(upload.single('linkImg'),newCtrl.addNews)
 router.route('/admin/tin-tuc/bai-viet/:idBV')
     .get()
-    .patch(newCtrl.updateNews)
+    .post(upload.single('linkImg'),newCtrl.updateNews)
     .delete(newCtrl.deleteNews)
 
+// comment
+router.get('/admin/binh-luan/:idBV',blCtrl.getComment)
+router.post('/admin/binh-luan',blCtrl.addCooment)
+//********************************* */
+
+//****************************************** */
 // linh vuc
 router.route('/admin/linh-vuc')
     .get(fieldCtrl.loadLinhVuc)
@@ -163,6 +200,20 @@ router.route('/admin/gop-y/:idGY')
     .patch(gopYCtrl.updateCheck)
     .delete(gopYCtrl.deleteGY)
 // -----------------
-
-
+// thu tuc hanh chinh
+router.route('/admin/thu-tuc-hanh-chinh')
+    .get(ttCtrl.loadThuTuc)
+    .post()
+router.route('/admin/thu-tuc-hanh-chinh/idTT')
+    .get()
+    .patch()
+    .delete()
+//***************************** */
+router.get('/destroyMess',(req,res) => {
+    req.session.mess=0;
+    res.status(200).json({mess:'da xoa'});
+})
+router.get('/getMess',(req,res) => {
+    res.send('gia tri--'+req.session.mess);
+})
 module.exports = router;

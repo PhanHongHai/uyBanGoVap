@@ -1,115 +1,68 @@
 <div>
-    <div class="sideBar d-none">
-        <% if(check==0){ %>
+
+    <!---->
+
+    <div class="sideBar-menu accordion" id="accordionExample">
+        <% if(kt==0){ %>
+        <%  sideBar.forEach(function(ele){ %>
+        <% if(ele.nameType === "CÔNG DÂN"){ %>
         <div class="headSideBar text-center">
-            <h5><i class="far fa-newspaper pr-2"></i>CÔNG DÂN</h5>
-        </div>
-        <div class="contentSideBar">
-            <ul>
-                <% sideBarCongDan.forEach(function(ele){ %>
-                <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
-                <% }) %>
-            </ul>
-        </div>
-        <% }
-        else{
-     %>
-        <div class="headSideBar text-center">
-            <h5><i class="far fa-newspaper pr-2"></i>GIỚI THIỆU</h5>
-        </div>
-        <div class="contentSideBar">
-            <ul>
-                <% gioiThieu.forEach(function(ele){ %>
-                <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
-                <% }) %>
-            </ul>
-        </div>
-        <div class="headSideBar text-center">
-            <h5><i class="far fa-newspaper pr-2"></i>TIN TỨC SỰ KIỆN</h5>
-        </div>
-        <div class="contentSideBar">
-            <ul>
-                <% tinTuc.forEach(function(ele){ %>
-                <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
-                <% }) %>
-            </ul>
-        </div>
-        <div class="headSideBar text-center">
-            <h5><i class="far fa-newspaper pr-2"></i>ỦY BAN NHÂN DÂN</h5>
-        </div>
-        <div class="contentSideBar">
-            <ul>
-                <% uyBan.forEach(function(ele){ %>
-                <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
-                <% }) %>
-            </ul>
-        </div>
-        <div class="headSideBar text-center">
-            <h5><i class="far fa-newspaper pr-2"></i>HỘI ĐỒNG NHÂN DÂN</h5>
-        </div>
-        <div class="contentSideBar">
-            <ul>
-                <li><a href="">Hoạt động HĐND nhiệm kỳ 2004 - 2009</a></li>
-                <li><a href="">Hoạt động HĐND nhiệm kỳ 2016 - 2021</a></li>
-            </ul>
-        </div>
-        <% } %>
-    </div>
-    <div class="sideBar-menu" >
-        <% if(check==0){ %>
-        <div class="headSideBar text-center">
-            <h5><i class="far fa-newspaper pr-2"></i>CÔNG DÂN</h5>
-        </div>
-        <div class="contentSideBar "  >
-            <ul>
-                <% sideBarCongDan.forEach(function(ele){ %>
-                <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
-                <% }) %>
-            </ul>
-        </div>
-        <% }
-        else{
-     %>
-        <div class="headSideBar text-center">
-            <h5 data-toggle="collapse" data-target="#gt"><i class="far fa-newspaper pr-2"></i>GIỚI THIỆU</h5>
-        </div>
-        <div class="contentSideBar collapse" id="gt">
-            <ul>
-                <% gioiThieu.forEach(function(ele){ %>
-                <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
-                <% }) %>
-            </ul>
-        </div>
-        <div class="headSideBar text-center">
-            <h5  data-toggle="collapse" data-target="#tt"><i class="far fa-newspaper pr-2"></i>TIN TỨC SỰ KIỆN</h5>
-        </div>
-        <div class="contentSideBar collapse"  id="tt">
-            <ul>
-                <% tinTuc.forEach(function(ele){ %>
-                <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
-                <% }) %>
-            </ul>
-        </div>
-        <div class="headSideBar text-center">
-            <h5  data-toggle="collapse"  data-target="#uyban"><i class="far fa-newspaper pr-2"></i>ỦY BAN NHÂN DÂN</h5>
-        </div>
-        <div class="contentSideBar collapse" id="uyban" >
-            <ul>
-                <% uyBan.forEach(function(ele){ %>
-                <li><a href="<%= ele.link %>"><%= ele.name %></a></li>
-                <% }) %>
-            </ul>
-        </div>
-        <div class="headSideBar text-center">
-            <h5><i class="far fa-newspaper pr-2"></i>HỘI ĐỒNG NHÂN DÂN</h5>
+            <h5><i class="far fa-newspaper pr-2"></i><a class="text-decoration-none" href="<%=ele.link %>">CÔNG DÂN</a>
+            </h5>
         </div>
         <div class="contentSideBar ">
             <ul>
-                <li><a href="">Hoạt động HĐND nhiệm kỳ 2004 - 2009</a></li>
-                <li><a href="">Hoạt động HĐND nhiệm kỳ 2016 - 2021</a></li>
+                <% ele.cate.forEach(function(val){ %>
+                <li><a href="/gop-y"><%= val.nameCate %></a></li>
+                <% }) %>
             </ul>
         </div>
-        <% } %>
+        <% }})}
+            else{ %>
+        <% let i=1;
+           sideBar.forEach(function(ele){ %>
+        <div class="headSideBar text-center">
+            <% if(i==1){ %>
+            <div id="heading<%=i%>">
+                <h5>
+                    <button class="btn w-100 text-white" type="button" data-toggle="collapse" data-target="#cl<%=i%>"
+                        aria-expanded="true" aria-controls="cl<%=i%>">
+                        <i class="far fa-newspaper pr-2"></i>
+                        <a class="text-decoration-none text-light" href="<%=ele.link%>"><%=ele.nameType %></a>
+                    </button>
+                </h5>
+            </div>
+            <% }else{ %>
+            <div id="heading<%=i%>">
+                <h5>
+                    <button class="btn w-100 collapsed text-white" type="button" data-toggle="collapse" data-target="#cl<%=i%>"
+                        aria-expanded="false" aria-controls="cl<%=i%>">
+                        <i class="far fa-newspaper pr-2"></i>
+                        <a class="text-decoration-none text-light" href=""><%=ele.nameType %></a>
+                    </button>
+                </h5>
+            </div>
+            <% } %>
+        </div>
+        <% if(i==1){ %>
+        <div class="contentSideBar collapse show" aria-labelledby="heading<%=i%>" id="cl<%=i%>"
+            data-parent="#accordionExample">
+            <ul>
+                <% ele.cate.forEach(function(val){ %>
+                <li><a href=""><%= val.nameCate %></a></li>
+                <% }) %>
+            </ul>
+        </div>
+        <% }else{ %>
+        <div class="contentSideBar collapse" id="cl<%=i%>" aria-labelledby="heading<%=i%>">
+            <ul>
+                <% ele.cate.forEach(function(val){ %>
+                <li><a href="/gop-y"><%= val.nameCate %></a></li>
+                <% }) %>
+            </ul>
+        </div>
+        <%} %>
+        <% i++; })} %>
     </div>
 
 </div>
