@@ -125,7 +125,8 @@
                 transition: 0.4s; }
               .allPage #bodyPage .tinChung .contentTinChung ul li span a h3 {
                 font-size: 18px;
-                font-weight: 500; }
+                font-weight: 500;
+                margin-top: 0%; }
             .allPage #bodyPage .tinChung .contentTinChung ul li span p {
               font-size: 14px;
               font-weight: 400; }
