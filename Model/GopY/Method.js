@@ -4,12 +4,10 @@ module.exports={
         let gopY=await new model(data);
         await gopY.save((err) => {
             if(err){
-                console.log(0);
                 return false;
             }
                 
             else{
-                console.log(1);
                 return true;
             }
                 

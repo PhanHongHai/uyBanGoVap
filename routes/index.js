@@ -12,7 +12,6 @@ const ctrl = require('../Controller/Process');
 const newCtrl=require('../Controller/News');
 const ttCtrl=require('../Controller/ThuTucHanhChinh');
 const modelCate=require('../Model/DanhMuc/Category');
-
 const modelCateType=require('../Model/LoaiDanhMuc/CategoryType');
 //---------------
 const BreadCrumb = require('../content/breadCrumb');
@@ -46,7 +45,7 @@ let bread = (req) => {
 /* GET home page. */
 router.get('/',ctrl.loadHome );
 // load bai viet
-router.get('/bai-viet/*.:idBV',ctrl.loadBV)
+router.get('/*/bai-viet/*.:idBV',ctrl.loadBV)
 // kenh tuong tac
 router.get('/cong-dan',ctrl.loadCD);
 router.get('/gioi-thieu', (req, res) => {
@@ -63,21 +62,18 @@ router.get('/gioi-thieu', (req, res) => {
 ],(err,data) => {
     if(err) throw err;
     else{
-        res.render('gioiThieu', { title: 'Giới Thiêu-Công thông tin điện tử Gò Vấp', link: link,sideBar:data,kt:1 });
+        res.render('gioiThieu', { title: 'Giới Thiêu-Công thông tin điện tử Gò Vấp', link: link,sideBar:data,kt:1,activeMenu:1 });
     }
 })
 
 });
 // thu tuc hanh chinh
-router.get('/thu-tuc-hanh-chinh', (req, res) => {
-  let link = bread(req);
-  res.render('thuTucHanhChinh', { title: 'Thủ tục hành chính-Công thông tin điện tử Gò Vấp', link: link });
-});
+router.get('/cong-dan/thu-tuc-hanh-chinh',ttCtrl.loadTTHC);
+router.get('/cong-dan/thu-tuc-hanh-chinh/:idTT',ttCtrl.getTT)
 
+router.get('/cong-dan/dich-vu-cong',ctrl.loadDVC);
 
-router.get('/dich-vu-cong',ctrl.loadDVC);
-
-router.route('/gop-y')
+router.route('/cong-dan/gop-y')
   .get(ctrl.loadGY)
   .post(upload.single('file'),ctrl.createGopY)
 router.get('/getSS',(req,res) => {

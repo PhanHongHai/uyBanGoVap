@@ -212,6 +212,8 @@ body {
       .normal-menu {
         @extend .menu-box;
         height: 60px;
+        width: 88%;
+        margin: auto;
         ul {
           height: 100%;
           li {

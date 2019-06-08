@@ -261,13 +261,11 @@
         $('.nutDelete').click(function(){
             let confirmText="Bạn có muốn xóa không ?";
             let id = $('#id').val();
-            console.log(id);
             if(confirm(confirmText)){
                 $.ajax({
                     type:'DELETE',
                     url:'/admin/tai-khoan/'+id
                 }).done((res) => {
-                   console.log(res);
                 });
             }
         });

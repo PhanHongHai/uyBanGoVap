@@ -1,5 +1,14 @@
 <%
     img='/public/images/pattern_bg.png';
+    let menuItem=[
+    {item:"TRANG CHỦ",link:"/"},
+    {item:"GIỚI THIỆU",link:"/gioi-thieu"},
+    {item:"TIN TỨC SỰ KIỆN",link:"/tin-tuc-su-kien"},
+    {item:"QUY HOẠCH VÀ PHÁT TRIỂN",link:"/quy-hoach-va-phat-trien"},
+    {item:"CÔNG DÂN",link:"/cong-dan"},
+    {item:"DOANH NGHIỆP",link:"/doanh-nghiep"},
+    {item:"DU LỊCH",link:"/du-lich"},
+  ]
  %>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +26,7 @@
     </style>
 </head>
 
-<body class="mw-100 m-0 p-0 " style="background-image: url('<%= img %>');">
+<body class="mw-100 m-0 p-0 " style="background-image: url('<%= img %>');background-attachment: fixed;">
     <div class="container p-0 allPage">
         <% include ../component/header %>
 
@@ -92,44 +101,45 @@
         <% include ../component/footer %>
     </div>
     <% include ../component/script %>
+    <script type="text/javascript">
+        <% if (check == 1) { %>
+            $.toast({
+                heading: 'Chúc mừng!',
+                text: "<span style='font-size:18px;'> Bạn đã gửi thành công </span>",
+                position: 'mid-center',
+                loaderBg: '#5ba035',
+                icon: 'success',
+                hideAfter: 4000,
+                stack: 1
+            });
+            axios.get('/destroySS')
+            .then(function(res){
+    
+            })
+            .catch(function(err){
+                if(err) throw err;
+            })
+        <% }
+        else if(check == 0) { %>
+            $.toast({
+                heading: 'Thông báo !',
+                text:"<span style=font-size:18px;'> Bạn đã gửi thất bại </span>" ,
+                position: 'mid-center',
+                loaderBg: '#5ba035',
+                icon: 'error',
+                hideAfter: 4000,
+                stack: 1
+            });
+               axios.get('/destroySS')
+            .then(function(res){
+    
+            })
+            .catch(function(err){
+                if(err) throw err;
+            })
+        <% } %>
+    </script>
 </body>
-<script type="text/javascript">
-    <% if (check == 1) { %>
-        $.toast({
-            heading: 'Chúc mừng!',
-            text: "<span style='font-size:18px;'> Bạn đã gửi thành công </span>",
-            position: 'mid-center',
-            loaderBg: '#5ba035',
-            icon: 'success',
-            hideAfter: 4000,
-            stack: 1
-        });
-        axios.get('/destroySS')
-        .then(function(res){
 
-        })
-        .catch(function(err){
-            if(err) throw err;
-        })
-    <% }
-    else if(check == 0) { %>
-        $.toast({
-            heading: 'Thông báo !',
-            text:"<span style=font-size:18px;'> Bạn đã gửi thất bại </span>" ,
-            position: 'mid-center',
-            loaderBg: '#5ba035',
-            icon: 'error',
-            hideAfter: 4000,
-            stack: 1
-        });
-           axios.get('/destroySS')
-        .then(function(res){
-
-        })
-        .catch(function(err){
-            if(err) throw err;
-        })
-    <% } %>
-</script>
 
 </html>

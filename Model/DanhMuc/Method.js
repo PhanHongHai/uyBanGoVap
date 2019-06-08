@@ -1,5 +1,6 @@
 const modelCate = require('./Category');
 const mongoose = require('mongoose');
+const methodNews=require('../TinTuc/Method');
 module.exports = {
     getListCate: () => {
         modelCate.aggregate(
@@ -31,9 +32,24 @@ module.exports = {
                 return 1;
         })
     },
-    deleteCate: (id) => {
+    deleteCate:async (id) => {
         modelCate.findOneAndRemove({_id:id}, (err) => {
-            return err;
+            if(err){ throw err; return false;}
+            else{
+                const kt=  methodNews.deleteListNews(id);
+                if(kt) return true;
+            }
         })
+    },
+    deleteListCate: async id =>{
+        const cate = await modelCate.find({typeCate:id});
+        cate.map(async (ele) =>{
+           await methodNews.deleteListNews(ele.id);
+        });
+        modelCate.deleteMany({typeCate:id},err =>{
+            if(err) {throw err; return false;};
+            return true;
+        });
+
     }
 }

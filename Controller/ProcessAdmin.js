@@ -20,10 +20,12 @@ module.exports = {
     // account 
     getAccount: async (username, password, done) => {
         let tk = await method.getAccountByUser(username);
-        tk={...tk,pass:password};
-        if (tk != null) {
+        if (tk.length != 0) {
+            tk = { ...tk, pass: password };
             method.checkAccount(tk, done);
         }
+        else
+            return done(null, false, { message: 'Tai khoan khong ton tai.' });
     },
     getListAccount: async (req, res) => {
         let link = bread(req);
@@ -31,7 +33,6 @@ module.exports = {
             if (req.session.mess == null)
                 req.session.mess = 2;
             let tk = await acc.find();
-            console.log(tk);
             res.render('admin', { title: 'QL Tài Khoản', link: link, user: req.user, acc: tk, path: "Account", count: req.session.count, mess: req.session.mess });
         }
         else
@@ -44,7 +45,7 @@ module.exports = {
         else
             return done(null, false);
     },
-    addAccount:async (req, res) => {
+    addAccount: async (req, res) => {
         let us = req.body.username;
         let pass = req.body.password;
         let role = req.body.role;
@@ -56,8 +57,8 @@ module.exports = {
         }
         req.session.mess = 0;
     },
-    updateAccount:async (req, res) => {
-        let kt = await method.updateAccount(req.params.idAcc,req.body.username,req.body.password,req.body.role);
+    updateAccount: async (req, res) => {
+        let kt = await method.updateAccount(req.params.idAcc, req.body.username, req.body.password, req.body.role);
         if (req.session.mess == null)
             req.session.mess = 2;
         if (kt) {
@@ -69,8 +70,8 @@ module.exports = {
         }
 
     },
-    deleteAccount:async (req, res) => {
-        let kt =await method.deleteAccount(req.params.idAcc);
+    deleteAccount: async (req, res) => {
+        let kt = await method.deleteAccount(req.params.idAcc);
         if (req.session.mess == null)
             req.session.mess = 2;
         if (kt) {

@@ -16,5 +16,12 @@ module.exports={
     },
     deleteNews: (id) => {
         modelNews.findOneAndRemove({_id:id});
+    },
+    deleteListNews:async id =>{
+        modelNews.deleteMany({idCate:id},err =>{
+            if(err){ throw err; return false;}
+            else
+                return true;
+        })
     }
 }

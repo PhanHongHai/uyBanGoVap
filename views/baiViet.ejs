@@ -1,5 +1,14 @@
 <%
     img='/public/images/pattern_bg.png';
+    let menuItem=[
+    {item:"TRANG CHỦ",link:"/"},
+    {item:"GIỚI THIỆU",link:"/gioi-thieu"},
+    {item:"TIN TỨC SỰ KIỆN",link:"/tin-tuc-su-kien"},
+    {item:"QUY HOẠCH VÀ PHÁT TRIỂN",link:"/quy-hoach-va-phat-trien"},
+    {item:"CÔNG DÂN",link:"/cong-dan"},
+    {item:"DOANH NGHIỆP",link:"/doanh-nghiep"},
+    {item:"DU LỊCH",link:"/du-lich"},
+  ]
  %>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +22,7 @@
 
 </head>
 
-<body class="mw-100 m-0 p-0 " style="background-image: url('<%= img %>');">
+<body class="mw-100 m-0 p-0 " style="background-image: url('<%= img %>');background-attachment: fixed;"">
     <div class="container p-0 allPage">
         <% include ../component/header %>
 

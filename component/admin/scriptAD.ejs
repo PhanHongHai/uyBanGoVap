@@ -43,7 +43,7 @@
             heightMin: 100,
             heightMax: 500,
             imageUploadURL: 'upload',
-            imageUploadMethod:'POST',
+            imageUploadMethod: 'POST',
             imageUploadParams: {
                 id: 'my_editor'
             }
@@ -53,7 +53,7 @@
             heightMin: 100,
             heightMax: 500,
             imageUploadURL: 'upload',
-            imageUploadMethod:'POST',
+            imageUploadMethod: 'POST',
             imageUploadParams: {
                 id: 'my_editor'
             }
@@ -92,12 +92,10 @@
             });
         }
         $('.btnNews').click(function () {
-            console.log(123);
             $('.listNews').removeClass('active').addClass('hide');
             $('.addNews').removeClass('hide').addClass('active');
         });
         $('.btnExit').click(function () {
-            console.log(123);
             $('.addNews').removeClass('active').addClass('hide');
             $('.listNews').removeClass('hide').addClass('active');
         });
@@ -105,7 +103,23 @@
         /****************************************
          *       Basic Table                   *
          ****************************************/
-        $('#zero_config').DataTable();
+        $('#zero_config').DataTable({
+            "language": {
+                "lengthMenu": "Hiện _MENU_ trên tổng trang",
+                "zeroRecords": "Không tìm thấy",
+                "info": "Trang_PAGE_ trong _PAGES_",
+                "infoEmpty": "Không có dữ liệu",
+                "infoFiltered": "(Lọc từ _MAX_ tổng dữ liệu)",
+                "search": "Tìm kiếm :",
+                "paginate": {
+                    "first": "Đầu",
+                    "last": "Cuối",
+                    "next": "Tiếp theo",
+                    "previous": "Quay lại"
+                },
+            }
+
+        });
         $('.email-list').pagination({
             totalNumber: function (done) {
                 $.ajax({
@@ -121,7 +135,6 @@
                     type: 'GET',
                     url: '/admin/gop-y/getList',
                     success: function (res) {
-                        console.log(res.data);
                         done(res.data);
                     }
                 });
@@ -139,7 +152,6 @@
             },
             callback: function (data, pagination) {
                 // template method of yourself
-                console.log(data);
                 var html = simpleTemplating(data);
                 $('.paginationGY').html(html);
             }
@@ -159,7 +171,6 @@
                     type: 'GET',
                     url: '/admin/tin-tuc/bai-viet/getList',
                     success: function (res) {
-                        console.log(res.data);
                         done(res.data);
                     }
                 });
@@ -177,7 +188,6 @@
             },
             callback: function (data, pagination) {
                 // template method of yourself
-                console.log(data);
                 var html = templateViewNew(data);
                 $('.paginationNews').html(html);
             }

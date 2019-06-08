@@ -6,8 +6,7 @@
         <div class="subCate">
             <ul>
                 <li>ĐẢNG BỘ</li>
-                <li>HỘI ĐỒNG NHÂN DÂN</li>
-                <li>ỦY BAN NHÂN DÂN</li>
+                <li>UỶ BAN NHÂN DÂN</li>
             </ul>
         </div>
     </div>
@@ -16,156 +15,76 @@
             <div class="row">
                 <div class="col-md-6 mainCate ">
                     <a href="">
-                        <img src="/public/uploads/db1.jpg" class="img-fluid" alt="">
-                        <h4 class=""> TRANG TRỌNG LỄ TRAO TẶNG HUY HIỆU ĐẢNG ĐỢT 19.5.2019</h4>
-                        <p><i class="fas fa-clock pr-2"></i>30/05/2019, 2:50 am</p>
+                        <img src="/public/uploads/<%= db[0].linkImg %>" class="img-fluid" alt="">
+                        <h4 class=""><%= db[0].title %></h4>
+                        <p><i class="fas fa-clock pr-2"></i><%= db[0].postTime %></p>
                     </a>
                 </div>
                 <div class="col-md-6 p-0">
                     <div class="cateItem">
                         <ul>
+                            <% if(db){
+                                 let i=1;
+                                db.forEach(function(ele){
+                             %>
+                            <% if(i > 1){ %>
                             <li>
-                                <a href="">
+                                <a href="/bai-viet/<%= ele.linkSEO%>.<%= ele._id %>">
                                     <div>
-                                        <img src="/public/uploads/db2.jpg" class="img-fluid" alt="">
+                                        <img src="/public/uploads/<%= ele.linkImg %>" class="img-fluid" alt="">
                                     </div>
                                     <span>
-                                        <p>ĐỒNG CHÍ TÔ ĐÌNH TRIỆU ĐẢM NHIỆM BÍ THƯ ĐẢNG ỦY - CHỦ TỊCH UBND PHƯỜNG 8"
-                                        </p>
-                                        <p><i class="fas fa-clock pr-2"></i>30/05/2019, 2:45 am</p>
+                                        <p><%= ele.title %></p>
+                                        <p><i class="fas fa-clock pr-2"></i><%=ele.postTime %></p>
                                     </span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="">
-                                    <div>
-                                        <img src="/public/uploads/db3.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <span>
-                                        <p>MÃI MÃI ƠN NGƯỜI - HỒ CHÍ MINH
-                                        </p>
-                                        <p><i class="fas fa-clock pr-2"></i>29/05/2019, 10:50 pm</p>
-                                    </span>
-                                </a>
-                            </li>
-                          
+                            <% } %>
+                            <% i++; })} %>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+     
         <div class="cateClassify">
             <div class="row">
+            <% if(ub.length != 0){ %>
                 <div class="col-md-6 mainCate ">
                     <a href="">
-                        <img src="/public/images/tin/2019-tin-2.jpg" class="img-fluid" alt="">
-                        <h4>2 Nhà giáo trẻ tiêu biểu 2019</h4>
+                        <img src="/public/images/tin/<%= ub[0].linkImg %>" class="img-fluid" alt="">
+                        <h4><%= ub[0].title %></h4>
+                          <p><i class="fas fa-clock pr-2"></i><%= db[0].postTime %></p>
                     </a>
                 </div>
+                <% } %>
                 <div class="col-md-6 p-0">
                     <div class="cateItem">
                         <ul>
+                             <% if(ub.length != 0){
+                                 let i=1;
+                                ub.forEach(function(ele){
+                             %>
+                            <% if(i > 1){ %>
                             <li>
                                 <a href="">
                                     <div>
-                                        <img src="/public/images/tin/2019-tin-2.jpg" class="img-fluid" alt="">
+                                        <img src="/public/images/tin/<%= ele.linkImg %>" class="img-fluid" alt="">
                                     </div>
                                     <span>
-                                        <p>THỰC SỰ PHỤC VỤ NHÂN DÂN BẰNG "TÂM PHẢI SÁNG" VÀ "TẦM
-                                            PHẢI
-                                            GIỎI"
+                                        <p><%= ele.title %>
                                         </p>
-                                        <p><i class="fas fa-clock pr-2"></i>5/5/2019</p>
+                                        <p><i class="fas fa-clock pr-2"></i><%= ele.postTime %></p>
                                     </span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="">
-                                    <div>
-                                        <img src="/public/images/tin/2019-tin-2.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <span>
-                                        <p>THỰC SỰ PHỤC VỤ NHÂN DÂN BẰNG "TÂM PHẢI SÁNG" VÀ "TẦM
-                                            PHẢI
-                                            GIỎI"
-                                        </p>
-                                        <p><i class="fas fa-clock pr-2"></i>5/5/2019</p>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div>
-                                        <img src="/public/images/tin/2019-tin-2.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <span>
-                                        <p>THỰC SỰ PHỤC VỤ NHÂN DÂN BẰNG "TÂM PHẢI SÁNG" VÀ "TẦM
-                                            PHẢI
-                                            GIỎI"
-                                        </p>
-                                        <p><i class="fas fa-clock pr-2"></i>5/5/2019</p>
-                                    </span>
-                                </a>
-                            </li>
+                           <% } %>
+                            <% i++; })} %>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="cateClassify">
-            <div class="row">
-                <div class="col-md-6 mainCate ">
-                    <a href="">
-                        <img src="/public/images/tin/2019-tin-2.jpg" class="img-fluid" alt="">
-                        <h4> 3 Nhà giáo trẻ tiêu biểu 2019</h4>
-                    </a>
-                </div>
-                <div class="col-md-6 p-0">
-                    <div class="cateItem">
-                        <ul>
-                            <li>
-                                <a href="">
-                                    <div>
-                                        <img src="/public/images/tin/2019-tin-2.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <span>
-                                        <p>THỰC SỰ PHỤC VỤ NHÂN DÂN BẰNG "TÂM PHẢI SÁNG" VÀ "TẦM
-                                            PHẢI
-                                            GIỎI"
-                                        </p>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div>
-                                        <img src="/public/images/tin/2019-tin-2.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <span>
-                                        <p>THỰC SỰ PHỤC VỤ NHÂN DÂN BẰNG "TÂM PHẢI SÁNG" VÀ "TẦM
-                                            PHẢI
-                                            GIỎI"
-                                        </p>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div>
-                                        <img src="/public/images/tin/2019-tin-2.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <span>
-                                        <p>THỰC SỰ PHỤC VỤ NHÂN DÂN BẰNG "TÂM PHẢI SÁNG" VÀ "TẦM
-                                            PHẢI
-                                            GIỎI"
-                                        </p>
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
     </div>
 </div>

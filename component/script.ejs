@@ -6,6 +6,25 @@
 <script src="/public/js/api/apiChung.js"></script>
 <script src="/public/js/axios.min.js"></script>
 <script src="/public/admin/jquery-toastr/jquery.toast.min.js"></script>
-
+<script src="/public/admin/DataTables/datatables.min.js"></script>
 <script src="/public/js/SmoothScroll.js"></script>
 <script src="/public/js/function/carouselHome.js"></script>
+<script type="text/javascript">
+    $('#tthc').DataTable({
+        "language": {
+            "lengthMenu": "Hiện _MENU_ trên tổng trang",
+            "zeroRecords": "Không tìm thấy",
+            "info": "Trang_PAGE_ trong _PAGES_",
+            "infoEmpty": "Không có dữ liệu",
+            "infoFiltered": "(Lọc từ _MAX_ tổng dữ liệu)",
+            "search": "Tìm kiếm :",
+            "paginate": {
+                "first": "Đầu",
+                "last": "Cuối",
+                "next": "Tiếp theo",
+                "previous": "Quay lại"
+            },
+        }
+
+    });
+</script>

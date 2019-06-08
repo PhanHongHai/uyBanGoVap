@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 module.exports = {
     getListCateType: () => {
         modelCateType.find({}, (err, data) => {
-            console.log(data);
             if (data)
                 return data;
             else
@@ -16,7 +15,6 @@ module.exports = {
     },
     addCateType: async (name,link) => {
         const data = await modelCateType.find({ nameType: name });
-        console.log(data);
         if (data.length == 0) {
             let cateType = new modelCateType({ nameType: name,link:link });
             cateType.save();

@@ -1,0 +1,158 @@
+<div class="matTran">
+    <div class="headCate">
+        <h5>
+            <span>KINH TẾ - DOANH NGHIỆP</span>
+        </h5>
+    </div>
+    <div class="contentCate mt-3">
+        <div class="cateClassify activeCate">
+            <div class="row">
+                <% if(kt.length != 0){ %>
+                <div class="col-md-6 mainCate ">
+                    <a href="/bai-viet/<%= kt[0].linkSEO%>.<%= kt[0]._id %>">
+                        <img src="/public/images/tin/<%= kt[0].linkImg %>" class="img-fluid" alt="">
+                        <h4><%= kt[0].title %></h4>
+                        <p><i class="fas fa-clock pr-2"></i><%= kt[0].postTime %></p>
+                    </a>
+                </div>
+                <% } %>
+                <div class="col-md-6 p-0">
+                    <div class="cateItem">
+                        <ul>
+                            <% if(kt.length != 0){
+                                        let i=1;
+                                        kt.forEach(function(ele){
+                                    %>
+                            <% if(i > 1){ %>
+                            <li>
+                                <a href="/bai-viet/<%= ele.linkSEO%>.<%= ele._id %>">
+                                    <div>
+                                        <img src="/public/images/tin/<%= ele.linkImg %>" class="img-fluid" alt="">
+                                    </div>
+                                    <span>
+                                        <p><%= ele.title %>
+                                        </p>
+                                        <p><i class="fas fa-clock pr-2"></i><%= ele.postTime %></p>
+                                    </span>
+                                </a>
+                            </li>
+                            <% } %>
+                            <% i++; })} %>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cateClassify">
+            <div class="row">
+                <div class="col-md-6 mainCate ">
+                    <a href="">
+                        <img src="/public/images/tin/2019-tin-2.jpg" class="img-fluid" alt="">
+                        <h4>2 Nhà giáo trẻ tiêu biểu 2019</h4>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="cateItem">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <div>
+                                        <img src="/public/images/tin/2019-tin-2.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <span>
+                                        <p>THỰC SỰ PHỤC VỤ NHÂN DÂN BẰNG "TÂM PHẢI SÁNG" VÀ "TẦM
+                                            PHẢI
+                                            GIỎI"
+                                        </p>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>
+                                        <img src="/public/images/tin/2019-tin-2.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <span>
+                                        <p>THỰC SỰ PHỤC VỤ NHÂN DÂN BẰNG "TÂM PHẢI SÁNG" VÀ "TẦM
+                                            PHẢI
+                                            GIỎI"
+                                        </p>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>
+                                        <img src="/public/images/tin/2019-tin-2.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <span>
+                                        <p>THỰC SỰ PHỤC VỤ NHÂN DÂN BẰNG "TÂM PHẢI SÁNG" VÀ "TẦM
+                                            PHẢI
+                                            GIỎI"
+                                        </p>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cateClassify">
+            <div class="row">
+                <div class="col-md-6 mainCate ">
+                    <a href="">
+                        <img src="/public/images/tin/2019-tin-2.jpg" class="img-fluid" alt="">
+                        <h4> 3 Nhà giáo trẻ tiêu biểu 2019</h4>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="cateItem">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <div>
+                                        <img src="/public/images/tin/2019-tin-2.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <span>
+                                        <p>THỰC SỰ PHỤC VỤ NHÂN DÂN BẰNG "TÂM PHẢI SÁNG" VÀ "TẦM
+                                            PHẢI
+                                            GIỎI"
+                                        </p>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>
+                                        <img src="/public/images/tin/2019-tin-2.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <span>
+                                        <p>THỰC SỰ PHỤC VỤ NHÂN DÂN BẰNG "TÂM PHẢI SÁNG" VÀ "TẦM
+                                            PHẢI
+                                            GIỎI"
+                                        </p>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>
+                                        <img src="/public/images/tin/2019-tin-2.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <span>
+                                        <p>THỰC SỰ PHỤC VỤ NHÂN DÂN BẰNG "TÂM PHẢI SÁNG" VÀ "TẦM
+                                            PHẢI
+                                            GIỎI"
+                                        </p>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

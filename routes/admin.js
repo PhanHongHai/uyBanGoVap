@@ -42,7 +42,14 @@ var fileFilter=(req,file,cb) => {
     else
         cb(null,true);
 }
+var fileFilterDoc=(req,file,cb) => {
+    if(!file.originalname.match(/\.(docx|pdf)$/))
+        cb(new Error('Bạn chỉ được upload file document'));
+    else
+        cb(null,true);
+}
 let upload = multer({ storage: store,fileFilter:fileFilter });
+let uploadDoc = multer({ storage: store,fileFilter:fileFilterDoc });
 //-----------------------
 //-----------------------
 
@@ -51,7 +58,7 @@ let bread = (req) => {
 }
 router.use(session({
     secret: 'something',
-    cookie: { maxAge: 1000 * 60 * 20 },
+    cookie: { maxAge: 1000 * 60 * 3600 },
     proxy: true,
     resave: false,
     saveUninitialized: true
@@ -73,12 +80,16 @@ router.route('/login')
         check('password').isLength({ min: 2, max: 20 })
             .withMessage('Nhập password tối thiểu 2 và tối đa là 20 ký tự')
     ], adminCtrl.logInAdmin
-        , passPort.authenticate('local', { failureRedirect: '/login', successRedirect: '/admin' }))
+        , passPort.authenticate('local', { failureRedirect: '/login', successRedirect: '/admin'}))
 passPort.use('local', new passPortLocal(adminCtrl.getAccount));
 passPort.serializeUser((tk, done) => {
     done(null, tk.username);
 });
 passPort.deserializeUser(adminCtrl.checkAccount);
+router.get('/logout',(req,res) => {
+    req.logout();
+    res.redirect('/login');
+})
 // load admin
 router.route('/admin')
     .get((req, res) => {
@@ -203,11 +214,13 @@ router.route('/admin/gop-y/:idGY')
 // thu tuc hanh chinh
 router.route('/admin/thu-tuc-hanh-chinh')
     .get(ttCtrl.loadThuTuc)
-    .post()
-router.route('/admin/thu-tuc-hanh-chinh/idTT')
+    .post(uploadDoc.single('file'),ttCtrl.addThuTuc)
+router.get('/admin/thu-tuc-hanh-chinh/loadUpdate/:idTT',ttCtrl.loadUpdateTT)
+router.get('/thu-tuc-hanh-chinh/download/:idTT',ttCtrl.downloadFile)
+router.route('/admin/thu-tuc-hanh-chinh/:idTT')
     .get()
-    .patch()
-    .delete()
+    .post(uploadDoc.single('file'),ttCtrl.updateThuTuc)
+    .delete(ttCtrl.deleteThuTuc)
 //***************************** */
 router.get('/destroyMess',(req,res) => {
     req.session.mess=0;

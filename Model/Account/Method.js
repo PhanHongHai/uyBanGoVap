@@ -14,7 +14,6 @@ module.exports = {
     checkAccount: (tk, done) => {
         bcrypt.genSalt(saltRounds, (err, salt) => {
                 bcrypt.compare(tk.pass, tk[0].password, (err, res) => {
-                    console.log(res);
                     if (res)
                         return done(null, tk[0]);
                     else
@@ -64,8 +63,6 @@ module.exports = {
                 username: user,
                 role: role
             };
-            console.log(id);
-            console.log(data);
             modelAccount.findOneAndUpdate({ _id: id }, { $set: data }, (err) => {
                 if (err) {
                     throw err;

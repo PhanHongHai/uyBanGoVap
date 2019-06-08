@@ -7,7 +7,7 @@
             <% tinMoi.forEach(function(ele,index){ %>
                 <%if(index <=1){ %>
                 <div class="itemNewHome">
-                    <a href="/bai-viet/<%=ele.linkSEO%>.<%=ele._id%>">
+                    <a href="<%=ele.cate[0].link%>/bai-viet/<%=ele.linkSEO%>.<%=ele._id%>">
                         <img src="/public/uploads/<%=ele.linkImg%>" alt="">
                         <div class="bodyNewsHome">
                             <div class="titleNewsHome mx-auto">
@@ -31,7 +31,7 @@
                <% tinMoi.forEach(function(ele,index){ %>
                <% if(index >1){ %>
                 <div class=" itemNewHome1">
-                <a href="/bai-viet/<%=ele.linkSEO%>.<%=ele._id%>">
+                <a href="<%=ele.cate[0].link%>/bai-viet/<%=ele.linkSEO%>.<%=ele._id%>">
                     <img src="/public/uploads/<%=ele.linkImg%>" alt="">
                     <div class="bodyNewsHome">
                         <div class="titleNewsHome mx-auto">

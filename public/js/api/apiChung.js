@@ -18,7 +18,6 @@ function postGopY() {
             'content-type': 'multipart/form-data'
         }
     }
-    console.log(data);
     axios.post('/gop-y', data,config)
         .then((res) => {
             $('.contentTinChung .name').val('');
@@ -43,7 +42,6 @@ function postGopY() {
         })
         .catch((err) => {
             if (err) {
-                console.log(err);
                 $.toast({
                     heading: 'Thông báo !',
                     text: res.data.mess,

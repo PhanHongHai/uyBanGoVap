@@ -1,29 +1,32 @@
-const modelLV=require('./Field');
+const modelLV = require('./Field');
 
 
-module.exports=  {
+module.exports = {
     addLV: async (data) => {
-        //let value=modelLV.find(data);
-       // console.log(value);
-       // if(value != null){
-           console.log(data);
-            let field=new modelLV(data);
-            field.save();
-       // }
-    },
-    updateLV: (id,data) => {
-        //let value =modelLV.find(data);
-        //if(value !=null){
-            console.log(data);
-            modelLV.findOneAndUpdate({_id:id},{$set:data},(err) => {
-                if(err) throw err;
+        let value = await modelLV.find(data);
+        if (value.length == 0) {
+            let field = new modelLV(data);
+            field.save(err => {
+                if (err) return false;
+                return true;
             });
-           
-       // }
+        }
+        else
+            return false;
+    },
+    updateLV:async (id, data) => {
+        let value =await modelLV.find(data);
+        if (value.length == 0) {
+            modelLV.findOneAndUpdate({ _id: id }, { $set: data }, (err) => {
+                if (err) throw err;
+            });
+        }
+        else
+            return false;
     },
     deleteLV: (id) => {
-        modelLV.findOneAndRemove({_id:id},(err) => {
-            if(err) throw err;
+        modelLV.findOneAndRemove({ _id: id }, (err) => {
+            if (err) throw err;
         });
     }
 }

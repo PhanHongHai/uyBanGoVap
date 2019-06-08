@@ -187,15 +187,33 @@ $(function () {
             nameField: {
                 required: true,
                 minlength: 5,
-                maxlength: 20
+                maxlength: 40
             },
         },
         messages: {
             nameField: {
                 required: 'Vui lòng nhập thông tin',
                 minlength: 'Nhập tối thiểu 5 ký tự',
-                maxlength: 'Nhập tối đa 20 ký tự'
+                maxlength: 'Nhập tối đa 40 ký tự'
             },
         },
     }); 
+    // thu tuc hanh chinh
+    $('#addTTHC').validate({
+        errorClass:"invalid",
+        rules:{
+            titleAP:{
+                required: true,
+                minlength: 5,
+                maxlength: 200
+            }
+        },
+        messages: {
+            titleAP: {
+                required: 'Vui lòng nhập thông tin',
+                minlength: 'Nhập tối thiểu 5 ký tự',
+                maxlength: 'Nhập tối đa 200 ký tự'
+            },
+        },
+    })
 })

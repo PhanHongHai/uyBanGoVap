@@ -75,8 +75,6 @@ function upload (req, callback) {
     // Generate path where the file will be saved.
     var appDir = path.dirname(require.main.filename);
     var realDir=appDir.substr(0, appDir.length-3);
-    console.log();
-    console.log(link);
     saveToPath = path.join(realDir, link);
 
     // Pipe reader stream (file from client) into writer stream (file from disk).

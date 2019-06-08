@@ -1,21 +1,20 @@
 // tai khoan
 function updateAcc(id) {
-    let username=$('.show .username').val();
-    let pass=$('.show .pass').val();
-    let role=$('.show .role').val();
-   let data={
-    username:username,
-    password:pass,
-    role:role
-   }
-        axios.patch("/admin/tai-khoan/" + id,data)
+    let username = $('.show .username').val();
+    let pass = $('.show .pass').val();
+    let role = $('.show .role').val();
+    let data = {
+        username: username,
+        password: pass,
+        role: role
+    }
+    axios.patch("/admin/tai-khoan/" + id, data)
         .then((res) => {
-          // location.reload(true);
+            // location.reload(true);
         })
         .catch((err) => {
-           console.log(err);
-          // location.reload(true);
-        }) 
+            // location.reload(true);
+        })
 }
 function deleteAcc(id) {
 
@@ -24,7 +23,6 @@ function deleteAcc(id) {
             location.reload(true);
         })
         .catch((err) => {
-            console.log(err);
             location.reload(true);
         })
 }
@@ -38,29 +36,23 @@ function updateCateType(id) {
     let link = $('.show .link').val();
     let data = {
         nameType: name,
-        link:link
+        link: link
     };
-    console.log(data);
-    console.log(id);
     axios.patch("/admin/tin-tuc/loai-danh-muc/" + id, data)
         .then((res) => {
-            console.log(res.data);
             location.reload(true);
         })
         .catch((err) => {
-            console.log(err);
         })
 }
 function deleteCateType(id) {
     let confirmText = "Bạn có muốn xóa không ?";
-    console.log(id);
     if (confirm(confirmText)) {
         axios.delete("/admin/tin-tuc/loai-danh-muc/" + id)
             .then((res) => {
                 location.reload(true);
             })
             .catch((err) => {
-                console.log(err);
             })
     }
 }
@@ -69,8 +61,9 @@ function deleteCateType(id) {
 // danh muc
 function updateCate(id) {
     let name = $('.show .nameCate').val();
+    let link = $('.show .link').val();
     let type = $('.show .nameType').val();
-    axios.patch("/admin/tin-tuc/danh-muc/" + id, { nameCate: name, typeCate: type })
+    axios.patch("/admin/tin-tuc/danh-muc/" + id, { nameCate: name, typeCate: type,link:link })
         .then((res) => {
             location.reload(true);
         })
@@ -86,7 +79,6 @@ function deleteCate(id) {
                 location.reload(true);
             })
             .catch((err) => {
-                console.log(err);
             })
     }
 
@@ -111,7 +103,6 @@ function deleteLV(id) {
                 location.reload(true);
             })
             .catch((err) => {
-                console.log(err);
             })
     }
 
@@ -129,18 +120,13 @@ function updateAg(id) {
         })
 }
 function deleteAg(id) {
-    console.log(id);
-    let confirmText = "Bạn có muốn xóa không ?";
-    if (confirm(confirmText)) {
-        axios.delete("/admin/co-quan-ban-hanh/" + id)
-            .then((res) => {
-                location.reload(true);
-            })
-            .catch((err) => {
-                if (err) throw err;
-            })
-    }
-
+    axios.delete("/admin/co-quan-ban-hanh/" + id)
+        .then((res) => {
+            location.reload(true);
+        })
+        .catch((err) => {
+            if (err) throw err;
+        })
 }
 //----------------------
 // gop y
@@ -154,8 +140,6 @@ function deleteGY(id) {
         })
 }
 function updateCheck(id) {
-    console.log(id);
-    console.log('hello');
     axios.patch("/admin/gop-y/" + id)
         .then((res) => {
             $('#countGY').text(res.data.count);
@@ -167,13 +151,24 @@ function updateCheck(id) {
 
 //------------------------
 /// bai viet 
-function deleteNews(id){
+function deleteNews(id) {
     axios.delete("/admin/tin-tuc/bai-viet/" + id)
+        .then((res) => {
+            window.location.href = "/admin/tin-tuc/bai-viet";
+        })
+        .catch((err) => {
+            if (err) throw err;
+        })
+}
+
+// THU TUC HANH CHINH
+function deleteTTHC(id){
+    axios.delete("/admin/thu-tuc-hanh-chinh/"+id)
     .then((res) => {
-        window.location.href = "/admin/tin-tuc/bai-viet";
+        window.location.href = "/admin/thu-tuc-hanh-chinh"; 
     })
     .catch((err) => {
-        if (err) throw err;
+        if(err) throw err;
     })
 }
 //******************* */

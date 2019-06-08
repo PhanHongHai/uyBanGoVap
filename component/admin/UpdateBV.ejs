@@ -18,7 +18,7 @@
                                     <label class="col-form-label">Danh mục</label>
                                     <select name="idCate" class="form-control" id="input-select">
                                         <% cate.forEach(function(val){ %>
-                                        <% if(val._id === ele.idCate){ %>
+                                        <% if(val.nameCate === ele.cate[0].nameCate){ %>
                                         <option value="<%=val._id%>" selected><%= val.nameCate %></option>
                                         <% } else{ %>
                                            <option value="<%=val._id%>"><%= val.nameCate %></option>

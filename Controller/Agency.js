@@ -16,16 +16,12 @@ module.exports={
     },
     addAgency: async (req,res) => {
         let val= await model.find({nameAg:req.body.nameAg});
-        console.log(val);
-        console.log(req.body);
         if(val.length == 0){
-            console.log('1');
             methodAg.addAgency(req.body);
             res.redirect('/admin/co-quan-ban-hanh');
-          
         }
         else{
-            res.redirect('/admin/co-quan-ban-hanh');
+            res.status(500).redirect('/admin/co-quan-ban-hanh');
         }
            
     },

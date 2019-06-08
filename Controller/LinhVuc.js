@@ -15,16 +15,18 @@ module.exports={
             res.redirect('/login');
         }
     },
-    addLV: (req,res) => {
-     methodLV.addLV(req.body);
-     res.redirect('/admin/linh-vuc');
+    addLV:async (req,res) => {
+    const check=await methodLV.addLV(req.body);
+    if(check)
+        res.status(500);
+    res.status(200).redirect('/admin/linh-vuc');
     },
-    updateLV: (req,res) => {
-        methodLV.updateLV(req.params.idLV,req.body);
+    updateLV:async (req,res) => {
+      await methodLV.updateLV(req.params.idLV,req.body);
         res.status(200).json({mess:'success'});
     },
-    deleteLV: (req,res) => {
+    deleteLV:async (req,res) => {
         methodLV.deleteLV(req.params.idLV);
-        res.status(200).json({mess:'success'});
+       await res.status(200).json({mess:'success'});
     }
 }

@@ -43,30 +43,38 @@
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton<%=i%>">
                                                     <i class="far fa-eye pr-3 dropdown-item" data-toggle="modal"
-                                                        data-target="#modalEdit<%=i%>" style="cursor:pointer;">&ensp;&ensp;Xem chi tiết</i>
-                                                   <a class="dropdown-item" href="/admin/tin-tuc/bai-viet/loadUpdate/<%=ele._id%>"><i class="fas fa-edit pr-3" style="font-weight: normal;">&ensp;&ensp;Cập nhật</i></a> 
-                                                    <i class="fas fa-trash-alt pr-3 dropdown-item" style="cursor:pointer;" data-toggle="modal" data-target="#deleteNew" >&ensp;&ensp;Xóa</i>
+                                                        data-target="#modalEdit<%=i%>"
+                                                        style="cursor:pointer;">&ensp;&ensp;Xem chi tiết</i>
+                                                    <a class="dropdown-item"
+                                                        href="/admin/tin-tuc/bai-viet/loadUpdate/<%=ele._id%>"><i
+                                                            class="fas fa-edit pr-3"
+                                                            style="font-weight: normal;">&ensp;&ensp;Cập nhật</i></a>
+                                                    <i class="fas fa-trash-alt pr-3 dropdown-item"
+                                                        style="cursor:pointer;" data-toggle="modal"
+                                                        data-target="#deleteNew">&ensp;&ensp;Xóa</i>
                                                 </div>
                                             </div>
                                             <div class="modal fade" id="deleteNew" tabindex="-1" role="dialog"
-                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Xóa bài viết</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-primary"
-                                                        onclick="deleteNews('<%= ele._id %>')">Xác nhận</button>
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal">Hủy</button>
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Xóa bài viết
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-primary"
+                                                                onclick="deleteNews('<%= ele._id %>')">Xác nhận</button>
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Hủy</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         </td>
                                         <!-- Button trigger modal -->
                                         <!-- Modal -->
@@ -95,9 +103,9 @@
                                                                     class="fas fa-folder-open pr-2"></i><%=ele.cate[0].nameCate%></span>
                                                         </div>
                                                         <div class="anh text-center">
-                                                                <img class="" src="/public/uploads/<%=ele.linkImg%>" alt=""
-                                                                    width="30%" height="auto">
-                                                            </div>
+                                                            <img class="" src="/public/uploads/<%=ele.linkImg%>" alt=""
+                                                                width="30%" height="auto">
+                                                        </div>
                                                         <div class="bodyInfo w-80 mx-auto mb-2 mt-3">
                                                             <h4 class="d-inline-block font-weight-normal">Đường dẫn :
                                                             </h4>
@@ -110,7 +118,7 @@
                                                             <p class="d-inline-block"><%-ele.mainContent%></p>
 
                                                         </div>
-                                                    
+
 
                                                     </div>
                                                 </div>

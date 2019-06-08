@@ -31,14 +31,22 @@
        "Cục Hải quan"
   ];
   var trungUong=[];
-
+  let menuItem=[
+    {item:"TRANG CHỦ",link:"/"},
+    {item:"GIỚI THIỆU",link:"/gioi-thieu"},
+    {item:"TIN TỨC SỰ KIỆN",link:"/tin-tuc-su-kien"},
+    {item:"QUY HOẠCH VÀ PHÁT TRIỂN",link:"/quy-hoach-va-phat-trien"},
+    {item:"CÔNG DÂN",link:"/cong-dan"},
+    {item:"DOANH NGHIỆP",link:"/doanh-nghiep"},
+    {item:"DU LỊCH",link:"/du-lich"},
+  ]
    img='/public/images/bg-home.jpg';
  %>
 <!DOCTYPE html>
 <html>
 <% include ../component/head %>
 
-<body class="mw-100 m-0 p-0 " style="background-image: url('<%= img %>');">
+<body class="mw-100 m-0 p-0 " style="background-image: url('<%= img %>');background-attachment: fixed;">
 
   <% include ../component/header %>
   <% include ../component/mainHome %>
@@ -54,15 +62,6 @@
   <script src="/public/js/owl.carousel.min.js"></script>
   <script src="/public/js/SmoothScroll.js"></script>
   <script src="/public/js/function/carouselHome.js"></script>
-  <script type="text/javascript">
-    new WOW().init();
-    function changeLink(duongDan) {
-      var vdo = document.getElementById('videoNew').src = duongDan;
-    }
-    /* var Scrollbar = window.Scrollbar;
-     Scrollbar.initAll();*/
- 
-  </script>
 
 </body>
 

@@ -3,6 +3,7 @@ const model = require('../Model/TinTuc/News');
 const modelCate = require('../Model/DanhMuc/Category');
 const BreadCrumb = require('../content/breadCrumb');
 const format = require('dateformat');
+const mongoose = require('mongoose');
 let bread = (req) => {
     return BreadCrumb.find((item) => item.key === req.path);
 }
@@ -18,7 +19,7 @@ module.exports = {
         if (req.isAuthenticated()) {
             link = bread(req);
             listCate = await modelCate.find({});
-            await model.aggregate(
+            model.aggregate(
                 [
                     {
                         $lookup: {
@@ -29,7 +30,6 @@ module.exports = {
                         }
                     }
                 ], (err, list) => {
-                    console.log(list);
                     if (err)
                         res.render('admin', { title: 'QL Bài viết', link: link, user: req.user, list: list, cate: listCate, path: 'TinTuc', count: req.session.count, mess: req.session.mess });
                     else {
@@ -43,8 +43,20 @@ module.exports = {
     loadUpdate: async (req, res) => {
         if (req.isAuthenticated()) {
             link = bread(req);
-            listCate = await modelCate.find({});
-            data = await model.find({ _id: req.params.idBV });
+            const listCate = await modelCate.find({});
+            let id = mongoose.Types.ObjectId(req.params.idBV);
+            const data = await model.aggregate(
+                [
+                    { $match: { _id: id } },
+                    {
+                        $lookup: {
+                            from: 'Category',
+                            localField: 'idCate',
+                            foreignField: '_id',
+                            as: 'cate'
+                        }
+                    }
+                ]);
             res.render('admin', { title: 'QL Bài viết', link: link, user: req.user, list: data, cate: listCate, path: 'UpdateBV', count: req.session.count, mess: req.session.mess });
 
         }
@@ -59,10 +71,8 @@ module.exports = {
     updateNews: (req, res) => {
         if (req.file) {
             let data = { ...req.body, linkImg: req.file.filename };
-            console.log(data);
             model.findByIdAndUpdate({ _id: req.params.idBV }, { $set: data }, (err) => {
-                if (err){
-                    console.log(err);
+                if (err) {
                     throw err;
                 }
                 else

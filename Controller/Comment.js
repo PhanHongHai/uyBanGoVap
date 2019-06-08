@@ -6,6 +6,5 @@ module.exports={
             res.status(200).json({data:"ádsdasdadsadad"});
     },
     addCooment:async (req,res) => {
-        console.log(req.body);
     }
 }

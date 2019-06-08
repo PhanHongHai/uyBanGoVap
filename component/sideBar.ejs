@@ -13,7 +13,7 @@
         <div class="contentSideBar ">
             <ul>
                 <% ele.cate.forEach(function(val){ %>
-                <li><a href="/gop-y"><%= val.nameCate %></a></li>
+                <li><a href="<%=val.link%>"><%= val.nameCate %></a></li>
                 <% }) %>
             </ul>
         </div>
@@ -49,7 +49,7 @@
             data-parent="#accordionExample">
             <ul>
                 <% ele.cate.forEach(function(val){ %>
-                <li><a href=""><%= val.nameCate %></a></li>
+                <li><a href="<%=val.link%>"><%= val.nameCate %></a></li>
                 <% }) %>
             </ul>
         </div>
@@ -57,7 +57,7 @@
         <div class="contentSideBar collapse" id="cl<%=i%>" aria-labelledby="heading<%=i%>">
             <ul>
                 <% ele.cate.forEach(function(val){ %>
-                <li><a href="/gop-y"><%= val.nameCate %></a></li>
+                <li><a href="<%=val.link%>"><%= val.nameCate %></a></li>
                 <% }) %>
             </ul>
         </div>

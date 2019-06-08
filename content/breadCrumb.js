@@ -8,10 +8,10 @@ const breadCrumb=[
     {key:'/admin/gop-y',link:[{text:'Home',link:'/admin'},{text:'Góp ý',link:'/admin/gop-y'}]},
 
     // page
-    {key:'/gop-y',link:[{text:'Trang chủ',link:'/'},{text:'Góp ý',link:'/gop-y'}]},
-    {key:'/dich-vu-cong',link:[{text:'Trang chủ',link:'/'},{text:'',link:'/dich-vu-cong'}]},
+    {key:'/cong-dan/gop-y',link:[{text:'Trang chủ',link:'/'},{text:'Công dân',link:'/cong-dan'},{text:'Góp ý',link:'/gop-y'}]},
+    {key:'/dich-vu-cong',link:[{text:'Trang chủ',link:'/'},{text:'Công dân',link:'/cong-dan'},{text:'Dịch vụ công',link:'/dich-vu-cong'}]},
     {key:'/cong-dan',link:[{text:'Trang chủ',link:'/'},{text:'Công dân',link:'/cong-dan'}]},
-    {key:'/thu-tuc-hanh-chinh',link:[{text:'Trang chủ',link:'/'},{text:'Thủ tục hành chính',link:'/thu-tuc-hanh-chinh'}]},
+    {key:'/cong-dan/thu-tuc-hanh-chinh',link:[{text:'Trang chủ',link:'/'},{text:'Công dân',link:'/cong-dan'},{text:'Thủ tục hành chính',link:'/thu-tuc-hanh-chinh'}]},
     
     // bai viet
   

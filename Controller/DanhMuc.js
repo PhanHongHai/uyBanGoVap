@@ -27,7 +27,6 @@ module.exports={
                    if(err)
                    res.render('admin', { title: 'QL Danh Mục', link: link, user: req.user, list: listCate ,listType:listType,path:'Category',count:req.session.count,mess:req.session.mess });
                    else{
-                       console.log(list);
                        res.render('admin', { title: 'QL Danh Mục', link: link, user: req.user, list: list ,listType:listType,path:'Category',count:req.session.count,mess:req.session.mess  });
                    }
                })
@@ -37,12 +36,10 @@ module.exports={
         }
     },
     addCategory: async (req,res) => {
-        console.log(req.body);
         await methodCate.addCate(req.body);
         res.redirect('/admin/tin-tuc/danh-muc');
     },
     updateCategory: (req,res) => {
-        console.log(req.body);
         methodCate.updateCate(req.params.idCate,req.body);
         res.status(200).json({mess:'succsess'});
     },

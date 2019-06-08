@@ -1,5 +1,14 @@
 <%
     img='/public/images/pattern_bg.png';
+    let menuItem=[
+    {item:"TRANG CHỦ",link:"/"},
+    {item:"GIỚI THIỆU",link:"/gioi-thieu"},
+    {item:"TIN TỨC SỰ KIỆN",link:"/tin-tuc-su-kien"},
+    {item:"QUY HOẠCH VÀ PHÁT TRIỂN",link:"/quy-hoach-va-phat-trien"},
+    {item:"CÔNG DÂN",link:"/cong-dan"},
+    {item:"DOANH NGHIỆP",link:"/doanh-nghiep"},
+    {item:"DU LỊCH",link:"/du-lich"},
+  ]
  %>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,9 +20,10 @@
     <link rel='stylesheet' href='/public/stylesheets/scss/kenhTuongTac.css' />
 </head>
 
-<body class="mw-100 m-0 p-0 " style="background-image: url('<%= img %>');">
+<body class="mw-100 m-0 p-0 " style="background-image: url('<%= img %>');background-attachment: fixed;"">
     <div class="container p-0 allPage">
         <% include ../component/header%>
+        <% include ../component/breadCrumb %>
         <div class="container mt-4">
             <div class="row pt-4">
                 <div class="col-md-8">
@@ -191,14 +201,7 @@
         <% include ../component/footer%>
     </div>
 
-    <script src="/public/js/jquery.min.js"></script>
-    <script src="/public/js/bootstrap.min.js"></script>
-    <script src="/public/js/function/menu.js"></script>
-    <script src="/public/slick/slick.min.js"></script>
-    <script src="/public/js/wow.js"></script>
-    <script src="/public/js/owl.carousel.min.js"></script>
-    <script src="/public/js/SmoothScroll.js"></script>
-    <script src="/public/js/function/carouselHome.js"></script>
+    <% include ../component/script %>
 </body>
 
 </html>
