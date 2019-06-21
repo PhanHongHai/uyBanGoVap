@@ -1,0 +1,195 @@
+<%
+    img='/public/images/pattern_bg.png';
+    let menuItem=[
+    {item:"TRANG CHỦ",link:"/"},
+    {item:"GIỚI THIỆU",link:"/gioi-thieu"},
+    {item:"TIN TỨC SỰ KIỆN",link:"/tin-tuc-su-kien"},
+    {item:"QUY HOẠCH VÀ PHÁT TRIỂN",link:"/quy-hoach-va-phat-trien"},
+    {item:"CÔNG DÂN",link:"/cong-dan"},
+    {item:"DOANH NGHIỆP",link:"/doanh-nghiep"},
+    {item:"DU LỊCH",link:"/du-lich"},
+  ]
+ %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../component/head %>
+    <link rel="stylesheet" href="/public/stylesheets/scss/sideBar.css">
+    <link rel="stylesheet" href="/public/stylesheets/scss/baiViet.css">
+    <link rel="stylesheet" href="/public/admin/flo/css/froala_editor.pkgd.css">
+    <link rel="stylesheet" type="text/css" href="/public/admin/flo/css/froala_style.min.css">
+    <link rel="stylesheet" href="/public/admin/pagination.css">
+    <style>
+        label.invalid {
+		display: inline-block;
+		color:red;
+		width: 200px;
+	}
+    </style>
+</head>
+
+<body class="mw-100 m-0 p-0 " style="background-image: url('<%= img %>');background-attachment: fixed;"">
+    <div class=" container p-0 allPage">
+    <% include ../component/header %>
+
+    <%- include('../component/trending',{tinMoi}) %>
+
+    <% if(detail){ %>
+    <div class="breadCrumb">
+        <a href="<%=detail[0].cate[0].link%>" class="text-decoration-none text-dark pt-1"
+            style="font-weight: 700;display: block;padding: 5px 0px 0px 30px;"><i
+                class="fas fa-folder pr-3"></i><%=detail[0].cate[0].nameCate%></a>
+    </div>
+
+    <div id="bodyPage">
+        <div class="w-100 pb-3 headPage">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-12 titleBaiViet">
+                        <h2><%= detail[0].title %></h2>
+                    </div>
+                    <div class="col-12 col-md-12">
+                        <div class="timeViet">
+                            <span><%= detail[0].postTime %></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-100 contentBaiViet">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12 col-xl-8">
+                    <div class="container">
+                        <div class="mt-3">
+                            <div class="mt-3 fr-view">
+                                <%- detail[0].mainContent %>
+                            </div>
+                        </div>
+                        <div class="tinDaDua">
+                            <h5>TIN NỔI BẬT</h5>
+                            <ul>
+                                <% tinLQ.forEach(function(ele){ %>
+                                <li><a href="/danh-muc<%=ele.cate[0].link%>/bai-viet/<%=ele.linkSEO%>.<%=ele._id%>">
+                                        <%= ele.title %>
+                                    </a></li>
+                                <% }) %>
+                            </ul>
+                        </div>
+                        <div class="comment w-100 mb-3">
+                            <h3>Để lại bình luận</h3>
+                            <form method="POST"  class="p-2 w-100 formComment">
+                                <div class="w-100 d-flex flex-wrap">
+                                    <div class="form-group w-50 pl-2">
+                                        <input id="user" class="form-control" name="userName" type="text"
+                                            placeholder="Nhập tên*">
+                                    </div>
+                                    <div class="form-group w-50 pl-2">
+                                        <input id="email" class="form-control" name="email" type="text"
+                                            placeholder="Nhập email*">
+                                    </div>
+                                    <div class="form-group w-100 pl-2">
+                                        <textarea id="ct" class="form-control content" name="content" cols="30" rows="5"
+                                            placeholder="Nhập nội dung..."></textarea>
+                                    </div>
+                                    <input type="hidden" name="idBV" id="idBV" value="<%=detail[0]._id%>">
+                                    <input class="btn w-25 ml-2" type="submit" value="Gửi">
+                                </div>
+
+                              
+                            </form>
+                        </div>
+                        <div class="listComment w-100 pb-3">
+                            <h5><i class="far fa-comments"></i>Bình Luận (<%= totalCM %>)</h5>
+                            <div class="item-comment ">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-12 col-xl-4">
+                    <% include ../component/sideBar %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <% include ../component/footer %>
+    </div>
+    <a href="javascript:" id="return-to-top"><i class="fas fa-chevron-up"></i></i></a>
+
+
+    <script src="/public/js/jquery.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
+    <script src="/public/js/function/menu.js"></script>
+    <script src="/public/slick/slick.min.js"></script>
+    <script src="/public/js/wow.js"></script>
+    <script src="/public/js/owl.carousel.min.js"></script>
+    <script src="/public/js/SmoothScroll.js"></script>
+    <script src="/public/js/function/carouselHome.js"></script>
+    <script src="/public/js/function/validate.js"></script>
+    <script src="/public/js/jquery.validate.min.js"></script>
+    <script src="/public/js/axios.js"></script>
+    <script src="/public/admin/pagination.min.js"></script>
+
+
+    <script type="text/javascript">
+$(document).ready(function () {
+            function templateViewNew(data) {
+                var html = "";
+                if(data.length !=0){
+                    $.each(data, function (index, ele) {
+                    html += "<article class='info-comment'>";
+                    html += "<div class='outsite-comment'>";
+                    html += "<figure class='avartar-comment'>";
+                    html += "<img src='/public/images/user.png'>";
+                    html += "</figure>";
+                    html += "<div class='item-comment'>";
+                    html += "<div class='outline-content-comment'>";
+                    html += "<div><strong>"+ ele.userName+"</strong>";
+                    html += "<span class='time'>"+ele.time+"</span> </div>";
+                    html += " <div class='content-comment'>"+ ele.content+"<div>";
+                    html += "</div></div></div></article> ";
+                });
+                }
+                else
+                    html += "  <span class='text-center'><h4 class='d-inline-block'><i class='fas fa-comment-slash d-inline-block'></i>Không có bình luận</h4></span> "
+                return html;
+            }
+            $('.listComment').pagination({
+                totalNumber: function (done) {
+                    let idBV=$('#idBV').val();
+                    $.ajax({
+                        type: 'GET',
+                        url: '/bai-viet/getListComment/'+idBV,
+                        success: function (res) {
+                            done(res.total);
+                        }
+                    });
+                },
+                dataSource: function (done) {
+                    let idBV=$('#idBV').val();
+                    $.ajax({
+                        type: 'GET',
+                        url: '/bai-viet/getListComment/'+idBV,
+                        success: function (res) {
+                            done(res.data);
+                        }
+                    });
+                },
+                pageSize: 10,
+                showNavigator: false,
+                autoHidePrevious: true,
+                autoHideNext: true,
+               
+                callback: function (data, pagination) {
+                    // template method of yourself
+                    var html = templateViewNew(data);
+                    $('.item-comment').html(html);
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>

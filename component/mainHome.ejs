@@ -1,0 +1,56 @@
+<div class="main">
+    <div class="container p-0" style="background-color: #fff;">
+        <% include ../component/trending %>
+        <div class="content w-100">
+        <% if(tinMoi){ %>
+            <div class="newsHomeCha w-100 d-flex flex-wrap">
+            <% tinMoi.forEach(function(ele,index){ %>
+                <%if(index <=1){ %>
+                <div class="itemNewHome">
+                    <a href="/danh-muc<%=ele.cate[0].link%>/bai-viet/<%=ele.linkSEO%>.<%=ele._id%>">
+                        <img src="/public/uploads/<%=ele.linkImg%>" alt="">
+                        <div class="bodyNewsHome">
+                            <div class="titleNewsHome mx-auto">
+                                <h3>
+                                   <%= ele.title %>
+                                </h3>
+                            </div>
+                            <div class="timeNewsHome">
+                                <ul>
+                                    <li><i class="far fa-folder pr-2"></i><%=ele.cate[0].nameCate%></li>
+                                    <li><i class="far fa-clock pr-2"></i><%=ele.postTime %></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <% } %>
+                <%}) %>
+            </div>
+            <div class="newHomeCha1 w-100">
+               <% tinMoi.forEach(function(ele,index){ %>
+               <% if(index >1){ %>
+                <div class=" itemNewHome1">
+                <a href="/danh-muc<%=ele.cate[0].link%>/bai-viet/<%=ele.linkSEO%>.<%=ele._id%>">
+                    <img src="/public/uploads/<%=ele.linkImg%>" alt="">
+                    <div class="bodyNewsHome">
+                        <div class="titleNewsHome mx-auto">
+                            <h3>
+                                    <%= ele.title.slice(0,50) %>...
+                            </h3>
+                        </div>
+                        <div class="timeNewsHome">
+                            <ul>
+                                <li><i class="far fa-folder pr-2"></i><%=ele.cate[0].nameCate%></li>
+                                <li><i class="far fa-clock pr-2"></i><%=ele.postTime %></li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <%}}) %>
+            </div>
+        </div>
+        <%} %>
+    </div>
+</div>

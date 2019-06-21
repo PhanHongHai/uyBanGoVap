@@ -1,0 +1,131 @@
+<div class="vanHoaXaHoi">
+    <div class="headCate">
+        <h5>
+            <span>XÃ HỘI- ĐÔ THỊ</span>
+        </h5>
+        <div class="subCate">
+            <ul>
+                <li>VĂN HÓA-XÃ HỘI</li>
+                <li>ĐIỂN HÌNH NGƯỜI TỐT VIỆC TỐT</li>
+                <li>NẾP SỐNG VĂN MINH ĐÔ THỊ</li>
+            </ul>
+        </div>
+    </div>
+    <div class="contentCate mt-3">
+        <div class="cateClassify activeCate">
+            <div class="row">
+                <% if(vh.length != 0){ %>
+                <div class="col-md-6 mainCate ">
+                    <a href="/danh-muc<%= vh[0].cate[0].link%>/bai-viet/<%= vh[0].linkSEO%>.<%= vh[0]._id %>">
+                        <img src="/public/uploads/<%= vh[0].linkImg %>" class="img-fluid" alt="">
+                        <h4 class=""><%= vh[0].title.slice(0,50) %>....
+                        </h4>
+                        <p><i class=" fas fa-clock pr-2"></i><%= vh[0].postTime %></p>
+                    </a>
+                </div>
+                <% } %>
+                <div class="col-md-6 p-0">
+                    <div class="cateItem">
+                        <ul>
+                            <% if(vh.length != 0){
+                                    let i=1;
+                                   vh.forEach(function(ele){
+                                %>
+                            <% if(i > 1){ %>
+                            <li>
+                                <a href="/danh-muc<%= ele.cate[0].link%>/bai-viet/<%= ele.linkSEO%>.<%= ele._id %>">
+                                    <div>
+                                        <img src="/public/uploads/<%= ele.linkImg %>" class="img-fluid" alt="">
+                                    </div>
+                                    <span>
+                                        <p><%= ele.title.slice(0,50) %>....
+                                        </p>
+                                        <p><i class="fas fa-clock pr-2"></i><%=ele.postTime %></p>
+                                    </span>
+                                </a>
+                            </li>
+                            <% } %>
+                            <% i++; })} %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cateClassify">
+            <div class="row">
+                <% if(dhnt.length != 0){ %>
+                <div class="col-md-6 mainCate ">
+                    <a href="/danh-muc<%= dhnt[0].cate[0].link%>/bai-viet/<%= dhnt[0].linkSEO%>.<%= dhnt[0]._id %>">
+                        <img src="/public/images/tin/<%= dhnt[0].linkImg %>" class="img-fluid" alt="">
+                        <h4><%= dhnt[0].title.slice(0,50) %>....</h4>
+                        <p><i class="fas fa-clock pr-2"></i><%= dhnt[0].postTime %></p>
+                    </a>
+                </div>
+                <% } %>
+                <div class="col-md-6">
+                    <div class="cateItem">
+                        <ul>
+                            <% if(dhnt.length != 0){
+                                    let i=1;
+                                    dhnt.forEach(function(ele){
+                                %>
+                            <% if(i > 1){ %>
+                            <li>
+                                <a href="/danh-muc<%= ele.cate[0].link%>/bai-viet/<%= ele.linkSEO%>.<%= ele._id %>">
+                                    <div>
+                                        <img src="/public/images/tin/<%= ele.linkImg %>" class="img-fluid" alt="">
+                                    </div>
+                                    <span>
+                                        <p><%= ele.title.slice(0,50) %>....
+                                        </p>
+                                        <p><i class="fas fa-clock pr-2"></i><%= ele.postTime %></p>
+                                    </span>
+                                </a>
+                            </li>
+                            <% } %>
+                            <% i++; })} %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cateClassify">
+            <div class="row">
+                <% if(ns.length != 0){ %>
+                <div class="col-md-6 mainCate ">
+                    <a href="/danh-muc<%= ns[0].cate[0].link%>/bai-viet/<%= ns[0].linkSEO%>.<%= ns[0]._id %>">
+                        <img src="/public/images/tin/<%= ns[0].linkImg %>" class="img-fluid" alt="">
+                        <h4><%= ns[0].title %></h4>
+                        <p><i class="fas fa-clock pr-2"></i><%= ns[0].postTime %></p>
+                    </a>
+                </div>
+                <% } %>
+                <div class="col-md-6">
+                    <div class="cateItem">
+                        <ul>
+                            <% if(ns.length != 0){
+                                    let i=1;
+                                    ns.forEach(function(ele){
+                                %>
+                            <% if(i > 1){ %>
+                            <li>
+                                <a href="/danh-muc<%= ele.cate[0].link%>/bai-viet/<%= ele.linkSEO%>.<%= ele._id %>">
+                                    <div>
+                                        <img src="/public/images/tin/<%= ele.linkImg %>" class="img-fluid" alt="">
+                                    </div>
+                                    <span>
+                                        <p><%= ele.title.slice(0,50) %>....
+                                        </p>
+                                        <p><i class="fas fa-clock pr-2"></i><%= ele.postTime %></p>
+                                    </span>
+                                </a>
+                            </li>
+                            <% } %>
+                            <% i++; })} %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

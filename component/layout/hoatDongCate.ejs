@@ -1,0 +1,90 @@
+<div class="hoatDong">
+    <div class="headCate">
+        <h5>
+            <span>HOẠT ĐỘNG</span>
+        </h5>
+        <div class="subCate">
+            <ul>
+                <li>ĐẢNG BỘ</li>
+                <li>UỶ BAN NHÂN DÂN</li>
+            </ul>
+        </div>
+    </div>
+    <div class="contentCate mt-3">
+        <div class="cateClassify activeCate">
+            <div class="row">
+                <div class="col-md-6 mainCate ">
+                    <a href="/danh-muc<%= db[0].cate[0].link%>/bai-viet/<%= db[0].linkSEO%>.<%= db[0]._id %>">
+                        <img src="/public/uploads/<%= db[0].linkImg %>" class="img-fluid" alt="">
+                        <h4 class=""><%= db[0].title.slice(0,50) %>...</h4>
+                        <p><i class="fas fa-clock pr-2"></i><%= db[0].postTime %></p>
+                    </a>
+                </div>
+                <div class="col-md-6 p-0">
+                    <div class="cateItem">
+                        <ul>
+                            <% if(db){
+                                 let i=1;
+                                db.forEach(function(ele){
+                             %>
+                            <% if(i > 1){ %>
+                            <li>
+                                <a href="/danh-muc<%= ele.cate[0].link%>/bai-viet/<%= ele.linkSEO%>.<%= ele._id %>">
+                                    <div>
+                                        <img src="/public/uploads/<%= ele.linkImg %>" class="img-fluid" alt="">
+                                    </div>
+                                    <span>
+                                        <p><%= ele.title.slice(0,40) %>....</p>
+                                        <p><i class="fas fa-clock pr-2"></i><%=ele.postTime %></p>
+                                    </span>
+                                </a>
+                            </li>
+                            <% } %>
+                            <% i++; })} %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+        <div class="cateClassify">
+            <div class="row">
+            <% if(ub.length != 0){ %>
+                <div class="col-md-6 mainCate ">
+                    <a href="/danh-muc<%= db[0].cate[0].link%>/bai-viet/<%= ub[0].linkSEO%>.<%= ub[0]._id %>">
+                        <img src="/public/images/uploads/<%= ub[0].linkImg %>" class="img-fluid" alt="">
+                        <h4><%= ub[0].title.slice(0,50) %>....</h4>
+                          <p><i class="fas fa-clock pr-2"></i><%= db[0].postTime %></p>
+                    </a>
+                </div>
+                <% } %>
+                <div class="col-md-6 p-0">
+                    <div class="cateItem">
+                        <ul>
+                             <% if(ub.length != 0){
+                                 let i=1;
+                                ub.forEach(function(ele){
+                             %>
+                            <% if(i > 1){ %>
+                            <li>
+                                <a href="/danh-muc<%= ele.cate[0].link%>/bai-viet/<%= ele.linkSEO%>.<%= ele._id %>">
+                                    <div>
+                                        <img src="/public/images/uploads/<%= ele.linkImg %>" class="img-fluid" alt="">
+                                    </div>
+                                    <span>
+                                        <p><%= ele.title.slice(0,50) %>....
+                                        </p>
+                                        <p><i class="fas fa-clock pr-2"></i><%= ele.postTime %></p>
+                                    </span>
+                                </a>
+                            </li>
+                           <% } %>
+                            <% i++; })} %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</div>

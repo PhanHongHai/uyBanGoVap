@@ -1,0 +1,49 @@
+
+<!-- ============================================================== -->
+  <!-- Left Sidebar - style you can find in sidebar.scss  -->
+  <!-- ============================================================== -->
+  <aside class="left-sidebar " data-sidebarbg="skin5">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav" class="p-t-30">
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin" aria-expanded="false"><i class="fas fa-columns"></i><span class="hide-menu">Dashboard</span></a></li>
+                <% if(user.role == 1){ %>
+                    <li class="sidebar-item">
+                        <a href="/admin/tai-khoan" class="sidebar-link"><i class="fas fa-address-book"></i><span class="hide-menu">Tài
+                            Khoản</span></a>
+                    </li>
+                    <%} %>
+                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-tasks"></i>
+                        <span class="hide-menu">QL Tin Tức</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                        <ul aria-expanded="false" class="collapse  first-level">
+                            <li class="sidebar-item"><a href="/admin/tin-tuc/bai-viet" class="sidebar-link"><i class="far fa-newspaper"></i><span class="hide-menu">Bài viết</span></a></li>
+                            <li class="sidebar-item"><a href="/admin/tin-tuc/danh-muc" class="sidebar-link"><i class="fas fa-book"></i><span class="hide-menu">Danh mục</span></a></li>
+                            <li class="sidebar-item"><a href="/admin/tin-tuc/loai-danh-muc" class="sidebar-link"><i class="fas fa-poll-h"></i><span class="hide-menu">Loại danh mục</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item"><a href="/admin/linh-vuc" class="sidebar-link"><i class="fas fa-layer-group"></i> <span class="hide-menu">Lĩnh Vực</span></a></li>
+                    <li class="sidebar-item"> <a href="/admin/co-quan-ban-hanh" class="sidebar-link"><i class="fab fa-magento"></i> <span class="hide-menu">Cơ Quan</span></a></li>
+                    <li class="sidebar-item">
+                        <a href="/admin/gop-y" class="sidebar-link"><span ><i class="fas fa-envelope-open-text"></i><span class="hide-menu">Góp Ý</span></span><span id="countGY" style="width: 20px;border-radius: 20px;height: 20px;text-align: center;background-color: red; margin-left: 5%; line-height: 21px;"><%= count %></span></a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="/admin/binh-luan" class="sidebar-link"><i class="fas fa-comments"></i> <span class="hide-menu">Bình Luận</a></span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="/admin/thu-tuc-hanh-chinh" class="sidebar-link"><i class="fab fa-ethereum"></i> <span class="hide-menu">Thủ Tục Hành
+                            Chính</span></a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="/admin/chat" class="sidebar-link"><i class="far fa-comment-alt"></i> <span class="hide-menu">Chat</span>
+                        </a>
+                    </li>
+            </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+</aside>
+<!-- ============================================================== -->
+<!-- End Left Sidebar - style you can find in sidebar.scss  -->

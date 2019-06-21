@@ -1,0 +1,77 @@
+<header>
+  <div class="container mainHeader">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-6">
+        <img src="/public/images/logoHome.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-12 col-sm-12 col-md-6">
+        <div class="row">
+          <div class="col-12">
+            <div class="contact pt-2">
+              <p><i class="fas fa-phone-volume pr-2"></i><strong>(028) 38941929</strong></p>
+              <p><i class="far fa-envelope pl-4 pr-2"></i><strong>bantingovap@gmail.com</strong></p>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="search">
+              <form method="POST" action="/tim-kiem">
+                <input type="text" placeholder="Nhập từ khóa...." name="key">
+                <button type="submit"><i class="fas fa-search"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 p-0">
+        <div class="menu">
+          <div class="tab-menu">
+            <div class="head-box">
+              <div class="container">
+                <i class="fas fa-bars float-left"></i>
+              </div>
+            </div>
+            <div class="menu-box">
+              <ul>
+                <li><a href="/"> TRANG CHỦ</a></li>
+                <li><a href="/gioi-thieu">GIỚI THIỆU</a></li>
+                <li><a href="/tin-tuc-su-kien">TIN TỨC SỰ KIỆN</a></li>
+                <li><a href="quy-hoach-va-phat-trien">QUY HOẠCH VÀ PHÁT TRIỂN</a></li>
+                <li><a href="/cong-dan">CÔNG DÂN</a></li>
+                <li><a href="/doanh-nghiep">DOANH NGHIỆP</a</li> <li><a href="">DU LỊCH</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="small-menu">
+            <div class="small-head-box">
+              <div class="container"><i class="fas fa-bars"></i></div>
+            </div>
+            <div class="small-menu-box">
+              <i class="fas fa-times"></i>
+              <ul>
+                <li><a href="/">TRANG CHỦ</a></li>
+                <li><a href="/gioi-thieu">GIỚI THIỆU</a></li>
+                <li><a href="/tin-tuc-su-kien">TIN TỨC SỰ KIỆN</a></li>
+                <li><a href="quy-hoach-va-phat-trien">QUY HOẠCH VÀ PHÁT TRIỂN</a></li>
+                <li><a href="/cong-dan">CÔNG DÂN</a></li>
+                <li><a href="/doanh-nghiep">DOANH NGHIỆP</a</li> <li><a href="">DU LỊCH</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="normal-menu">
+            <ul>
+              <% let i=0; %>
+              <% menuItem.forEach(function(ele){ %>
+              <% if(i == activeMenu){ %>
+                 <li style="background-color: #eb9812;"><a href="<%= ele.link %>"><%= ele.item %></a></li>
+              <% } else{ %>
+                 <li><a href="<%= ele.link %>"><%= ele.item %></a></li>
+              <% } %>
+              <% i++; }) %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>

@@ -1,0 +1,287 @@
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title float-left">Danh sách thủ tục hành chính</h3>
+                    <div class="float-right">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAđ">
+                            Thêm
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modalAđ" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Thêm mới</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="POST" action="/admin/thu-tuc-hanh-chinh" id="addTTHC"
+                                            enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <label for="inputSmall" class="col-form-label">Tiêu Đề</label>
+                                                <textarea class="form-control form-control-sm"
+                                                    name="titleAP"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputSmall" class="col-form-label">Lĩnh Vực</label>
+                                                <select id="inputSmall" type="text" class="form-control form-control-sm"
+                                                    name="idField">
+                                                    <% listLV.forEach(ele =>{ %>
+                                                    <option value="<%= ele._id %>"><%=ele.nameField%></option>
+                                                    <% }) %>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputSmall" class="col-form-label">Trình Tự Thực
+                                                    Hiện</label>
+                                                <textarea class="form-control form-control-sm" name="sequence" id=""
+                                                    cols="30" rows="5"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputSmall" class="col-form-label">Cách Thức Thực
+                                                    Hiện</label>
+                                                <input id="inputSmall" type="text" class="form-control form-control-sm"
+                                                    name="method">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputSmall" class="col-form-label">Hồ Sơ</label>
+                                                <input id="inputSmall" type="text" class="form-control form-control-sm"
+                                                    name="profile">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputSmall" class="col-form-label">Đối Tượng</label>
+                                                <input id="inputSmall" type="text" class="form-control form-control-sm"
+                                                    name="object">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputSmall" class="col-form-label">Thời Gian Xử Lý</label>
+                                                <input id="inputSmall" type="text" class="form-control form-control-sm"
+                                                    name="resolutionTime">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputSmall" class="col-form-label">Cơ Quan Ban Hành</label>
+                                                <select id="inputSmall" class="form-control form-control-sm"
+                                                    name="idCQ">
+                                                    <% listCQ.forEach(ele =>{ %>
+                                                    <option value="<%= ele._id %>"><%=ele.nameAg%></option>
+                                                    <% }) %>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputSmall" class="col-form-label">Kết Quả</label>
+                                                <input id="inputSmall" type="text" class="form-control form-control-sm"
+                                                    name="result">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputSmall" class="col-form-label">Yêu Cầu, Điều
+                                                    kiện</label>
+                                                <textarea class="form-control form-control-sm" name="request" id=""
+                                                    cols="30" rows="5"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputSmall" class="col-form-label">Lệ Phí</label>
+                                                <input id="inputSmall" type="text" class="form-control form-control-sm"
+                                                    name="fees">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputSmall" class="col-form-label">Tên Mẫu Đơn</label>
+                                                <input id="inputSmall" type="text" class="form-control form-control-sm"
+                                                    name="nameForm">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputSmall" class="col-form-label">Cơ sở pháp lý</label>
+                                                <input id="inputSmall" type="text" class="form-control form-control-sm"
+                                                    name="legalBasis">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="inputDefault" class="col-form-label">Tài liệu đính
+                                                    kèm</label>
+                                                <input id="inputDefault" type="file" class="form-control" name="file">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">Xác Nhận</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Thoát</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+
+
+                    <div class="table-responsive">
+                        <table id="zero_config" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th class="text-center" scope="col">Tiêu đề</th>
+                                    <th scope="col">Xử lý</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if(list){ 
+                                    let i=1;    
+                                %>
+                                <% list.forEach(function(ele){ %>
+                                <tr>
+                                    <td class="text-center"><%=i%></td>
+                                    <td><%=ele.titleAP%></td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-success dropdown-toggle" type="button"
+                                                id="dropdownMenuButton<%=i%>" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-cog"></i>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton<%=i%>">
+                                                <i class="far fa-eye pr-3 dropdown-item" data-toggle="modal"
+                                                    data-target="#modalView<%=i%>"
+                                                    style="cursor:pointer;">&ensp;&ensp;Xem chi tiết</i>
+                                                <a class="dropdown-item"
+                                                    href="/admin/thu-tuc-hanh-chinh/loadUpdate/<%=ele._id%>"><i
+                                                        class="fas fa-edit pr-3"
+                                                        style="font-weight: normal;">&ensp;&ensp;Cập nhật</i></a>
+                                                <i class="fas fa-trash-alt pr-3 dropdown-item" style="cursor:pointer;"
+                                                    data-toggle="modal"
+                                                    data-target="#deleteTT<%=i%>">&ensp;&ensp;Xóa</i>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="deleteTT<%=i%>" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Xóa thủ tục hành
+                                                            chính
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-primary"
+                                                            onclick="deleteTTHC('<%= ele._id %>')">Xác nhận</button>
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Hủy</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <div class="modal fade " id="modalView<%= i %>" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalScrollableTitle" aria-hidden="true"
+                                        style="margin-left: 5%;">
+                                        <div class="modal-dialog modal-dialog-scrollable" role="document"
+                                            style="max-width: 900px;">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title text-center"
+                                                        id="exampleModalScrollableTitle">
+                                                        Thông tin thủ tục
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body ">
+                                                    <div class="headerInfo text-center">
+                                                        <h2 class="font-weight-normal"><%=ele.titleAP%></h2>
+                                                    </div>
+                                                    <div class="bodyInfo w-80 mx-auto mb-2 mt-3">
+                                                        <h4 class="d-inline-block font-weight-normal">Lĩnh Vực :
+                                                        </h4>
+                                                        <p class="d-inline-block"><%=ele.field[0].nameField%></p>
+
+                                                    </div>
+                                                    <div class="bodyInfo w-80 mx-auto mb-2">
+                                                        <h4 class="d-inline-block font-weight-normal">Cơ Quan Ban Hành :
+                                                        </h4>
+                                                        <p class="d-inline-block"><%=ele.cq[0].nameAg%></p>
+                                                    </div>
+                                                    <div class="bodyInfo w-80 mx-auto">
+                                                        <h4 class="d-inline-block font-weight-normal">Trình Tự Thực Hiện
+                                                            :</h4>
+                                                        <p class="d-inline-block"><%-ele.sequence%></p>
+                                                    </div>
+                                                    <div class="bodyInfo w-80 mx-auto mb-2 mt-3">
+                                                        <h4 class="d-inline-block font-weight-normal">Cách Thức Thực
+                                                            Hiện :
+                                                        </h4>
+                                                        <p class="d-inline-block"><%=ele.method%></p>
+                                                    </div>
+                                                    <div class="bodyInfo w-80 mx-auto mb-2 mt-3">
+                                                        <h4 class="d-inline-block font-weight-normal">Đối Tượng:
+                                                        </h4>
+                                                        <p class="d-inline-block"><%=ele.object%>
+                                                            <div class="bodyInfo w-80 mx-auto mb-2 mt-3">
+                                                                <h4 class="d-inline-block font-weight-normal">Hồ Sơ :
+                                                                </h4>
+                                                                <p class="d-inline-block"><%=ele.profile%></p>
+                                                            </div>
+                                                            <div class="bodyInfo w-80 mx-auto mb-2 mt-3">
+                                                                <h4 class="d-inline-block font-weight-normal">Thời Gian
+                                                                    Giải Quyết :
+                                                                </h4>
+                                                                <p class="d-inline-block"><%=ele.resolutionTime%></p>
+                                                            </div>
+                                                            <div class="bodyInfo w-80 mx-auto mb-2 mt-3">
+                                                                <h4 class="d-inline-block font-weight-normal">Kết Quả :
+                                                                </h4>
+                                                                <p class="d-inline-block"><%=ele.resolutionTime%></p>
+                                                            </div>
+                                                            <div class="bodyInfo w-80 mx-auto mb-2 mt-3">
+                                                                <h4 class="d-inline-block font-weight-normal">Lệ Phí :
+                                                                </h4>
+                                                                <p class="d-inline-block"><%=ele.fees%></p>
+                                                            </div>
+                                                            <div class="bodyInfo w-80 mx-auto mb-2 mt-3">
+                                                                <h4 class="d-inline-block font-weight-normal">Tên Mẫu
+                                                                    Đơn :
+                                                                </h4>
+                                                                <p class="d-inline-block"><%=ele.nameForm%></p>
+                                                            </div>
+                                                            <div class="bodyInfo w-80 mx-auto mb-2 mt-3">
+                                                                <h4 class="d-inline-block font-weight-normal">Cơ Sở Pháp
+                                                                    Lý :
+                                                                </h4>
+                                                                <p class="d-inline-block"><%=ele.legalBasis%></p>
+                                                            </div>
+                                                            <div class="bodyInfo w-80 mx-auto mb-2 mt-3">
+                                                                <h4 class="d-inline-block font-weight-normal">File đính
+                                                                    kèm :
+                                                                </h4>
+                                                                <a class="d-inline-block"
+                                                                    href="/thu-tuc-hanh-chinh/download/<%=ele._id%>"><%=ele.linkFile%></a>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </tr>
+                    </div>
+                    <%i++ })} %>
+                    </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>

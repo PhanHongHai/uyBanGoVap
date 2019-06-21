@@ -1,0 +1,41 @@
+<!-- Container fluid  -->
+<div class="dashboard-wrapper">
+    <aside class="page-aside">
+        <div class="aside-content">
+            <div class="aside-header">
+                <button class="navbar-toggle" data-target=".aside-nav" data-toggle="collapse" type="button"><span
+                        class="icon"><i class="fas fa-caret-down"></i></span></button><span class="title">Góp Ý</span>
+                <p class="description">Chức năng</p>
+            </div>
+            <div class="aside-nav">
+                <ul class="nav">
+                    <li class="active"><a href="/admin/gop-y"><span class="icon"><i
+                                    class="fas fa-fw fa-inbox"></i></span>Inbox<span
+                                class="badge badge-primary float-right"><%= count %></span></a></li>
+                    
+            </div>
+        </div>
+    </aside>
+    <div class="content">
+        <div class="main-content container-fluid p-0">
+            <div class="email-inbox-header">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="email-title"><span class="icon"><i class="fas fa-inbox"></i></span> Inbox <span
+                                class="new-messages">(<%= count %> tin mới)</span> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="email-filters ">
+                <span class="d-flex flex-wrap"><img src="/public/admin/inbox_gm.png" alt="" width="20" height="20"><h4 class="ml-4">Tên</h4></span>
+            </div>
+            <div class="email-list">
+                <div class="paginationGY">
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

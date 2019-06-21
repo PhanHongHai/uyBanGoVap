@@ -1,0 +1,132 @@
+<%
+    img='/public/images/pattern_bg.png';
+    let menuItem=[
+    {item:"TRANG CHỦ",link:"/"},
+    {item:"GIỚI THIỆU",link:"/gioi-thieu"},
+    {item:"TIN TỨC SỰ KIỆN",link:"/tin-tuc-su-kien"},
+    {item:"QUY HOẠCH VÀ PHÁT TRIỂN",link:"/quy-hoach-va-phat-trien"},
+    {item:"CÔNG DÂN",link:"/cong-dan"},
+    {item:"DOANH NGHIỆP",link:"/doanh-nghiep"},
+    {item:"DU LỊCH",link:"/du-lich"},
+  ]
+ %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../component/head %>
+    <link rel="stylesheet" href="/public/stylesheets/scss/sideBar.css">
+    <link rel="stylesheet" href="/public/stylesheets/scss/tinChung.css">
+    <style>
+        #tthc tr th,
+        #tthc tbody td {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body class="mw-100 m-0 p-0 " style="background-image: url('<%= img %>');background-attachment: fixed;"">
+        <div class="container p-0 allPage">
+            <% include ../component/header %>
+
+            <div id="bodyPage">
+                <% include ../component/breadCrumb %>
+                <div class="row">
+                    <div class="col-md-8 mb-3">
+                        <div class="tinChung">
+                            <div class="headTinChung">
+                                <h3><a href="/"></i>THỦ TỤC HÀNH CHÍNH</a></h3>
+                            </div>
+                            <div class="contentTinChung mt-3 pb-4">
+                                <% if(list){
+                                    list.forEach(function(ele){
+                                %>
+                                <div class="card" style="width: 100%;margin-left: 20px;">
+                                    <div class="card-header">
+                                        <%= ele.titleAP %>
+                                    </div>
+                                    <div class="card-body">
+                                        <span>
+                                            <h5 class="card-text">Lĩnh vực :</h5>
+                                            <p class="font-weight-light"> <%= ele.field[0].nameField %></p>
+                                        </span>
+                                        <span>
+                                            <h5 class="card-text">Trình tự thực hiện :</h5>
+                                            <p class="font-weight-light"> <%= ele.sequence %></p>
+                                        </span>
+                                        <span>
+                                            <h5 class="card-text">Cách thức thực hiện :</h5>
+                                            <p class="font-weight-light"><%= ele.method %></p>
+                                        </span>
+                                        <span>
+                                            <h5 class="card-text">Hồ sơ : </h5>
+                                            <p class="font-weight-light"><%= ele.profile %></p>
+                                        </span>
+                                        <span>
+                                            <h5 class="card-text">Thời gian giải quyết :</h5>
+                                            <p class="font-weight-light"> <%= ele.resolutionTime %></p>
+                                        </span>
+                                        <span>
+                                            <h5 class="card-text">Đối tượng : </h5>
+                                            <p class="font-weight-light"><%= ele.method %></p>
+                                        </span>
+                                        <span>
+                                            <h5 class="card-text">Cơ quan ban hành :</h5>
+                                            <p class="font-weight-light"> <%= ele.cq[0].nameAg %></p>
+                                        </span>
+                                        <span>
+                                            <h5 class="card-text">Kết quả :</h5>
+                                            <p class="font-weight-light"> <%= ele.result %></p>
+                                        </span>
+                                        <span>
+                                            <h5 class="card-text">Phí, lệ phí :</h5>
+                                            <p class="font-weight-light"> <%= ele.fees %></p>
+                                        </span>
+                                        <span>
+                                            <h5 class="card-text">Tên mẫu đơn :</h5>
+                                            <p class="font-weight-light"> <%= ele.nameForm %></p>
+                                        </span>
+                                        <span>
+                                            <h5 class="card-text">Yêu cầu, điều kiện :</h5>
+                                            <p class="font-weight-light"> <%= ele.request %></p>
+                                        </span>
+                                        <span>
+                                            <h5 class="card-text">Cơ sở pháp lý : </h5>
+                                            <p class="font-weight-light"><%= ele.field[0].nameAg %></p>
+                                        </span>
+                                        <span class="card-text">
+                                            <h5 class="card-text">Tài liệu đính kèm : </h5>
+                                            <% if(ele.linkFile){ 
+                                                let duoiFile =ele.linkFile.substr(ele.linkFile.length-4,4);
+                                                if(duoiFile === ".doc" ||duoiFile === "docx"){
+                                           %>
+                                                <img class="img-fluid" src="/public/images/WORD.png" alt="">
+                                            <% }else{ %>
+                                                <img class="img-fluid" src="/public/images/PDF.png" alt="">
+                                            <% }} %>
+                                            <a href="/thu-tuc-hanh-chinh/download/<%= ele._id %>"><%= ele.linkFile %></a><a href="/thu-tuc-hanh-chinh/download/<%= ele._id %>" class="btn btn-primary ml-3"><i
+                                                    class="fas fa-file-download"></i>
+                                            </a>
+                                        </span>
+
+                                    </div>
+                                </div>
+                                <% })}%>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <%- include('../component/sideBar',{sideBar})%>
+                    </div>
+                </div>
+            </div>
+            <% include ../component/footer %>
+        </div>
+        <% include ../component/script %>
+        <a href="javascript:" id="return-to-top"><i class="fas fa-chevron-up"></i></i></a>
+    </body>
+
+</html>

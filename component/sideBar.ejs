@@ -1,0 +1,47 @@
+<div class="sideBar-all">
+
+    <!---->
+
+    <div class="sideBar-menu accordion" id="accordionExample">
+        <% if(kt==0){ %>
+        <%  sideBar.forEach(function(ele){ %>
+        <% if(ele.nameType === "CÔNG DÂN"){ %>
+        <div class="headSideBar text-center">
+            <h5><i class="far fa-newspaper pr-2"></i>CÔNG DÂN
+            </h5>
+        </div>
+        <div class="contentSideBar ">
+            <ul>
+                <% ele.cate.forEach(function(val){ %>
+                <li><a href="<%=val.link%>"><%= val.nameCate %></a></li>
+                <% }) %>
+            </ul>
+        </div>
+        <% }})}
+            else{ %>
+        <% let i=0;
+           sideBar.forEach(function(ele){ %>
+        <% if(ele.nameType !== "CÔNG DÂN"){ %>
+        <div class="headSideBar text-center">
+            <div id="heading<%=i%>">
+                <h5>
+                    <button class="btn w-100 text-white" type="button" data-toggle="collapse" data-target="#cl<%=i%>"
+                        aria-expanded="true" aria-controls="cl<%=i%>">
+                        <i class="far fa-newspaper pr-2"></i>
+                        <%=ele.nameType %>
+                    </button>
+                </h5>
+            </div>
+        </div>
+         <div class="contentSideBar collapse " aria-labelledby="heading<%=i%>" id="cl<%=i%>"
+            data-parent="#accordionExample">
+            <ul>
+                <% ele.cate.forEach(function(val){ %>
+                <li><a href="/danh-muc<%=val.link%>.<%=val._id%>"><%= val.nameCate %></a></li>
+                <% }) %>
+            </ul>
+        </div>
+        <% i++; }})} %>
+    </div>
+
+</div>

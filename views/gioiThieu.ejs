@@ -1,0 +1,126 @@
+<%
+    img='/public/images/bg-page.jpg';
+    let menuItem=[
+    {item:"TRANG CHỦ",link:"/"},
+    {item:"GIỚI THIỆU",link:"/gioi-thieu"},
+    {item:"TIN TỨC SỰ KIỆN",link:"/tin-tuc-su-kien"},
+    {item:"QUY HOẠCH VÀ PHÁT TRIỂN",link:"/quy-hoach-va-phat-trien"},
+    {item:"CÔNG DÂN",link:"/cong-dan"},
+    {item:"DOANH NGHIỆP",link:"/doanh-nghiep"},
+    {item:"DU LỊCH",link:"/du-lich"},
+  ]
+ %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../component/head %>
+    <link rel="stylesheet" href="/public/stylesheets/scss/sideBar.css">
+    <link rel="stylesheet" href="/public/stylesheets/scss/tinChung.css">
+</head>
+
+<body class="mw-100 m-0 p-0 " style="background-image: url('<%= img %>');">
+    <div class="container p-0 allPage">
+        <% include ../component/header %>
+        <div id="bodyPage">
+            <div class="w-100">
+                    <% include ../component/breadcrumb %>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="tinChung ">
+                        <div class="headTinChung">
+                            <h3><a href="/danh-muc/truyen-thong-lich-su-quan-go-vap.5cfb8fca1aa70617ec404840"></i>TRUYỀN THỐNG-LỊCH SỬ
+                                    QUẬN GÒ
+                                    VẤP</a></h3>
+                        </div>
+                        <div class="contentTinChung">
+                            <ul class="paginationNews">
+                           
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <% include ../component/sideBar %>
+                </div>
+                <div class="col-12 col-md-12">
+                    <% include ../component/footer %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/public/js/jquery.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
+    <script src="/public/js/function/menu.js"></script>
+    <script src="/public/slick/slick.min.js"></script>
+    <script src="/public/js/wow.js"></script>
+    <script src="/public/js/owl.carousel.min.js"></script>
+    <script src="/public/js/SmoothScroll.js"></script>
+    <script src="/public/js/function/carouselHome.js"></script>
+    <script src="/public/admin/pagination.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            function templateViewNew(data) {
+                var html = "";
+                if(data.length !=0){
+                    $.each(data, function (index, ele) {
+                    html += "<li> <a href=/danh-muc" + ele.cate[0].link + "/bai-viet/" + ele.linkSEO + "." + ele._id + ">";
+                    html += " <img src='/public/uploads/" + ele.linkImg + "' alt=''></a>";
+                    html += "<span><a href=/danh-muc" + ele.cate[0].link + "/bai-viet/" + ele.linkSEO + "." + ele._id + ">";
+                    html += "<h3>" + ele.title + "</h3></a>";
+                    html += " <p><i class='fas fa-clock pr-2'></i>" + ele.postTime + "</p>";
+                    html += " <p>" + ele.mainContent.slice(0, 200) + "....</p>";
+                    html += "<a href=/danh-muc" + ele.cate[0].link + "/bai-viet/" + ele.linkSEO + "." + ele._id + " class='btn w-25 mt-3'>Xem thêm</a>";
+                    html += " </span></li>";
+                });
+                }
+                else
+                    html += "<h2 class='text-center pt-4'>Không có dữ liệu </h2>"
+                return html;
+            }
+            $('.contentTinChung').pagination({
+                totalNumber: function (done) {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/gioi-thieu/getList',
+                        success: function (res) {
+                            done(res.total);
+                        }
+                    });
+                },
+                dataSource: function (done) {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/gioi-thieu/getList',
+                        success: function (res) {
+                            done(res.data);
+                            console.log(res.data);
+                        }
+                    });
+                },
+                pageSize: 10,
+                showNavigator: false,
+                autoHidePrevious: true,
+                autoHideNext: true,
+                className: 'phanTrang',
+                classPrefix: 'news-list',
+                ajax: {
+                    beforeSend: function () {
+                        $('.paginationGY').html("<img src='public/images/loading.svg'/>");
+                    }
+                },
+                callback: function (data, pagination) {
+                    // template method of yourself
+                    var html = templateViewNew(data);
+                    $('.paginationNews').html(html);
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>

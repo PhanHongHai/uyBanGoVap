@@ -1,0 +1,13 @@
+<div class="trending">
+    <div class="container">
+        <span>Tin mới <i class="fas fa-hand-point-right pl-3"></i></span>
+        <div class="bodyTrending">
+            <ul>
+                <% if(tinMoi){ %>
+                <% tinMoi.forEach(function(ele){ %>
+                <li><a href="/danh-muc<%=ele.cate[0].link%>/bai-viet<%=ele.linkSEO%>.<%=ele._id%>" class=" d-inline-block text-truncate pt-1" style="max-width: 650px;"><%=ele.title.slice(0,75)%>....</a> </li>
+                <%})} %>
+            </ul>
+        </div>
+    </div>
+</div>

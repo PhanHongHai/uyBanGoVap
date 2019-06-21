@@ -1,0 +1,13 @@
+<div class="page-breadcrumb">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <% if(link){ 
+                for(let item of link.link){
+            %>
+            <li class="breadcrumb-item">
+                <a href="<%= item.link %>" class="breadcrumb-link"><%= item.text %></a>
+            </li>
+            <% }} %>
+        </ol>
+    </nav>
+</div>
