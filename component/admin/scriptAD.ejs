@@ -15,7 +15,8 @@
 <script src="/public/admin/waves.js"></script>
 
 <!-- main js -->
-<script src="/public/admin/custom.min.js"></script>
+<script src="/public/admin/custom.js"></script>
+<script src="/public/js/function/adminJS.js"></script>
 <script src="/public/admin/pagination.min.js"></script>
 <script src="/public/js/axios.js"></script>
 <script src="/public/js/api/apiAdmin.js"></script>
@@ -23,8 +24,11 @@
 <script src="/public/admin/flo/js/froala_editor.pkgd.min.js"></script>
 <script src="/public/admin/flo/plugins/image.min.js"></script>
 <script>
-    $(document).ready(function () {
 
+    $(document).ready(function () {
+        $('#imgNew').change(function(e){
+            $('#currentImg').attr('src',"/public/uploads/"+e.target.files[0].name);
+        });
         /*
         var editor = new FroalaEditor('#myEditor', {
             imageUploadURL: 'admin/tin-tuc/bai-viet/sendImage',
@@ -136,6 +140,7 @@
                     url: '/admin/gop-y/getList',
                     success: function (res) {
                         done(res.data);
+                        console.log(res.data);
                     }
                 });
             },

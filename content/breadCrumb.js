@@ -11,6 +11,8 @@ const breadCrumb=[
     {key:'/cong-dan/gop-y',link:[{text:'Trang chủ',link:'/'},{text:'Công dân',link:'/cong-dan'},{text:'Góp ý',link:'/gop-y'}]},
     {key:'/dich-vu-cong',link:[{text:'Trang chủ',link:'/'},{text:'Công dân',link:'/cong-dan'},{text:'Dịch vụ công',link:'/dich-vu-cong'}]},
     {key:'/cong-dan',link:[{text:'Trang chủ',link:'/'},{text:'Công dân',link:'/cong-dan'}]},
+    {key:'/gioi-thieu',link:[{text:'Trang chủ',link:'/'},{text:'Giới Thiệu',link:'/gioi-thieu'}]},
+    {key:'/tin-tuc-su-kien',link:[{text:'Trang chủ',link:'/'},{text:'Tin Tức Sự Kiện',link:'/tin-tuc-su-kien'}]},
     {key:'/cong-dan/thu-tuc-hanh-chinh',link:[{text:'Trang chủ',link:'/'},{text:'Công dân',link:'/cong-dan'},{text:'Thủ tục hành chính',link:'/thu-tuc-hanh-chinh'}]},
     
     // bai viet

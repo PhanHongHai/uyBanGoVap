@@ -11,7 +11,7 @@ const gopYCtrl = require('../Controller/Process');
 const newCtrl=require('../Controller/News');
 const ttCtrl=require('../Controller/ThuTucHanhChinh');
 const upload_img=require('../Controller/img_upload');
-const blCtrl=require('../Controller/Comment');
+const blCtrl=require('../Controller/BinhLuan');
 // --------------------
 // --------------------
 // setup
@@ -179,8 +179,9 @@ router.route('/admin/tin-tuc/bai-viet/:idBV')
     .delete(newCtrl.deleteNews)
 
 // comment
-router.get('/admin/binh-luan/:idBV',blCtrl.getComment)
-router.post('/admin/binh-luan',blCtrl.addCooment)
+router.get('/admin/binh-luan',blCtrl.loadPage)
+router.route('/admin/binh-luan/:idCM')
+    .delete()
 //********************************* */
 
 //****************************************** */
@@ -222,6 +223,7 @@ router.route('/admin/thu-tuc-hanh-chinh/:idTT')
     .post(uploadDoc.single('file'),ttCtrl.updateThuTuc)
     .delete(ttCtrl.deleteThuTuc)
 //***************************** */
+
 router.get('/destroyMess',(req,res) => {
     req.session.mess=0;
     res.status(200).json({mess:'da xoa'});

@@ -1,4 +1,4 @@
-<div>
+<div class="sideBar-all">
 
     <!---->
 
@@ -7,7 +7,7 @@
         <%  sideBar.forEach(function(ele){ %>
         <% if(ele.nameType === "CÔNG DÂN"){ %>
         <div class="headSideBar text-center">
-            <h5><i class="far fa-newspaper pr-2"></i><a class="text-decoration-none" href="<%=ele.link %>">CÔNG DÂN</a>
+            <h5><i class="far fa-newspaper pr-2"></i>CÔNG DÂN
             </h5>
         </div>
         <div class="contentSideBar ">
@@ -19,50 +19,29 @@
         </div>
         <% }})}
             else{ %>
-        <% let i=1;
+        <% let i=0;
            sideBar.forEach(function(ele){ %>
+        <% if(ele.nameType !== "CÔNG DÂN"){ %>
         <div class="headSideBar text-center">
-            <% if(i==1){ %>
             <div id="heading<%=i%>">
                 <h5>
                     <button class="btn w-100 text-white" type="button" data-toggle="collapse" data-target="#cl<%=i%>"
                         aria-expanded="true" aria-controls="cl<%=i%>">
                         <i class="far fa-newspaper pr-2"></i>
-                        <a class="text-decoration-none text-light" href="<%=ele.link%>"><%=ele.nameType %></a>
+                        <%=ele.nameType %>
                     </button>
                 </h5>
             </div>
-            <% }else{ %>
-            <div id="heading<%=i%>">
-                <h5>
-                    <button class="btn w-100 collapsed text-white" type="button" data-toggle="collapse" data-target="#cl<%=i%>"
-                        aria-expanded="false" aria-controls="cl<%=i%>">
-                        <i class="far fa-newspaper pr-2"></i>
-                        <a class="text-decoration-none text-light" href=""><%=ele.nameType %></a>
-                    </button>
-                </h5>
-            </div>
-            <% } %>
         </div>
-        <% if(i==1){ %>
-        <div class="contentSideBar collapse show" aria-labelledby="heading<%=i%>" id="cl<%=i%>"
+         <div class="contentSideBar collapse " aria-labelledby="heading<%=i%>" id="cl<%=i%>"
             data-parent="#accordionExample">
             <ul>
                 <% ele.cate.forEach(function(val){ %>
-                <li><a href="<%=val.link%>"><%= val.nameCate %></a></li>
+                <li><a href="/danh-muc<%=val.link%>.<%=val._id%>"><%= val.nameCate %></a></li>
                 <% }) %>
             </ul>
         </div>
-        <% }else{ %>
-        <div class="contentSideBar collapse" id="cl<%=i%>" aria-labelledby="heading<%=i%>">
-            <ul>
-                <% ele.cate.forEach(function(val){ %>
-                <li><a href="<%=val.link%>"><%= val.nameCate %></a></li>
-                <% }) %>
-            </ul>
-        </div>
-        <%} %>
-        <% i++; })} %>
+        <% i++; }})} %>
     </div>
 
 </div>

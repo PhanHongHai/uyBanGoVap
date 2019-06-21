@@ -4,13 +4,31 @@ const modelLV = require('../Model/LinhVuc/Field');
 const modelCQ = require('../Model/CoQuan/AgencyIssued');
 const mongoose = require('mongoose');
 const modelCateType = require('../Model/LoaiDanhMuc/CategoryType');
+const modelCate = require('../Model/DanhMuc/Category');
+const modelNew = require('../Model/TinTuc/News');
 const BreadCrumb = require('../content/breadCrumb');
 let bread = (req) => {
     return BreadCrumb.find((item) => item.key === req.path);
 }
 module.exports = {
-    getTT:(req,res) => {
+    getTT:async (req,res) => {
         let link = bread(req);
+        let tinMoi = await modelNew.aggregate([
+            {
+                $lookup: {
+                    from: 'Category',
+                    localField: 'idCate',
+                    foreignField: '_id',
+                    as: 'cate'
+                }
+            },
+            {
+                $sort: { postTime: -1 }
+            },
+            {
+                $limit: 5
+            }
+        ]);
         modelCateType.aggregate([
             {
                 $lookup: {
@@ -50,7 +68,8 @@ module.exports = {
                         }
 
                     ]);
-                res.render('ChiTietTTHC', { title: 'Thủ Tục Hành Chính - Công thông tin điện tử Gò Vấp', link: link,list:list, sideBar: data, kt: 0 });
+                res.render('ChiTietTTHC', { title: 'Thủ Tục Hành Chính - Công thông tin điện tử Gò Vấp', link: link,list:list,
+                 sideBar: data, kt: 0,tinMoi:tinMoi,activeMenu: 4 });
             }
         })
     },
@@ -91,6 +110,22 @@ module.exports = {
     },
     loadTTHC: async (req, res) => {
         let link = bread(req);
+        let tinMoi = await modelNew.aggregate([
+            {
+                $lookup: {
+                    from: 'Category',
+                    localField: 'idCate',
+                    foreignField: '_id',
+                    as: 'cate'
+                }
+            },
+            {
+                $sort: { postTime: -1 }
+            },
+            {
+                $limit: 5
+            }
+        ]);
         modelCateType.aggregate([
             {
                 $lookup: {
@@ -127,7 +162,7 @@ module.exports = {
 
                     ]);
                 res.render('thuTucHanhChinh', { title: 'Thủ Tục Hành Chính - Công thông tin điện tử Gò Vấp',
-                 link: link,list:list, sideBar: data, kt: 0,activeMenu:1 });
+                 link: link,list:list , sideBar: data, kt: 0,activeMenu:4,cate:null, tinMoi:tinMoi });
             }
         })
     },

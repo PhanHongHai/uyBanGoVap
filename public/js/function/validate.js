@@ -95,14 +95,14 @@ $(function () {
             nameType: {
                 required: true,
                 minlength: 5,
-                maxlength: 20
+                maxlength: 50
             }
         },
         messages: {
             nameType: {
                 required: 'Vui lòng nhập thông tin',
                 minlength: 'Nhập tối thiểu 5 ký tự',
-                maxlength: 'Nhập tối đa 20 ký tự'
+                maxlength: 'Nhập tối đa 50 ký tự'
             }
         },
     }); 
@@ -112,14 +112,14 @@ $(function () {
             name: {
                 required: true,
                 minlength: 5,
-                maxlength: 20
+                maxlength: 50
             }
         },
         messages: {
             name: {
                 required: 'Vui lòng nhập thông tin',
                 minlength: 'Nhập tối thiểu 5 ký tự',
-                maxlength: 'Nhập tối đa 20 ký tự'
+                maxlength: 'Nhập tối đa 50 ký tự'
             }
         },
     }); 
@@ -149,7 +149,7 @@ $(function () {
             nameCate: {
                 required: true,
                 minlength: 5,
-                maxlength: 20
+                maxlength: 50
             },
             typeCate:"required"
         },
@@ -157,7 +157,7 @@ $(function () {
             nameCate: {
                 required: 'Vui lòng nhập thông tin',
                 minlength: 'Nhập tối thiểu 5 ký tự',
-                maxlength: 'Nhập tối đa 20 ký tự'
+                maxlength: 'Nhập tối đa 50 ký tự'
             },
             typeCate:{required:"Vui lòng chọn loại danh mục"}
         },
@@ -169,14 +169,14 @@ $(function () {
             nameAg: {
                 required: true,
                 minlength: 5,
-                maxlength: 20
+                maxlength: 50
             },
         },
         messages: {
             nameAg: {
                 required: 'Vui lòng nhập thông tin',
                 minlength: 'Nhập tối thiểu 5 ký tự',
-                maxlength: 'Nhập tối đa 20 ký tự'
+                maxlength: 'Nhập tối đa 50 ký tự'
             },
         },
     }); 
@@ -215,5 +215,39 @@ $(function () {
                 maxlength: 'Nhập tối đa 200 ký tự'
             },
         },
+    });
+    // comment
+    $('.formComment').validate({
+        errorClass:"invalid",
+        rules:{
+            userName:{
+                required: true,
+                minlength: 5,
+                maxlength: 50
+            },
+            email:{
+                required: true,
+                email: true
+            },
+            content:{
+                required: true,
+                maxlength: 300
+            }
+        },
+        messages: {
+            userName: {
+                required: 'Vui lòng nhập tên',
+                minlength: 'Nhập tối thiểu 5 ký tự',
+                maxlength: 'Nhập tối đa 50 ký tự'
+            },
+            email:{
+                required:'Vui lòng nhập email',
+                email:'Email không xác định'
+            },
+            content:{
+                required:'Vui lòng nhập nội dung',
+                maxlength:'Nhập tối đa 300 ký tự'
+            }
+        } 
     })
 })

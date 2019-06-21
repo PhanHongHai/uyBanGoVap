@@ -22,7 +22,7 @@ module.exports={
                             foreignField:'_id',
                             as:'type'
                         }
-                    }
+                    },
                ],(err,list) => {
                    if(err)
                    res.render('admin', { title: 'QL Danh Mục', link: link, user: req.user, list: listCate ,listType:listType,path:'Category',count:req.session.count,mess:req.session.mess });

@@ -9,20 +9,20 @@ const cateCtrl = require('../Controller/DanhMuc');
 const fieldCtrl = require('../Controller/LinhVuc');
 const agencyCtrl = require('../Controller/Agency');
 const ctrl = require('../Controller/Process');
-const newCtrl=require('../Controller/News');
-const ttCtrl=require('../Controller/ThuTucHanhChinh');
-const modelCate=require('../Model/DanhMuc/Category');
-const modelCateType=require('../Model/LoaiDanhMuc/CategoryType');
+const newCtrl = require('../Controller/News');
+const ttCtrl = require('../Controller/ThuTucHanhChinh');
+const modelCate = require('../Model/DanhMuc/Category');
+const modelCateType = require('../Model/LoaiDanhMuc/CategoryType');
 //---------------
 const BreadCrumb = require('../content/breadCrumb');
-var multer  = require('multer')
+var multer = require('multer')
 // upload
-const store= multer.diskStorage({
+const store = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './public/uploads')
   },
   filename: function (req, file, cb) {
-    cb(null,file.originalname  )
+    cb(null, file.originalname)
   }
 });
 
@@ -43,44 +43,46 @@ let bread = (req) => {
 }
 
 /* GET home page. */
-router.get('/',ctrl.loadHome );
+router.get('/', ctrl.loadHome);
 // load bai viet
-router.get('/*/bai-viet/*.:idBV',ctrl.loadBV)
-// kenh tuong tac
-router.get('/cong-dan',ctrl.loadCD);
-router.get('/gioi-thieu', (req, res) => {
-  let link = bread(req);
-  modelCateType.aggregate([
-    {
-        $lookup:{
-            from:'Category',
-            localField:'_id',
-            foreignField:'typeCate',
-            as:'cate'
-        }
-    }
-],(err,data) => {
-    if(err) throw err;
-    else{
-        res.render('gioiThieu', { title: 'Giới Thiêu-Công thông tin điện tử Gò Vấp', link: link,sideBar:data,kt:1,activeMenu:1 });
-    }
-})
-
-});
+router.route('/danh-muc*/bai-viet*.:idBV')
+  .get(ctrl.loadBV)
+  .post(ctrl.comment)
+// comment
+router.get('/bai-viet/getListComment/:idBV',ctrl.getListComment)
+// kenh tuong tac-- cong dan
+router.get('/cong-dan', ctrl.loadCD);
+// gioi thieu
+router.get('/gioi-thieu', ctrl.loadPageGT);
+router.get('/gioi-thieu/getList', ctrl.getListGT)
+//  tin tuc su kien
+router.get('/tin-tuc-su-kien', ctrl.loadPageTTSK);
+router.get('/tin-tuc-su-kien/getList', ctrl.getListTTSK);
+// quy hoach phat trien
+router.get('/quy-hoach-va-phat-trien', ctrl.loadPageQHPT);
+router.get('/quy-hoach-va-phat-trien/getList', ctrl.getListQHPT);
 // thu tuc hanh chinh
-router.get('/cong-dan/thu-tuc-hanh-chinh',ttCtrl.loadTTHC);
-router.get('/cong-dan/thu-tuc-hanh-chinh/:idTT',ttCtrl.getTT)
+router.get('/cong-dan/thu-tuc-hanh-chinh', ttCtrl.loadTTHC);
+router.get('/cong-dan/thu-tuc-hanh-chinh/:idTT', ttCtrl.getTT)
+// tim kiem
+router.post('/tim-kiem',ctrl.search);
 
-router.get('/cong-dan/dich-vu-cong',ctrl.loadDVC);
 
+
+router.get('/cong-dan/dich-vu-cong', ctrl.loadDVC);
+
+//  danh muc
+router.get('/danh-muc*.:idDM', ctrl.loadPageByCate)
+router.get('/getListNewsCate/:idCate', ctrl.getNewsCate)
+// **************************
 router.route('/cong-dan/gop-y')
   .get(ctrl.loadGY)
-  .post(upload.single('file'),ctrl.createGopY)
-router.get('/getSS',(req,res) => {
-  res.send(req.session.count+'++'+req.session.mess);
+  .post(upload.single('file'), ctrl.createGopY)
+router.get('/getSS', (req, res) => {
+  res.send(req.session.count + '++' + req.session.mess);
 })
-router.get('/destroySS',(req,res) => {
-  req.session.mess=2;
-  res.status(200).json({check:req.session.mess});
+router.get('/destroySS', (req, res) => {
+  req.session.mess = 2;
+  res.status(200).json({ check: req.session.mess });
 })
 module.exports = router;

@@ -9,10 +9,28 @@ $(function () {
         var vitri = $("html").scrollTop();
         if (vitri > 113) {
             $('.menu').addClass('menuZoom animated fadeInDown');
+           // $('.sideBar-menu').addClass('sideBar-active');
         }
         else if (vitri < 100) {
             $('.menu').removeClass('menuZoom animated fadeInDown');
+          //  $('.sideBar-menu').removeClass('sideBar-active');
         }
+        /*
+        if (vitri > 236) {
+            $('.sideBar-menu').addClass('sideBar-active');
+        }
+        else if (vitri < 236) {
+           $('.sideBar-menu').removeClass('sideBar-active');
+        }
+        if (vitri > 2849) {
+            $('.sideBar-menu').removeClass('sideBar-active');
+            $('.sideBar-menu').addClass('sideBar-active-1');
+        }
+        else if ( vitri >236 && vitri < 2849 ) {
+            $('.sideBar-menu').removeClass('sideBar-active-1');
+            $('.sideBar-menu').addClass('sideBar-active');
+        }
+        */
     });
 
     // small menu

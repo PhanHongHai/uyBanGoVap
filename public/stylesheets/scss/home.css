@@ -1654,7 +1654,8 @@ body {
           position: absolute;
           bottom: -1%;
           width: 100%;
-          color: #fff; }
+          color: #fff;
+          height: 60%; }
           body .main .content .itemNewHome .bodyNewsHome .titleNewsHome {
             width: 80%; }
             body .main .content .itemNewHome .bodyNewsHome .titleNewsHome h3 {
@@ -1823,18 +1824,20 @@ body {
           bottom: 15%;
           left: 0;
           background-color: #f9c100; }
-        body .contentHome .hoatDong .headCate h5 span {
-          height: 50px;
-          display: block;
-          padding-top: 15% !important;
-          padding-left: 8px !important;
-          font-size: 16px; }
+        body .contentHome .hoatDong .headCate h5 {
+          width: 35%; }
+          body .contentHome .hoatDong .headCate h5 span {
+            height: 34px;
+            display: block;
+            padding-top: 5% !important;
+            font-size: 16px;
+            text-align: center; }
         body .contentHome .hoatDong .headCate .subCate {
-          width: 75%;
+          width: 65%;
           display: inline-block; }
           body .contentHome .hoatDong .headCate .subCate ul li {
-            padding-left: 0% !important;
-            padding-right: 2% !important;
+            padding-left: 6% !important;
+            padding-right: 10% !important;
             border-right: 1px solid gray; }
             body .contentHome .hoatDong .headCate .subCate ul li:hover {
               color: #f9c100;
@@ -2028,7 +2031,8 @@ body {
             font-weight: 400;
             height: 50px;
             display: block;
-            padding-top: 12%; }
+            padding-top: 12%;
+            text-align: center; }
         body .contentHome .anNinh .headCate .subCate {
           width: 70%;
           display: inline-block; }
@@ -2325,7 +2329,8 @@ body {
           position: absolute;
           bottom: 1%;
           width: 99.5%;
-          color: #fff; }
+          color: #fff;
+          height: 99.5%; }
           body .main .content .itemNewHome .bodyNewsHome .titleNewsHome {
             width: 80%; }
             body .main .content .itemNewHome .bodyNewsHome .titleNewsHome h3 {
@@ -2491,22 +2496,22 @@ body {
           left: 0;
           background-color: #f9c100; }
         body .contentHome .hoatDong .headCate h5 {
-          width: 25%;
+          width: 35%;
           float: left;
           margin: 0;
           padding: 0;
           color: #fff; }
           body .contentHome .hoatDong .headCate h5 span {
-            height: 50px;
+            height: 34px;
             display: block;
-            padding-top: 15% !important;
-            padding-left: 8px !important; }
+            padding-top: 4% !important;
+            text-align: center; }
         body .contentHome .hoatDong .headCate .subCate {
-          width: 75%;
+          width: 65%;
           display: inline-block; }
           body .contentHome .hoatDong .headCate .subCate ul li {
-            padding-left: 0% !important;
-            padding-right: 2% !important;
+            padding-left: 7% !important;
+            padding-right: 10% !important;
             border-right: 1px solid gray; }
             body .contentHome .hoatDong .headCate .subCate ul li:hover {
               color: #f9c100;
@@ -2559,7 +2564,8 @@ body {
                       font-size: 12px;
                       line-height: 18px;
                       font-weight: 500;
-                      font-family: roboto, sans-serif; }
+                      font-family: roboto, sans-serif;
+                      width: 90%; }
                       body .contentHome .hoatDong .contentCate .cateClassify .cateItem ul li a span p:hover {
                         color: #f9c100;
                         transition: 0.4s; }
@@ -2659,7 +2665,8 @@ body {
                       font-size: 12px;
                       line-height: 18px;
                       font-weight: 500;
-                      font-family: roboto, sans-serif; }
+                      font-family: roboto, sans-serif;
+                      width: 90%; }
                       body .contentHome .vanHoaXaHoi .contentCate .cateClassify .cateItem ul li a span p:hover {
                         color: #f9c100;
                         transition: 0.4s; }
@@ -2761,7 +2768,8 @@ body {
                       font-size: 12px;
                       line-height: 18px;
                       font-weight: 500;
-                      font-family: roboto, sans-serif; }
+                      font-family: roboto, sans-serif;
+                      width: 90%; }
                       body .contentHome .anNinh .contentCate .cateClassify .cateItem ul li a span p:hover {
                         color: #f9c100;
                         transition: 0.4s; }
@@ -2835,7 +2843,8 @@ body {
                       font-size: 12px;
                       line-height: 18px;
                       font-weight: 500;
-                      font-family: roboto, sans-serif; }
+                      font-family: roboto, sans-serif;
+                      width: 90%; }
                       body .contentHome .matTran .contentCate .cateClassify .cateItem ul li a span p:hover {
                         color: #f9c100;
                         transition: 0.4s; }

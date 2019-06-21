@@ -43,7 +43,7 @@ module.exports = {
         if (tk)
             return done(null, tk[0]);
         else
-            return done(null, false);
+            return done(null, false,{ message: 'Tai khoan khong ton tai.' });
     },
     addAccount: async (req, res) => {
         let us = req.body.username;

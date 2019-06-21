@@ -1028,6 +1028,7 @@
           padding: 0;
           padding-top: 2px;
           width: 100%;
+          
           &:first-child {
             padding-top: 0;
             padding-right: 0;
@@ -1045,6 +1046,7 @@
             bottom: -1%;
             width: 100%;
             color: #fff;
+            height: 60%;
             .titleNewsHome {
               width: 80%;
               h3 {
@@ -1276,21 +1278,22 @@
             background-color: #f9c100;
           }
           h5 {
+            width: 35%;
             span {
-              height: 50px;
+              height: 34px;
               display: block;
-              padding-top: 15% !important;
-              padding-left: 8px !important;
+              padding-top: 5% !important;
               font-size: 16px;
+              text-align: center;
             }
           }
           .subCate {
-            width: 75%;
+            width: 65%;
             display: inline-block;
             ul {
               li {
-                padding-left: 0% !important;
-                padding-right: 2% !important;
+                padding-left: 6% !important;
+                padding-right: 10% !important;
                 border-right: 1px solid gray;
                 &:hover {
                   color: #f9c100;
@@ -1545,6 +1548,7 @@
               height: 50px;
               display: block;
               padding-top: 12%;
+              text-align: center;
             }
           }
           .subCate {
@@ -1959,6 +1963,7 @@
             bottom: 1%;
             width: 99.5%;
             color: #fff;
+            height: 99.5%;
             .titleNewsHome {
               width: 80%;
               h3 {
@@ -2185,25 +2190,25 @@
             background-color: #f9c100;
           }
           h5 {
-            width: 25%;
+            width: 35%;
             float: left;
             margin: 0;
             padding: 0;
             color: #fff;
             span {
-              height: 50px;
+              height: 34px;
               display: block;
-              padding-top: 15% !important;
-              padding-left: 8px !important;
+              padding-top: 4% !important;
+              text-align: center;
             }
           }
           .subCate {
-            width: 75%;
+            width: 65%;
             display: inline-block;
             ul {
               li {
-                padding-left: 0% !important;
-                padding-right: 2% !important;
+                padding-left: 7% !important;
+                padding-right: 10% !important;
                 border-right: 1px solid gray;
                 &:hover {
                   color: #f9c100;
@@ -2273,6 +2278,7 @@
                         line-height: 18px;
                         font-weight: 500;
                         font-family: roboto, sans-serif;
+                        width: 90%;
                         &:hover {
                           color: #f9c100;
                           transition: 0.4s;
@@ -2403,6 +2409,7 @@
                         line-height: 18px;
                         font-weight: 500;
                         font-family: roboto, sans-serif;
+                        width: 90%;
                         &:hover {
                           color: #f9c100;
                           transition: 0.4s;
@@ -2535,6 +2542,7 @@
                         line-height: 18px;
                         font-weight: 500;
                         font-family: roboto, sans-serif;
+                        width: 90%;
                         &:hover {
                           color: #f9c100;
                           transition: 0.4s;
@@ -2633,6 +2641,7 @@
                         line-height: 18px;
                         font-weight: 500;
                         font-family: roboto, sans-serif;
+                        width: 90%;
                         &:hover {
                           color: #f9c100;
                           transition: 0.4s;

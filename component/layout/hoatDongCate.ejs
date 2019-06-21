@@ -14,9 +14,9 @@
         <div class="cateClassify activeCate">
             <div class="row">
                 <div class="col-md-6 mainCate ">
-                    <a href="">
+                    <a href="/danh-muc<%= db[0].cate[0].link%>/bai-viet/<%= db[0].linkSEO%>.<%= db[0]._id %>">
                         <img src="/public/uploads/<%= db[0].linkImg %>" class="img-fluid" alt="">
-                        <h4 class=""><%= db[0].title %></h4>
+                        <h4 class=""><%= db[0].title.slice(0,50) %>...</h4>
                         <p><i class="fas fa-clock pr-2"></i><%= db[0].postTime %></p>
                     </a>
                 </div>
@@ -29,12 +29,12 @@
                              %>
                             <% if(i > 1){ %>
                             <li>
-                                <a href="/bai-viet/<%= ele.linkSEO%>.<%= ele._id %>">
+                                <a href="/danh-muc<%= ele.cate[0].link%>/bai-viet/<%= ele.linkSEO%>.<%= ele._id %>">
                                     <div>
                                         <img src="/public/uploads/<%= ele.linkImg %>" class="img-fluid" alt="">
                                     </div>
                                     <span>
-                                        <p><%= ele.title %></p>
+                                        <p><%= ele.title.slice(0,40) %>....</p>
                                         <p><i class="fas fa-clock pr-2"></i><%=ele.postTime %></p>
                                     </span>
                                 </a>
@@ -51,9 +51,9 @@
             <div class="row">
             <% if(ub.length != 0){ %>
                 <div class="col-md-6 mainCate ">
-                    <a href="">
-                        <img src="/public/images/tin/<%= ub[0].linkImg %>" class="img-fluid" alt="">
-                        <h4><%= ub[0].title %></h4>
+                    <a href="/danh-muc<%= db[0].cate[0].link%>/bai-viet/<%= ub[0].linkSEO%>.<%= ub[0]._id %>">
+                        <img src="/public/images/uploads/<%= ub[0].linkImg %>" class="img-fluid" alt="">
+                        <h4><%= ub[0].title.slice(0,50) %>....</h4>
                           <p><i class="fas fa-clock pr-2"></i><%= db[0].postTime %></p>
                     </a>
                 </div>
@@ -67,12 +67,12 @@
                              %>
                             <% if(i > 1){ %>
                             <li>
-                                <a href="">
+                                <a href="/danh-muc<%= ele.cate[0].link%>/bai-viet/<%= ele.linkSEO%>.<%= ele._id %>">
                                     <div>
-                                        <img src="/public/images/tin/<%= ele.linkImg %>" class="img-fluid" alt="">
+                                        <img src="/public/images/uploads/<%= ele.linkImg %>" class="img-fluid" alt="">
                                     </div>
                                     <span>
-                                        <p><%= ele.title %>
+                                        <p><%= ele.title.slice(0,50) %>....
                                         </p>
                                         <p><i class="fas fa-clock pr-2"></i><%= ele.postTime %></p>
                                     </span>

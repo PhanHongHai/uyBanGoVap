@@ -28,6 +28,9 @@ module.exports = {
                             foreignField: '_id',
                             as: 'cate'
                         }
+                    },
+                    {
+                        $sort:{postTime:-1}
                     }
                 ], (err, list) => {
                     if (err)

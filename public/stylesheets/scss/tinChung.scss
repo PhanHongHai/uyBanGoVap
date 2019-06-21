@@ -47,6 +47,7 @@ $color-bg: #fff;
   .allPage{
     #bodyPage{
       .tinChung{
+        margin-top: -10% !important;
         .headTinChung{
           margin: 0 !important;
           h3{
@@ -65,6 +66,7 @@ $color-bg: #fff;
           }
         }
         .contentTinChung{
+          .card{margin-left: 0 !important;}
           ul{
             li{
               a{
@@ -75,50 +77,63 @@ $color-bg: #fff;
               }
               span{
                 width: 55% !important;
+                a{
+                  h3{font-size: 16px !important;}
+                }
                 a.btn {
                   display: none;
                 }
+                p{font-size: 13px !important;}
               }
             }
           }
+
         }
       }
     }
   }
 }
 @media (min-width: 768px) and (max-width: 991px){
-  .allPage{
-    #bodyPage{
-      .tinChung{
-        .headTinChung{
-          h3{
-            a{
-              &:before{
-                width: 20% !important;
-                top: 85% !important;
-                left: 33% !important;
-              }
-              &:after{
-               width: 20% !important;
-               top: 85% !important;
-               right: 31% !important;
+  body{
+    .allPage{
+      #bodyPage{
+        .tinChung{
+          margin-top: -10% !important;
+          .headTinChung{
+            h3{
+              font-size: 25px;
+              a{
+                &:before{
+                  width: 20% !important;
+                  top: 85% !important;
+                  left: 33% !important;
+                }
+                &:after{
+                 width: 20% !important;
+                 top: 85% !important;
+                 right: 31% !important;
+                }
               }
             }
           }
-        }
-        .contentTinChung{
-          ul{
-            li{
-              a{
-                img{
-                  width: 45% !important;
-                  height: 190px !important;
+          .contentTinChung{
+            ul{
+              li{
+                a{
+                  img{
+                    width: 45% !important;
+                    height: 190px !important;
+                  }
                 }
-              }
-              span{
-                width: 55% !important;
-                a.btn {
-                  display: none;
+                span{
+                  width: 55% !important;
+                  a{
+                    h3{font-size: 16px !important;}
+                  }
+                  a.btn {
+                    display: none;
+                  }
+                  p{font-size: 13px !important;}
                 }
               }
             }
@@ -127,9 +142,32 @@ $color-bg: #fff;
       }
     }
   }
+  
  }
 @media (min-width: 992px) and (max-width: 1200px){
-
+  body{
+    .allPage{
+      #bodyPage{
+        .tinChung{
+          margin-top: -8%;
+          .contentTinChung{
+            ul{
+              li{
+                a{
+                  img{
+                    height: 170px;
+                  }
+                }
+                span{
+                  a.btn{display: none;}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 .page-breadcrumb{
   .breadcrumb{
@@ -156,6 +194,7 @@ $color-bg: #fff;
     background-color: $color-bg;
     .tinChung {
       width: 100%;
+      margin-top: -6.4%;
       .headTinChung {
         position: relative;
         width: 100%;
@@ -231,6 +270,7 @@ $color-bg: #fff;
                   font-size: 18px;
                   font-weight: 500;
                   margin-top: 0%;
+                  text-align: left;
                 }
               }
               p {
